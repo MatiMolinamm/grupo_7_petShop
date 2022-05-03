@@ -1,76 +1,7 @@
 * {
-  margin: 0;
+  margin: 0%;
   box-sizing: border-box;
-
-}
-
-div button.masproducto, div button.menosproducto {
-  color: black;
-}
-
-div.agregaralcarrito {
-  padding: 5px;
-  width: 100%;
-}
-
-div.cantidaddeproducto {
-  display: flex;
-}
-
-div.pesoproducto {
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-}
-
-div a.botonpesoproducto {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  color: black;
-  text-decoration: none;
-  padding: 10px;
-}
-
-div a.botonpesoproducto:hover {
-  background-color: grey;
-  color: white;
-}
-
-div button.botonagregaralcarrito {
-  background-color: rgb(122, 122, 230);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  height: 43px;
-  margin: auto;
-  width: 100%;
-}
-
-div.ordencarrito {
-  display: flex;
-  align-items: center;
-}
-
-div.precioystock {
-  display: flex;
-  padding: 5px;
-  justify-content: space-around;
-}
-
-div p.precio {
-  width: 50%;
-}
-
-div p.stock {
-  width: 50%;
-  display: inline-block;
-}
-
-div input.inputcantidaddeproducto {
-  width: 43px;
-  height: 43px;
-  text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 header {
@@ -85,6 +16,11 @@ header article {
   justify-content: space-between;
 }
 
+main {
+  background-color: #ffffff;
+}
+
+/*------Clases del Header-----------*/
 .topHeader {
   display: flex;
   flex-wrap: wrap;
@@ -125,6 +61,7 @@ header article {
   justify-content: center;
   align-items: center;
 }
+
 .centerHeader div#logo {
   width: 80%;
   display: flex;
@@ -158,6 +95,19 @@ header article {
   padding-bottom: 1%;
 }
 
+.bottomHeader button {
+  background-color: rgb(141, 74, 204);
+  border: none;
+}
+
+.bottomHeader button :hover {
+  cursor: pointer;
+}
+
+.bottomHeader form input {
+  width: 90%;
+  border-radius: 10px;
+  color: black;
 }
 
 .bottomHeader ul {
@@ -166,10 +116,245 @@ header article {
 }
 
 .bottomHeader li {
-  /* color: white;*/
   display: inline-flex;
   font-weight: bold;
   padding: 0.5%;
+}
+
+.fa-magnifying-glass:before,
+.fa-search:before {
+  color: white;
+  content: "\f002";
+}
+
+/*---------------------*/
+
+/* seccion principal */
+.carrusel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  margin: 10px;
+  height: 40vh;
+  border: solid black 2px;
+}
+
+.carrusel h2 {
+  color: black;
+}
+
+.productosDestacados {
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2.productosDestacados {
+  font-size: 16px;
+  justify-content: left;
+  padding: 5px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.productos {
+  width: 70%;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  margin-bottom: 20px;
+}
+
+.productos h3 {
+  color: black;
+}
+
+.productos img {
+  width: 100%;
+}
+
+.productos p {
+  color: black;
+}
+
+/* footer*/
+footer {
+  background-color: #ebebeb;
+  margin: 10px;
+  text-align: center;
+}
+
+footer img {
+  width: 40%;
+}
+
+footer li {
+  color: black;
+  list-style: none;
+}
+
+.register {
+  background-color: #ebebeb;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+}
+
+.register h2 {
+  color: black;
+}
+
+.register div {
+  margin-top: 5px;
+}
+
+.register input {
+  color: rgb(111, 11, 204);
+  width: 50vw;
+}
+
+.register button {
+  color: rgb(111, 11, 204);
+  font-weight: 900;
+  transition: 650ms;
+}
+
+.register button:hover {
+  background-color: rgb(111, 11, 204);
+  color: white;
+  font-weight: 900;
+  border: none;
+}
+
+.linkto {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 400px;
+  font-size: 12px;
+}
+
+.linkto a {
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+/*!Mariano*/
+Seccion detalle producto div form button.sumaryrestarproducto {
+  background-color: red;
+  color: red;
+}
+
+/*Mariano*/
+div.agregaralcarrito {
+  padding: 5px;
+  width: 50%;
+}
+
+/*Mariano*/
+div.cantidaddeproducto {
+  display: flex;
+  margin-right: 1em;
+}
+
+/*Mariano*/
+div.pesoproducto {
+  display: flex;
+  text-align: left;
+  padding: 20px 0px;
+}
+
+/*Mariano*/
+div a.botonpesoproducto {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+  margin: 0px 36px 0px 0px;
+  padding: 10px;
+}
+
+/*Mariano*/
+div a.botonpesoproducto:hover {
+  background-color: rgb(84, 108, 247);
+  color: white;
+}
+
+/*Mariano*/
+div button.botonagregaralcarrito {
+  background-color: rgb(122, 122, 230);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 43px;
+  margin: auto;
+  width: 180px;
+}
+
+/*Mariano*/
+div.ordencarrito {
+  display: flex;
+  align-items: center;
+}
+
+/*Mariano*/
+div.precioystock {
+  display: flex;
+  padding: 5px;
+  justify-content: space-around;
+}
+
+/*Mariano*/
+div p.precio {
+  width: 50%;
+}
+
+/*Mariano*/
+div p.stock {
+  width: 50%;
+  display: inline-block;
+}
+
+/*Mariano*/
+div input.inputcantidaddeproducto {
+  width: 43px;
+  height: 43px;
+  text-align: center;
+}
+
+/*Mariano*/
+main article.imagenproducto img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  padding: 25px;
+}
+
+/*Mariano*/
+main article.resumenproducto {
+  padding: 25px;
+  width: 100%;
+}
+
+/*Mariano*/
+main h1.tituloresumenproducto {
+  color: #666666;
+  padding: 5px;
+}
+
+/*Mariano*/
+main div.descripcionproducto {
+  padding: 25px;
+  width: 100%;
+}
+
+/*Mariano*/
+main article.detalleproductos {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 481px) {
@@ -189,3 +374,24 @@ header article {
 }
 
 @media (min-width: 769px) {
+  .productos {
+    width: 21%;
+  }
+
+  /*Mariano*/
+  main article.imagenproducto {
+    width: 40%;
+  }
+
+  /*Mariano*/
+  main article.resumenproducto {
+    padding: 25px 25px;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1300px) {
+  div.detalleproducto {
+    padding: 0px 40px;
+  }
+}

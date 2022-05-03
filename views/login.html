@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7a7177ae0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Petit and Fun</title>
+  </head>
+  <body>
+    <header>
+      <article class="topHeader">
+        <div>
+          <i class="fa-solid fa-phone"></i>
+          <p>011-155829155</p>
+        </div>
+        <div><p>contactanos</p></div>
+      </article>
+      <article class="centerHeader">
+        <div id="menu"><i class="fa-solid fa-bars"></i></div>
+        <div id="logo"><img src="/img/paf-logo.png" /></div>
+        <div id="usuario">
+          <a href="/login"><i class="fa-solid fa-user"></i></a
+          ><i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </article>
+      <article class="bottomHeader">
+        <form>
+          <input
+            type="search"
+            placeholder="Buscar productos, marcas y mas..."
+          />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <ul>
+          <li>
+            <a><p>Perros</p></a>
+          </li>
+          <li>
+            <a><p>Gatos</p></a>
+          </li>
+          <li>
+            <a><p>Aves</p></a>
+          </li>
+          <li>
+            <a><p>Peces</p></a>
+          </li>
+          <li>
+            <a><p>Promociones</p></a>
+          </li>
+          <li>
+            <a><p>Sucursales</p></a>
+          </li>
+        </ul>
+      </article>
+    </header>
+    <hr />
+    <main>
+      <form action="/" method="post" class="register">
+        <h2>INGRESAR</h2>
+
+        <div class="email">
+          <input
+            type="email"
+            name="email"
+            placeholder="Ingrese su email@address.com"
+            required
+          />
+        </div>
+        <div class="pasword">
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+
+        <div class="boton">
+          <button type="submit">Enviar</button>
+          <button type="reset">Borrar</button>
+        </div>
+        <div class="linkto">
+          <a href="http://localhost:3000/register">¿Aún no está registrado?</a>
+          <a href="#">Olvide mi Contraseña</a>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div><img src="/img/paf-logo.png" alt="" /></div>
+      <div>
+        <ul>
+          <li>Nosotros</li>
+          <li>Productos</li>
+          <li>Contactanos</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
