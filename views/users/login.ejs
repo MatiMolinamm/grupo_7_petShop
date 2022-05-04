@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <hr />
+    <main>
+      <form action="/" method="post" class="register">
+        <h2>INGRESAR</h2>
+
+        <div class="email">
+          <input
+            type="email"
+            name="email"
+            placeholder="Ingrese su email@address.com"
+            required
+          />
+        </div>
+        <div class="pasword">
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+
+        <div class="boton">
+          <button type="submit">Enviar</button>
+          <button type="reset">Borrar</button>
+        </div>
+        <div class="linkto">
+          <a href="http://localhost:3000/register">¿Aún no está registrado?</a>
+          <a href="#">Olvide mi Contraseña</a>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

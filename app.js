@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const routerMain = require("./routes/main");
+const routerProductos = require("./routes/product");
 
 app.set("view engine", "ejs");
 
@@ -14,4 +15,4 @@ app.use("/", routerMain);
 app.use("/index", routerMain);
 app.use("/register", routerMain);
 app.use("/login", routerMain);
-app.use("/productos", routerMain);
+app.use("/productos", routerProductos);

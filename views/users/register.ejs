@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <hr />
+    <main>
+      <form action="/" method="post" class="register">
+        <h2>REGISTRARSE</h2>
+        <div class="nombre">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre y apellido"
+            required
+          />
+        </div>
+        <div class="telefono">
+          <input
+            type="number"
+            name="telefono"
+            placeholder="Numero telefónico"
+            required
+          />
+        </div>
+        <div class="email">
+          <input
+            type="email"
+            name="email"
+            placeholder="email@address.com"
+            required
+          />
+        </div>
+        <div class="pasword">
+          <input
+            type="password"
+            name="password"
+            placeholder="*********"
+            required
+          />
+        </div>
+        <div class="pasword">
+          <input
+            type="password"
+            name="password"
+            placeholder="Confirmar password"
+            required
+          />
+        </div>
+        <div class="boton">
+          <button type="submit">Enviar</button>
+          <button type="reset">Borrar</button>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>
