@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+    <hr />
+    <main>
+        <h2>Carrito de compras</h2>
+        <div class="carritodecompras">
+            <form>
+                <table class="tabladecarritocompras">
+                        <tr class="headcarrito">
+                            <th>
+                                Producto
+                            </th>
+                            <th>
+                                Envío
+                            </th>
+                            <th>
+                                Precio
+                            </th>
+                            <th>
+                                Cantidad
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                        </tr>
+                    <div class="itemscarrito">
+                        <tr class="itemcarritoindividual">
+                            <td class="imgcarritoproducto"><img src="/img/alimento-gato-excellent.png" width="100px"
+                                    alt="alimento-gato-excellent.png"><span>Alimento para Gato XXX</span>
+                            </td>
+                            <td>$ Envío</td>
+                            <td>$ Precio</td>
+                            <td><div class="cantidaddeproducto">
+                                <button type="button" class="sumaryrestarproducto"><label>-</label></button> 
+                                 <input type="number" name="cantidaddeproducto" id="cantidaddeproducto" placeholder="1" class="inputcantidaddeproducto">
+                                 <button type="button" class="sumaryrestarproducto"><label>+</label></button> 
+                             </div></td>
+                            <td>$ Total</td>
+
+                        </tr>
+                    </div>
+        </div>
+        </table>
+        </form>
+        </div>
+    </main> <%- include('../partials/footer.ejs')%>
+</body>
+
+</html>
