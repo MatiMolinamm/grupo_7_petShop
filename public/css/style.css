@@ -5,7 +5,11 @@
 }
 
 /*Mariano*! padding para todos los h*/
-h1, h2, h3, h4 {
+h1 {
+  font-size: 1.5rem;
+}
+
+h2, h3, h4 {
   margin: 20px;
   font-size: 1.3rem;
   padding: 10px;
@@ -16,7 +20,8 @@ h1, h2, h3, h4 {
 
 header {
   width: 100vw;
-  background-color: rgb(141, 74, 204);
+  background-color: #8c52ff;
+  ;
 }
 
 header article {
@@ -73,7 +78,7 @@ main {
 }
 
 .centerHeader div#logo {
-  width: 80%;
+  width: 30%;
   display: flex;
   justify-content: center;
 }
@@ -86,7 +91,10 @@ main {
 }
 
 .centerHeader img {
-  width: 27%;
+ width: 520px;
+ height: 250px;
+ max-width: 100%;
+ max-height: 100%;
 }
 
 .bottomHeader {
@@ -194,7 +202,7 @@ h2.productosDestacados {
 
 /* footer*/
 footer {
-  background-color: #ebebeb;
+  background-color: #4dbbd4;
   margin: 10px;
   text-align: center;
 }
@@ -204,7 +212,7 @@ footer img {
 }
 
 footer li {
-  color: black;
+  color: white;
   list-style: none;
 }
 
@@ -257,8 +265,9 @@ footer li {
 Seccion detalle producto */
 
 div form button.sumaryrestarproducto {
-  background-color: red;
-  color: red;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid rgb(130, 130, 130);
+  border-radius: 10px;
 }
 
 div.agregaralcarrito {
@@ -327,6 +336,7 @@ div input.inputcantidaddeproducto {
   width: 43px;
   height: 43px;
   text-align: center;
+  border-radius: 10px;
 }
 
 h2.titulodescripcionproducto {
@@ -380,11 +390,71 @@ td.imgcarritoproducto {
   justify-content: center;
 }
 
-/*!Mariano: alta, baja ymodificacion producto*/
-form.formabmproducto {
-  display: flex;
+/*!Mariano: alta, baja y modificacion producto*/
+
+h1 {
+  color: #4dbbd4;
 }
 
+form div.mainformabmproducto {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+form div.formimagenabmproducto {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+form div.formimagenabmproducto input {
+  margin: 0;
+  padding: 0;
+}
+
+form div.formimagenabmproducto img {
+  width: 100%;
+  max-width: 438px;
+  min-width: 200px;
+}
+
+form div.detailformabmproducto div {
+  margin: 10px 0;
+  width: 100%;
+}
+
+div.detailformabmproducto input, div.detailformabmproducto select, div.detailformabmproducto textarea {
+  text-align: center;
+  width: 100%;
+  padding: 5px 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid rgb(217, 217, 217);
+}
+
+form div input::placeholder, div textarea::placeholder {
+  color:#121212;
+}
+
+form div select {
+  display: block;
+}
+
+form div.formbuttonsabmproducto {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form div.formbuttonsabmproducto div {
+  width: 100%;
+}
+
+form div.buttonabmproducto input {
+  background-color: #8c52ff;
+}
 
 @media (min-width: 481px) {
   .bottomHeader ul {
@@ -400,6 +470,13 @@ form.formabmproducto {
   .productos {
     width: 40%;
   }
+}
+
+/*!Mariano: alta, baja ymodificacion producto*/
+form div.formimagenabmproducto {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
 }
 
 @media (min-width: 769px) {
@@ -419,8 +496,22 @@ form.formabmproducto {
   }
 }
 
+/*!Mariano: alta, baja ymodificacion producto*/
+form div.mainformabmproducto {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 100%;
+}
+
+form div.formbuttonsabmproducto div {
+  width: 30% ;
+}
+
 @media (min-width: 1300px) {
   div.detalleproducto {
     padding: 0px 40px;
   }
 }
+
+/*!Mariano: alta, baja ymodificacion producto*/
