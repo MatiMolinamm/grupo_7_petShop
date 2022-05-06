@@ -4,6 +4,16 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/*Mariano*! padding para todos los h*/
+h1, h2, h3, h4 {
+  margin: 20px;
+  font-size: 1.3rem;
+  padding: 10px;
+  color: purple;
+  font-weight: bold;
+  font-style: italic;
+}
+
 header {
   width: 100vw;
   background-color: rgb(141, 74, 204);
@@ -86,6 +96,7 @@ main {
   justify-content: center;
   padding: 0.5%;
   margin-top: 5px;
+  background-color: #4dbbd4;
 }
 
 .bottomHeader form {
@@ -119,6 +130,7 @@ main {
   display: inline-flex;
   font-weight: bold;
   padding: 0.5%;
+  color: white;
 }
 
 .fa-magnifying-glass:before,
@@ -241,32 +253,30 @@ footer li {
   text-decoration: none;
 }
 
-/*!Mariano*/
-Seccion detalle producto div form button.sumaryrestarproducto {
+/*!Mariano
+Seccion detalle producto */
+
+div form button.sumaryrestarproducto {
   background-color: red;
   color: red;
 }
 
-/*Mariano*/
 div.agregaralcarrito {
   padding: 5px;
   width: 50%;
 }
 
-/*Mariano*/
 div.cantidaddeproducto {
   display: flex;
   margin-right: 1em;
 }
 
-/*Mariano*/
 div.pesoproducto {
   display: flex;
   text-align: left;
   padding: 20px 0px;
 }
 
-/*Mariano*/
 div a.botonpesoproducto {
   background-color: white;
   border-radius: 20px;
@@ -277,13 +287,12 @@ div a.botonpesoproducto {
   padding: 10px;
 }
 
-/*Mariano*/
+
 div a.botonpesoproducto:hover {
   background-color: rgb(84, 108, 247);
   color: white;
 }
 
-/*Mariano*/
 div button.botonagregaralcarrito {
   background-color: rgb(122, 122, 230);
   border: none;
@@ -294,38 +303,37 @@ div button.botonagregaralcarrito {
   width: 180px;
 }
 
-/*Mariano*/
 div.ordencarrito {
   display: flex;
   align-items: center;
 }
 
-/*Mariano*/
 div.precioystock {
   display: flex;
   padding: 5px;
   justify-content: space-around;
 }
 
-/*Mariano*/
 div p.precio {
   width: 50%;
 }
 
-/*Mariano*/
 div p.stock {
   width: 50%;
   display: inline-block;
 }
 
-/*Mariano*/
 div input.inputcantidaddeproducto {
   width: 43px;
   height: 43px;
   text-align: center;
 }
 
-/*Mariano*/
+h2.titulodescripcionproducto {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
 main article.imagenproducto img {
   height: auto;
   max-width: 100%;
@@ -333,29 +341,50 @@ main article.imagenproducto img {
   padding: 25px;
 }
 
-/*Mariano*/
 main article.resumenproducto {
   padding: 25px;
   width: 100%;
 }
 
-/*Mariano*/
 main h1.tituloresumenproducto {
   color: #666666;
   padding: 5px;
 }
 
-/*Mariano*/
 main div.descripcionproducto {
   padding: 25px;
   width: 100%;
 }
 
-/*Mariano*/
 main article.detalleproductos {
   display: flex;
   flex-wrap: wrap;
 }
+
+/*!Mariano: carrito de compras*/
+table {
+  width: 100%;
+}
+
+table tr.headcarrito {
+  background-color: #e0dcdc;
+}
+
+table th, table td {
+  text-align: center;
+  align-items: center;
+}
+
+td.imgcarritoproducto {
+  display: flex;
+  justify-content: center;
+}
+
+/*!Mariano: alta, baja ymodificacion producto*/
+form.formabmproducto {
+  display: flex;
+}
+
 
 @media (min-width: 481px) {
   .bottomHeader ul {

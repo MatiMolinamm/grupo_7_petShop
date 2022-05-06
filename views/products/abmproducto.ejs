@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs')%>
-  <body>
-    <%- include('../partials/header.ejs')%>
-    <hr />
-    <main>
-     <h1>Carrito de compras</h1>
-     <div class="carritodecompras">
-         <form>
-             <table>
-                 <th>
-                     Producto
-                 </th>
-                 <th>
-                    Envío
-                </th>
-                <th>
-                    Precio
-                </th>
-                <th>
-                    Cantidad
-                </th>
-                <th>
-                    Total
-                </th>
-             </table>
-         </form>
+<%- include('../partials/head.ejs')%>
 
-     </div>
+<body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+        <h1>Alta/Baja/Modificación de producto</h1>
+
+        <form class="formabmproducto" action="/abmproducto" method="post">
+            <input type="text" placeholder="Titulo del producto">
+            <input type="text" placeholder="Descripción">
+            <label for="imagenproducto">Imagen del producto</label>
+            <input type="file" accept=".jpg,.png,.svg" name="imagen producto" placeholder="imagen del producto">
+            <input type="number" placeholder="Precio">
+            <label for="peso">Peso</label>
+            <select name="peso" id="peso">
+                <option value="Perros">3kg</option>
+                <option value="Gatos">5kg</option>
+                <option value="Peces">8kg</option>
+            </select>
+            <input type="number" placeholder="Stock">
+            <label for="categoria">Categoría</label>
+            <select name="categoria" id="categoria">
+                <option value="Perros">Perros</option>
+                <option value="Gatos">Gatos</option>
+                <option value="Peces">Peces</option>
+                <option value="Aves">Aves</option>
+            </select>
+            <input type="text" placeholder="Cantidad">
+        </form>
+
+        </div>
     </main>
     <%- include('../partials/footer.ejs')%>
-  </body>
+</body>
+
 </html>
