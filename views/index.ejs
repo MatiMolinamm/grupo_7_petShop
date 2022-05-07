@@ -1,83 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head.ejs')%>
-  <body>
-    <%- include('./partials/header.ejs')%>
-    <hr />
-    <main>
-      <article class="carrusel">
-        <div>
-          <h2>Aca van las imagenes en carrusel</h2>
-        </div>
-      </article>
-      <h2 class="productosDestacados">PRODUCTOS DESTACADOS</h2>
-      <article class="productosDestacados">
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-        <div class="productos">
-          <h3>Balanceado</h3>
-          <img src="/img/productos/alimento-ave-embuche.png" alt="alimento" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            voluptatum accusantium fugit placeat obcaecati praesentium.
-          </p>
-        </div>
-      </article>
-    </main>
-    <%- include('./partials/footer.ejs')%>
-  </body>
+    <%- include('./partials/head.ejs')%>
+    <body>
+
+        <%- include('./partials/header.ejs')%>
+        <hr />
+        <main>
+            <article class="carrusel">
+                <div>
+                    <h2>Aca van las imagenes en carrusel</h2>
+                </div>
+            </article>
+            <h2 class="productosDestacados">PRODUCTOS DESTACADOS</h2>
+            <article class="productosDestacados">
+
+                <% 
+                    productos.forEach( ( producto ) => {
+
+                        %>
+
+                            <div class="productos">
+                                <h3><%= producto.titulo %></h3>
+                                <img src="<%= producto.img_path %>" alt="alimento" />
+                                <p>
+                                    <%= producto.descripcion %>
+                                </p>
+                            </div>
+
+                        <%
+
+                    });
+                %>
+
+            </article>
+          </main>
+        <%- include('./partials/footer.ejs')%>
+
+    </body>
 </html>

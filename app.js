@@ -1,19 +1,17 @@
-const express = require("express");
-const path = require("path");
-const app = express();
-const routerMain = require("./routes/main");
-const routerProductos = require("./routes/product");
+// Required modules
+const express         = require( "express" );
+const path            = require( "path" );
+const app             = express();
+// Required routers
+const routerMain      = require( "./routes/main" );
+const routerProductos = require( "./routes/product" );
+const publicPath      = path.resolve( __dirname, "./public" );
+// Config
+app.set( "view engine", "ejs" );
+app.use( express.static( publicPath ));
 
-app.set("view engine", "ejs");
+// Routes
+app.use( "/", routerMain );
+app.use( "/productos", routerProductos );
 
-const publicPath = path.resolve(__dirname, "./public");
-app.use(express.static(publicPath));
-
-app.listen(3000, () => console.log("servidor funcionando en puerto 3000"));
-
-app.use("/", routerMain);
-app.use("/index", routerMain);
-app.use("/register", routerMain);
-app.use("/login", routerMain);
-app.use("/productos", routerProductos);
-
+app.listen( 3000, () => console.log( "servidor funcionando en puerto 3000" ));

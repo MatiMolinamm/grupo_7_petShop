@@ -144,10 +144,17 @@ main {
 }
 
 .bottomHeader li {
+  color: white;
+  cursor: pointer;
   display: inline-flex;
   font-weight: bold;
-  padding: 0.5%;
-  color: white;
+  padding: 15px 10px;
+}
+
+.bottomHeader li:hover {
+
+    background-color: #8c52ff;
+
 }
 
 .fa-magnifying-glass:before,
