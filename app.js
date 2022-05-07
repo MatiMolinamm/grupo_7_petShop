@@ -16,3 +16,4 @@ app.use("/index", routerMain);
 app.use("/register", routerMain);
 app.use("/login", routerMain);
 app.use("/productos", routerProductos);
+
