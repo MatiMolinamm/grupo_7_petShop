@@ -338,39 +338,73 @@ footer li p{
   text-decoration: none;
 }
 
-/*!Mariano -- Seccion detalle producto */
+/*!Mariano
+Seccion detalle producto */
 
-div form button.sumaryrestarproducto {
-  background-color: rgb(224, 224, 224);
-  border: 1px solid rgb(130, 130, 130);
-  border-radius: 10px;
-}
 
 div.agregaralcarrito {
-  padding: 5px;
-  width: 50%;
+    padding: 5px;
+    width: 50%;
 }
 
 div.cantidaddeproducto {
-  display: flex;
-  margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    margin-right: 2em;
+}
+
+div.cantidaddeproducto input {
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(107 102 102);
+    border-image: initial;
+    height: 41px;
+    padding: 0px 5px;
+    text-align: center;
+    width: 35px;
+}
+
+div form input.sumaryrestarproductoplus {
+    background-color: rgb(204, 204, 220);
+    border-color: rgb(107 102 102);
+    border-radius: 2px 14px 14px 1px;
+    color: #7a7ae6;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    height: 41px
+    padding: 6px 12px 9px;
+}
+
+div form input.sumaryrestarproductominus {
+    background-color: rgb(204, 204, 220);
+    border-color: rgb(107 102 102);
+    border-radius: 14px 2px 2px 14px;
+    color: #7a7ae6;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    height: 41px;
+    padding: 6px 12px 9px;
 }
 
 div.pesoproducto {
   display: flex;
-  text-align: left;
   padding: 20px 0px;
+  text-align: left;
 }
 
 div a.botonpesoproducto {
-  background-color: white;
+  background-color: #c36cac;
   border-radius: 20px;
-  border: 1px solid black;
-  color: black;
+  border: 1px solid #c36cac;
+  color: #ffffff;
   margin: 0px 36px 0px 0px;
   padding: 10px;
   text-decoration: none;
 }
+
 
 div a.botonpesoproducto:hover {
   background-color: rgb(84, 108, 247);
@@ -404,14 +438,7 @@ div p.precio {
 
 div p.stock {
   display: inline-block;
-  width: 50%;
-}
-
-div input.inputcantidaddeproducto {
-  border-radius: 10px;
-  height: 43px;
-  text-align: center;
-  width: 43px;
+  width: 50%;  
 }
 
 h2.titulodescripcionproducto {
