@@ -46,34 +46,50 @@ main {
 }
 
 /*------Clases del Header-----------*/
+
 .topHeader {
+  background-color: #7a7ae6;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  padding: 0.5%;
+  height: 60px;
+}
+
+.topHeader  {
+  color: white;
+  font-size: 14px;
 }
 
 .topHeader div {
-  display: flex;
-  font-size: 1rem;
-  justify-content: center;
-  text-align: center;
-  padding-top: 20px;
-  width: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 1rem;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+    width: 32%;
+}
+
+.topHeader div i.fa-truck-fast, div i.fa-envelope, div i,fa-phone {
+  color: white;
+  font-size: 14px;
 }
 
 .topHeader p {
-  margin-left: 4%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 4%;
 }
 
 .centerHeader {
+  align-items: center;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: 51px;
-  justify-content: space-around;
-  padding: 0.5%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .centerHeader div#menu {
@@ -91,19 +107,81 @@ main {
 .centerHeader div#logo {
   display: flex;
   justify-content: center;
-  width: 30%;
+  width: 22%;
 }
 
 .centerHeader div#usuario {
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-  width: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 18%;
+    padding: 0 19px 0px 5px;
 }
 
 .centerHeader img {
   max-height: 100%;
   max-width: 100%;
+  padding-right: 30px;
+}
+
+.centerHeader button {
+  background-color: rgb(34 109 175);
+  border: none;
+  border-radius: 0px 19px 19px 0px;
+  font-size: 17px;
+  position: relative;
+  padding: 0px 18px;
+  right: 18px;
+}
+
+.centerHeader button:hover { /* ¿Acá no sería así? --->  .bottomHeader button:hover {}  Luca S. */
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.centerHeader form {
+  display: flex;
+  margin: auto;
+  width: 59%;
+}
+
+.centerHeader form input {
+  border-radius: 24px;
+  border: 1px solid #8c52ff;
+  color: black;
+  height: 42px;
+  width: 90%;
+}
+
+.centerHeader form input:hover {
+  border: 1px solid #44d1f1;
+}
+
+.centerHeader form input::placeholder {
+  padding-left: 10px;
+}
+
+.centerHeader div a i.fa-user {
+    background-color: #4dbbd4;
+    border: 1px solid white;
+    border-radius: 22%;
+    box-shadow: 2px 2px 0px white;
+    font-size: 1rem;
+    margin: 0px 7px 0px 0px;
+    padding: 5px;    
+}
+
+.centerHeader div i.fa-cart-shopping {
+  background-color: #4dbbd4;
+  border: 1px solid white;
+  border-radius: 22%;
+  box-shadow: 2px 2px 0px white;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.centerHeader div i.fa-cart-shopping:hover, div a i.fa-user:hover {
+  font-size: 1.5rem;
 }
 
 .bottomHeader {
@@ -114,44 +192,6 @@ main {
   margin-top: 5px;
   padding: 0.5%;
   position: relative;
-}
-
-.bottomHeader form {
-  display: flex;
-  margin: auto;
-  padding: 2%;
-  width: 70%;
-}
-
-.bottomHeader button {
-  background-color: rgb(34 109 175);
-  border: none;
-  border-radius: 0px 19px 19px 0px;
-  font-size: 17px;
-  position: relative;
-  padding: 0px 18px;
-  right: 18px;
-}
-
-.bottomHeader button:hover { /* ¿Acá no sería así? --->  .bottomHeader button:hover {}  Luca S. */
-  cursor: pointer;
-  font-size: 22px;
-}
-
-.bottomHeader form input {
-  border-radius: 24px;
-  border: 1px solid #4dbbd4;
-  color: black;
-  height: 42px;
-  width: 90%;
-}
-
-.bottomHeader form input:hover {
-  border: 1px solid #44d1f1;
-}
-
-.bottomHeader form input::placeholder {
-  padding-left: 10px;
 }
 
 .bottomHeader ul {
@@ -661,6 +701,23 @@ form div.formbuttonsabmproducto div {
   div.detalleproducto {
     padding: 0px 40px;
   }
+
+  .centerHeader div a i.fa-user {
+    font-size: 1.5rem;
+    padding: 7px; 
+}
+
+.centerHeader div i.fa-cart-shopping {
+    font-size: 1.5rem;
+    padding: 7px;
+}
+
+.centerHeader div a i.fa-user:hover {
+  font-size: 2rem;
+}
+
+.centerHeader div i.fa-cart-shopping:hover{
+  font-size: 2rem;
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
