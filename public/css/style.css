@@ -59,6 +59,7 @@ main {
   font-size: 1rem;
   justify-content: center;
   text-align: center;
+  padding-top: 20px;
   width: 50%;
 }
 
@@ -118,23 +119,39 @@ main {
 .bottomHeader form {
   display: flex;
   margin: auto;
-  padding-bottom: 1%;
+  padding: 2%;
   width: 70%;
 }
 
 .bottomHeader button {
-  background-color: rgb(141, 74, 204);
+  background-color: rgb(34 109 175);
   border: none;
+  border-radius: 0px 19px 19px 0px;
+  font-size: 17px;
+  position: relative;
+  padding: 0px 18px;
+  right: 18px;
 }
 
-.bottomHeader button :hover { /* ¿Acá no sería así? --->  .bottomHeader button:hover {}  Luca S. */
+.bottomHeader button:hover { /* ¿Acá no sería así? --->  .bottomHeader button:hover {}  Luca S. */
   cursor: pointer;
+  font-size: 22px;
 }
 
 .bottomHeader form input {
-  border-radius: 10px;
+  border-radius: 24px;
+  border: 1px solid #4dbbd4;
   color: black;
+  height: 42px;
   width: 90%;
+}
+
+.bottomHeader form input:hover {
+  border: 1px solid #44d1f1;
+}
+
+.bottomHeader form input::placeholder {
+  padding-left: 10px;
 }
 
 .bottomHeader ul {
@@ -350,7 +367,7 @@ div.agregaralcarrito {
 div.cantidaddeproducto {
     display: flex;
     justify-content: center;
-    margin-right: 2em;
+    margin-right: 17px;
 }
 
 div.cantidaddeproducto input {
@@ -391,7 +408,8 @@ div form input.sumaryrestarproductominus {
 
 div.pesoproducto {
   display: flex;
-  padding: 20px 0px;
+  justify-content: center;
+  padding: 30px 0px;
   text-align: left;
 }
 
@@ -399,12 +417,12 @@ div a.botonpesoproducto {
   background-color: #c36cac;
   border-radius: 20px;
   border: 1px solid #c36cac;
+  box-shadow: 3px 1px 6px #000000;
   color: #ffffff;
   margin: 0px 36px 0px 0px;
   padding: 10px;
   text-decoration: none;
 }
-
 
 div a.botonpesoproducto:hover {
   background-color: rgb(84, 108, 247);
@@ -424,16 +442,20 @@ div button.botonagregaralcarrito {
 div.ordencarrito {
   align-items: center;
   display: flex;
+  justify-content: center;
 }
 
 div.precioystock {
   display: flex;
-  justify-content: space-around;
   padding: 5px;
 }
 
-div p.precio {
-  width: 50%;
+div span.precio {
+    color: #c36cac;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
 }
 
 div p.stock {
@@ -461,6 +483,8 @@ main article.resumenproducto {
 main h1.tituloresumenproducto {
   color: #666666;
   padding: 5px;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 main div.descripcionproducto {
@@ -573,6 +597,19 @@ form div.buttonabmproducto input {
   .productos {
     width: 40%;
   }
+
+  div.cantidaddeproducto {
+    margin-right: 35px;
+}
+
+div.ordencarrito {
+  margin: 4% 0%;
+}
+
+main h1.tituloresumenproducto {
+  font-size: 1.7rem;
+}
+
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
@@ -597,6 +634,15 @@ form div.formimagenabmproducto {
     padding: 25px 25px;
     width: 50%;
   }
+
+  div.cantidaddeproducto {
+    margin-right: 50px;
+}
+
+main h1.tituloresumenproducto {
+  font-size: 2rem;
+}
+
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
