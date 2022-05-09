@@ -165,10 +165,14 @@ main {
     background-color: #4dbbd4;
     border: 1px solid white;
     border-radius: 22%;
-    box-shadow: 2px 2px 0px white;
+    box-shadow: 3px 0px 0px white;
     font-size: 1rem;
     margin: 0px 7px 0px 0px;
     padding: 5px;    
+}
+
+.centerHeader div a span:last-child {
+  display: none;
 }
 
 .centerHeader div i.fa-cart-shopping {
@@ -280,8 +284,13 @@ footer ul {
   padding: 0%;
 }
 
+footer .logo {
+  width:5%;
+  margin: auto;
+}
+
 footer img {
-  width: 100%;
+  max-width: 100%;
 }
 
 footer div li {
@@ -649,7 +658,6 @@ div.ordencarrito {
 main h1.tituloresumenproducto {
   font-size: 1.7rem;
 }
-
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
@@ -683,9 +691,35 @@ main h1.tituloresumenproducto {
   font-size: 2rem;
 }
 
+.centerHeader form {
+  max-width: 476px;
 }
 
-/*!Mariano: alta, baja ymodificacion producto*/
+.centerHeader div#usuario {
+  min-width: 357px;
+}
+
+.centerHeader div a {
+  display: block;
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.centerHeader div a i.fa-user {
+  border-radius: 20px;
+  font-size: 1.3rem;
+  padding: 7px; 
+}
+
+.centerHeader div a span:first-child {
+  display: inline-block;
+  left: 47px;
+  position: relative;
+  width: 120px;
+  z-index: 10;
+}
+
 form div.mainformabmproducto {
   display: flex;
   flex-wrap: wrap;
@@ -696,28 +730,85 @@ form div.mainformabmproducto {
 form div.formbuttonsabmproducto div {
   width: 30% ;
 }
+}
 
 @media (min-width: 1300px) {
+
   div.detalleproducto {
     padding: 0px 40px;
   }
 
-  .centerHeader div a i.fa-user {
-    font-size: 1.5rem;
-    padding: 7px; 
+  .centerHeader form {
+    width: 60%;
+    max-width: 60%;
+  }
+
+.centerHeader div#usuario {
+  width: 30%;
+}
+  
+.centerHeader div a {
+    display: block;
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.centerHeader div a i.fa-user {
+  border-radius: 20px;
+  font-size: 1.3rem;
+  padding: 7px; 
+}
+
+.centerHeader div a span:first-child {
+    display: inline-block;
+    left: 47px;
+    transition: transform 0.3s;
+    position: relative;
+    width: 120px;
+    z-index: 10;
+  }
+
+.centerHeader div a span:last-child {
+  align-items: center;
+  bottom: 0;
+  border-radius: 20px;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 55px;
+  top: 0;
+  right: 0;
+  transition: width 0.3s, color 0.3s, border 0.3s;  
+  width: 1px;
+}
+
+.centerHeader div a span i:hover {
+  animation: rotation 0.4s linear;
+}
+
+ @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(130deg);
+    }
+  }
+ 
+.centerHeader div a:hover span:last-child {
+  background-color: #4dbbd4;
+  border: 1px 1px 1px 0px solid white;
+  color: white;
+  width: 180px;
 }
 
 .centerHeader div i.fa-cart-shopping {
     font-size: 1.5rem;
     padding: 7px;
 }
-
-.centerHeader div a i.fa-user:hover {
-  font-size: 2rem;
-}
-
-.centerHeader div i.fa-cart-shopping:hover{
-  font-size: 2rem;
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
