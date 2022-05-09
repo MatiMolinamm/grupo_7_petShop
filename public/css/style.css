@@ -224,22 +224,34 @@ main {
 /* seccion principal */
 
 .carrusel {
-  align-items: center;
-  background-color: #ebebeb;
-  border: solid black 2px;
-  display: flex;
-  height: 40vh;
-  justify-content: center;
-  margin: 10px;
+    background-image: url(../img/banner-gato.png);
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .carrusel h2 {
   color: black;
 }
 
+div div.homeagregaralcarrito button.botonagregaralcarrito {
+  background-color: rgb(122, 122, 230);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  height: 43px;
+  margin: 10px 0;
+  width: 60%;
+}
+
 .productosDestacados {
   align-items: center;
-  background-color: #ebebeb;
+  background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -273,6 +285,14 @@ h2.productosDestacados {
   color: black;
 }
 
+p.precioshome {
+  padding: 10px;
+  font-size: 20px;
+  color: #666666;
+  font-weight: bold;
+}
+
+
 /* ------- footer -----------*/
 
 footer {
@@ -287,9 +307,11 @@ footer ul {
   padding: 0%;
 }
 
-footer .logo {
-  width:5%;
+footer .logofooter {
+  width:10%;
+  padding: 20px;
   margin: auto;
+  min-width: 200px;
 }
 
 footer img {
