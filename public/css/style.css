@@ -745,9 +745,11 @@ form div.formimagenabmproducto {
   /* ---- Luca Spiritini ---- */
   
   footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 50px;
   }
-
   footer .logofooter {
     margin: auto;
     max-width: 200px;
