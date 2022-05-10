@@ -9,7 +9,9 @@ h1 {
   font-size: 1.5rem;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   color: purple;
   font-size: 1.3rem;
   font-style: italic;
@@ -17,7 +19,6 @@ h2, h3, h4 {
   margin: 20px;
   padding: 10px;
 }
-
 
 h5 {
   color: white;
@@ -56,31 +57,34 @@ main {
   height: 60px;
 }
 
-.topHeader  {
+.topHeader {
   color: white;
   font-size: 14px;
 }
 
 .topHeader div {
-    display: flex;
-    flex-wrap: nowrap;
-    font-size: 1rem;
-    justify-content: center;
-    text-align: center;
-    padding-top: 20px;
-    width: 32%;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 1rem;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+  width: 32%;
 }
 
-.topHeader div i.fa-truck-fast, div i.fa-envelope, div i,fa-phone {
+.topHeader div i.fa-truck-fast,
+div i.fa-envelope,
+div i,
+fa-phone {
   color: white;
   font-size: 14px;
 }
 
 .topHeader p {
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 4%;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 4%;
 }
 
 .centerHeader {
@@ -111,11 +115,11 @@ main {
 }
 
 .centerHeader div#usuario {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    width: 18%;
-    padding: 0 19px 0px 5px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 18%;
+  padding: 0 19px 0px 5px;
 }
 
 .centerHeader img {
@@ -134,7 +138,7 @@ main {
   right: 18px;
 }
 
-.centerHeader button:hover { /* ¿Acá no sería así? --->  .bottomHeader button:hover {}  Luca S. */
+.centerHeader button:hover {
   cursor: pointer;
   font-size: 22px;
 }
@@ -162,13 +166,13 @@ main {
 }
 
 .centerHeader div a i.fa-user {
-    background-color: #4dbbd4;
-    border: 1px solid white;
-    border-radius: 22%;
-    box-shadow: 3px 0px 0px white;
-    font-size: 1rem;
-    margin: 0px 7px 0px 0px;
-    padding: 5px;    
+  background-color: #4dbbd4;
+  border: 1px solid white;
+  border-radius: 22%;
+  box-shadow: 3px 0px 0px white;
+  font-size: 1rem;
+  margin: 0px 7px 0px 0px;
+  padding: 5px;
 }
 
 .centerHeader div a span:last-child {
@@ -184,7 +188,8 @@ main {
   padding: 5px;
 }
 
-.centerHeader div i.fa-cart-shopping:hover, div a i.fa-user:hover {
+.centerHeader div i.fa-cart-shopping:hover,
+div a i.fa-user:hover {
   font-size: 1.5rem;
 }
 
@@ -224,14 +229,14 @@ main {
 /* seccion principal */
 
 .carrusel {
-    background-image: url(../img/banner-gato.png);
-    display: flex;
-    height: 200px;
-    justify-content: center;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
+  background-image: url(../img/banner-promo4.png);
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
 }
 
 .carrusel h2 {
@@ -292,71 +297,50 @@ p.precioshome {
   font-weight: bold;
 }
 
-
 /* ------- footer -----------*/
 
 footer {
   background-color: #4dbbd4;
   margin: 0px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  padding-top: 40px;
   text-align: center;
-  width: 100%;
 }
 
-footer ul {
-  padding: 0%;
-}
-
-footer .logofooter {
-  width:10%;
-  padding: 20px;
+footer .logo-footer {
   margin: auto;
-  min-width: 200px;
+  max-width: 200px;
 }
 
-footer img {
-  max-width: 100%;
-}
-
-footer div li {
+footer li {
   align-items: center;
   color: white;
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin-top: 0px;
 }
-
 
 footer a {
   text-decoration: none;
 }
 
-footer li p{
-  margin: 0%;
-  padding: 5px;
-  text-align: center;
-}
-
-.iconos-pago {
-  color:black;
-  display: flex;
+.iconos-redes i {
+  color: black;
   font-size: 2rem;
-  justify-content: space-around;
   margin-top: 30px;
 }
 
-.iconos-redes {
-  color:black;
-  display: flex;
-  font-size: 2rem;
-  justify-content: space-around;
+.iconos-pago i {
+  color: purple;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  padding: 0 15px;
 }
 
 #whatsapp {
   background-color: green;
   border-radius: 100%;
-  color:white;
+  color: white;
   font-size: 3rem;
   padding: 7px;
 }
@@ -364,7 +348,7 @@ footer li p{
 #facebook {
   background-color: rgb(53, 53, 255);
   border-radius: 20%;
-  color:white;
+  color: white;
   font-size: 1.8rem;
   height: 30px;
   padding: 5px;
@@ -374,13 +358,12 @@ footer li p{
 #instagram {
   background-color: rgb(111, 11, 204);
   border-radius: 20%;
-  color:white;
+  color: white;
   font-size: 1.8rem;
   height: 30px;
   padding: 5px;
   width: 30px;
 }
-
 
 /*-------register-------*/
 
@@ -432,52 +415,51 @@ footer li p{
 /*!Mariano
 Seccion detalle producto */
 
-
 div.agregaralcarrito {
-    padding: 5px;
-    width: 50%;
+  padding: 5px;
+  width: 50%;
 }
 
 div.cantidaddeproducto {
-    display: flex;
-    justify-content: center;
-    margin-right: 17px;
+  display: flex;
+  justify-content: center;
+  margin-right: 17px;
 }
 
 div.cantidaddeproducto input {
-    background-color: transparent;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(107 102 102);
-    border-image: initial;
-    height: 41px;
-    padding: 0px 5px;
-    text-align: center;
-    width: 35px;
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(107 102 102);
+  border-image: initial;
+  height: 41px;
+  padding: 0px 5px;
+  text-align: center;
+  width: 35px;
 }
 
 div form input.sumaryrestarproductoplus {
-    background-color: rgb(204, 204, 220);
-    border-color: rgb(107 102 102);
-    border-radius: 2px 14px 14px 1px;
-    color: #7a7ae6;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 900;
-    height: 41px
-    padding: 6px 12px 9px;
+  background-color: rgb(204, 204, 220);
+  border-color: rgb(107 102 102);
+  border-radius: 2px 14px 14px 1px;
+  color: #7a7ae6;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  height: 41px;
+  padding: 6px 12px 9px;
 }
 
 div form input.sumaryrestarproductominus {
-    background-color: rgb(204, 204, 220);
-    border-color: rgb(107 102 102);
-    border-radius: 14px 2px 2px 14px;
-    color: #7a7ae6;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 900;
-    height: 41px;
-    padding: 6px 12px 9px;
+  background-color: rgb(204, 204, 220);
+  border-color: rgb(107 102 102);
+  border-radius: 14px 2px 2px 14px;
+  color: #7a7ae6;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  height: 41px;
+  padding: 6px 12px 9px;
 }
 
 div.pesoproducto {
@@ -525,16 +507,16 @@ div.precioystock {
 }
 
 div span.precio {
-    color: #c36cac;
-    font-size: 1.5rem !important;
-    font-weight: bold;
-    text-align: left;
-    width: 50%;
+  color: #c36cac;
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  text-align: left;
+  width: 50%;
 }
 
 div p.stock {
   display: inline-block;
-  width: 50%;  
+  width: 50%;
 }
 
 h2.titulodescripcionproducto {
@@ -581,7 +563,8 @@ table tr.headcarrito {
   background-color: #e0dcdc;
 }
 
-table th, table td {
+table th,
+table td {
   align-items: center;
   text-align: center;
 }
@@ -627,7 +610,9 @@ form div.detailformabmproducto div {
   width: 100%;
 }
 
-div.detailformabmproducto input, div.detailformabmproducto select, div.detailformabmproducto textarea {
+div.detailformabmproducto input,
+div.detailformabmproducto select,
+div.detailformabmproducto textarea {
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid rgb(217, 217, 217);
@@ -636,8 +621,9 @@ div.detailformabmproducto input, div.detailformabmproducto select, div.detailfor
   width: 100%;
 }
 
-form div input::placeholder, div textarea::placeholder {
-  color:#121212;
+form div input::placeholder,
+div textarea::placeholder {
+  color: #121212;
 }
 
 form div select {
@@ -674,15 +660,15 @@ form div.buttonabmproducto input {
 
   div.cantidaddeproducto {
     margin-right: 35px;
-}
+  }
 
-div.ordencarrito {
-  margin: 4% 0%;
-}
+  div.ordencarrito {
+    margin: 4% 0%;
+  }
 
-main h1.tituloresumenproducto {
-  font-size: 1.7rem;
-}
+  main h1.tituloresumenproducto {
+    font-size: 1.7rem;
+  }
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
@@ -710,55 +696,68 @@ form div.formimagenabmproducto {
 
   div.cantidaddeproducto {
     margin-right: 50px;
-}
+  }
 
-main h1.tituloresumenproducto {
-  font-size: 2rem;
-}
+  main h1.tituloresumenproducto {
+    font-size: 2rem;
+  }
 
-.centerHeader form {
-  max-width: 476px;
-}
+  .centerHeader form {
+    max-width: 476px;
+  }
 
-.centerHeader div#usuario {
-  min-width: 357px;
-}
+  .centerHeader div#usuario {
+    min-width: 357px;
+  }
 
-.centerHeader div a {
-  display: block;
-  width: 60%;
-  position: relative;
-  overflow: hidden;
-}
+  .centerHeader div a {
+    display: block;
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+  }
 
-.centerHeader div a i.fa-user {
-  border-radius: 20px;
-  font-size: 1.3rem;
-  padding: 7px; 
-}
+  .centerHeader div a i.fa-user {
+    border-radius: 20px;
+    font-size: 1.3rem;
+    padding: 7px;
+  }
 
-.centerHeader div a span:first-child {
-  display: inline-block;
-  left: 47px;
-  position: relative;
-  width: 120px;
-  z-index: 10;
-}
+  .centerHeader div a span:first-child {
+    display: inline-block;
+    left: 47px;
+    position: relative;
+    width: 120px;
+    z-index: 10;
+  }
 
-form div.mainformabmproducto {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  width: 100%;
-}
+  form div.mainformabmproducto {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 100%;
+  }
 
-form div.formbuttonsabmproducto div {
-  width: 30% ;
-}
+  form div.formbuttonsabmproducto div {
+    width: 30%;
+  }
+
+  /* ---- Luca Spiritini ---- */
+  
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px;
+  }
+  footer .logofooter {
+    margin: auto;
+    max-width: 200px;
+  }
+
 }
 
 @media (min-width: 1300px) {
-
   div.detalleproducto {
     padding: 0px 40px;
   }
@@ -768,24 +767,24 @@ form div.formbuttonsabmproducto div {
     max-width: 60%;
   }
 
-.centerHeader div#usuario {
-  width: 30%;
-}
-  
-.centerHeader div a {
+  .centerHeader div#usuario {
+    width: 30%;
+  }
+
+  .centerHeader div a {
     display: block;
     width: 60%;
     position: relative;
     overflow: hidden;
-}
+  }
 
-.centerHeader div a i.fa-user {
-  border-radius: 20px;
-  font-size: 1.3rem;
-  padding: 7px; 
-}
+  .centerHeader div a i.fa-user {
+    border-radius: 20px;
+    font-size: 1.3rem;
+    padding: 7px;
+  }
 
-.centerHeader div a span:first-child {
+  .centerHeader div a span:first-child {
     display: inline-block;
     left: 47px;
     transition: transform 0.3s;
@@ -794,46 +793,46 @@ form div.formbuttonsabmproducto div {
     z-index: 10;
   }
 
-.centerHeader div a span:last-child {
-  align-items: center;
-  bottom: 0;
-  border-radius: 20px;
-  color: transparent;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 55px;
-  top: 0;
-  right: 0;
-  transition: width 0.3s, color 0.3s, border 0.3s;  
-  width: 1px;
-}
+  .centerHeader div a span:last-child {
+    align-items: center;
+    bottom: 0;
+    border-radius: 20px;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 55px;
+    top: 0;
+    right: 0;
+    transition: width 0.3s, color 0.3s, border 0.3s;
+    width: 1px;
+  }
 
-.centerHeader div a span i:hover {
-  animation: rotation 0.4s linear;
-}
+  .centerHeader div a span i:hover {
+    animation: rotation 0.4s linear;
+  }
 
- @keyframes rotation {
+  @keyframes rotation {
     from {
       transform: rotate(0deg);
     }
-  
+
     to {
       transform: rotate(130deg);
     }
   }
- 
-.centerHeader div a:hover span:last-child {
-  background-color: #4dbbd4;
-  border: 1px 1px 1px 0px solid white;
-  color: white;
-  width: 180px;
-}
 
-.centerHeader div i.fa-cart-shopping {
+  .centerHeader div a:hover span:last-child {
+    background-color: #4dbbd4;
+    border: 1px 1px 1px 0px solid white;
+    color: white;
+    width: 180px;
+  }
+
+  .centerHeader div i.fa-cart-shopping {
     font-size: 1.5rem;
     padding: 7px;
-}
+  }
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
