@@ -298,71 +298,53 @@ p.precioshome {
 }
 
 /* ------- footer -----------*/
+/* ---- Luca Spiritini, Miguel Caputo ---- */
 
-footer {
-  background-color: #4dbbd4;
-  margin: 0px;
-  padding-bottom: 40px;
-  padding-top: 40px;
+.footer {
+  width: 100%;
+  background-color: #8c52ff;
+}
+.footer .grupo-1 {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+  padding: 35px 0px;
+}
+.footer .grupo-1 .box figure {
+  width: 180px;
+  justify-content: center;
+}
+.footer .grupo-1 .box h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.footer .grupo-1 .box p {
+  color: #efefef;
+  margin-bottom: 10px;
+}
+.footer .grupo-1 .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 10px;
+  color: #fff;
+  margin-right: 10px;
+  background-color: #44d1f1;
   text-align: center;
 }
-
-footer .logo-footer {
-  margin: auto;
-  max-width: 200px;
+.footer .grupo-2 {
+  background-color: #0a1a2a;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
 }
-
-footer li {
-  align-items: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-}
-
-footer a {
-  text-decoration: none;
-}
-
-.iconos-redes i {
-  color: black;
-  font-size: 2rem;
-  margin-top: 30px;
-}
-
-.iconos-pago i {
-  color: purple;
-  font-size: 1.5rem;
-  margin-top: 30px;
-  padding: 0 15px;
-}
-
-#whatsapp {
-  background-color: green;
-  border-radius: 100%;
-  color: white;
-  font-size: 3rem;
-  padding: 7px;
-}
-
-#facebook {
-  background-color: rgb(53, 53, 255);
-  border-radius: 20%;
-  color: white;
-  font-size: 1.8rem;
-  height: 30px;
-  padding: 5px;
-  width: 30px;
-}
-
-#instagram {
-  background-color: rgb(111, 11, 204);
-  border-radius: 20%;
-  color: white;
-  font-size: 1.8rem;
-  height: 30px;
-  padding: 5px;
-  width: 30px;
+.footer .grupo-2 small {
+  font-size: 15px;
 }
 
 /*-------register-------*/
@@ -742,19 +724,30 @@ form div.formimagenabmproducto {
     width: 30%;
   }
 
-  /* ---- Luca Spiritini ---- */
+  /* ---- Luca Spiritini, Miguel Caputo ---- */
   
-  footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 50px;
-  }
-  footer .logofooter {
+  .footer .grupo-1 {
+    max-width: 1200px;
     margin: auto;
-    max-width: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
   }
-
+  .footer .grupo-1 .red-social a {
+    transition: all 300ms ease;
+  }
+  .footer .grupo-1 .red-social a:hover {
+    color: purple;
+    border-radius: 5px;
+  }
+  .footer .grupo-2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+  }
+  
 }
 
 @media (min-width: 1300px) {
