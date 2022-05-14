@@ -123,7 +123,7 @@ fa-phone {
 
 .centerHeader img {
   max-height: 100%;
-  max-width: 100%;
+  max-width: 85%;
   padding-right: 30px;
 }
 
@@ -214,7 +214,7 @@ div a i.fa-user:hover {
 }
 
 .bottomHeader li:hover {
-  background-color: rgb(201, 40, 255);
+  background-color: rgb(102, 186, 251);
 }
 
 .fa-magnifying-glass:before,
@@ -408,22 +408,22 @@ div.cantidaddeproducto {
 }
 
 div.cantidaddeproducto input {
-  background-color: transparent;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(107 102 102);
-  border-image: initial;
-  height: 41px;
-  padding: 0px 5px;
-  text-align: center;
-  width: 35px;
+  background-color: #efefef;
+    border-width: 1px;
+    border-color: transparent;
+    border-image: initial;
+    font-size: 19px;
+    font-weight: 700;
+    height: 41px;
+    padding: 0px 5px;
+    text-align: center;
+    width: 35px;
 }
 
 div form input.sumaryrestarproductoplus {
-  background-color: rgb(204, 204, 220);
-  border-color: rgb(107 102 102);
+  background-color: rgb(77 187 212);
   border-radius: 2px 14px 14px 1px;
-  color: #7a7ae6;
+  color: #ffffff;
   cursor: pointer;
   font-size: 18px;
   font-weight: 900;
@@ -432,10 +432,9 @@ div form input.sumaryrestarproductoplus {
 }
 
 div form input.sumaryrestarproductominus {
-  background-color: rgb(204, 204, 220);
-  border-color: rgb(107 102 102);
+  background-color: rgb(77 187 212);
   border-radius: 14px 2px 2px 14px;
-  color: #7a7ae6;
+  color: #ffffff;
   cursor: pointer;
   font-size: 18px;
   font-weight: 900;
@@ -539,18 +538,18 @@ main article.detalleproductos {
 div.carritodecompras {
   width: 100%;
   margin: 30px 10px;
-  height: auto;
+  margin-bottom: 10vh;
+}
+
+div.carritodetalleproducto {
+  border-right: 1px solid rgb(228, 228, 228);
+  width: 100%;
 }
 
 div form {
   display: flex;
   align-content: center;
   flex-wrap: wrap;
-}
-
-div.carritodetalleproducto {
-  border-right: 1px solid rgb(228, 228, 228);
-  width: 100%;
 }
 
 div.proceder-checkout {
@@ -586,22 +585,43 @@ table.totaldelcarrito {
   width: 100%;
 }
 
-table tr.headcarrito {
-  background-color: #e0dcdc;
+table th {
+align-items: center;
+  background-color: #ffffff;
+  border-bottom: #4dbbd4 1px solid;
 }
 
-table th,
+table th:not(.center) {
+  text-align: left;
+}
+
 table td {
   align-items: center;
+  text-align:center;
+}
+
+table td.center {
+  text-align:center;
+}
+
+th.cantidaddeproducto {
+  text-align:center;
+}
+
+table tr.headcarrito>:first-child {
+padding: 0 0 5px 20px;
+}
+
+table tr.headcarrito>:second-child, tr.headcarrito>:third-child, tr.headcarrito>:fourth-child, {
+  text-align:center;
 }
 
 table.tablacarritodetalleproducto {
-  width: 100%;
+  width: 95%;
 }
 
 td.imgcarritoproducto {
   display: flex;
-  justify-content: center;
 }
 
 /*!Mariano: alta, baja y modificacion producto*/
@@ -688,10 +708,6 @@ form div.buttonabmproducto input {
     width: 40%;
   }
 
-  div.cantidaddeproducto {
-    margin-right: 35px;
-  }
-
   div.ordencarrito {
     margin: 4% 0%;
   }
@@ -713,11 +729,12 @@ form div.formimagenabmproducto {
     width: 21%;
   }
 
-  /*Mariano*/
-
   div.carritodecompras {
     width: 81%;
     border-right: none;
+    margin: 0;
+    padding: 0;
+    margin: auto;
   }
 
   main article.imagenproducto {
@@ -728,10 +745,6 @@ form div.formimagenabmproducto {
   main article.resumenproducto {
     padding: 25px 25px;
     width: 50%;
-  }
-
-  div.cantidaddeproducto {
-    margin-right: 50px;
   }
 
   main h1.tituloresumenproducto {
@@ -812,6 +825,7 @@ div.carritodecompras {
 }
 
 div.carritodetalleproducto {
+  border-right: 1px solid rgb(228, 228, 228);
   width: 60%;
 }
 
@@ -822,6 +836,8 @@ div.totaldelcarrito {
 }
 
 @media (min-width: 1300px) {
+
+  /*Carrito*/
   div.detalleproducto {
     padding: 0px 40px;
   }
@@ -837,6 +853,8 @@ div.totaldelcarrito {
   div.totaldelcarrito {
     width: 34%;
   }
+
+  /*Header*/
 
   .centerHeader form {
     width: 60%;
