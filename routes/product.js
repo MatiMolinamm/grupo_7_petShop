@@ -4,33 +4,8 @@ const productosController = require("../controllers/productos");
 
 router.get("/", productosController.productos);
 router.get("/abmproducto", productosController.abmproducto);
-
+router.get("/perros", productosController.perros);
+router.get("/gatos", productosController.gatos);
+router.get("/peces", productosController.peces);
+router.get("/aves", productosController.aves);
 module.exports = router;
-
-//Hay un error en los codigos q no deja correr el nodemon:
-
-/*router.get("/:idProducto", productosController.detalle);
-
-router.get(
-  "/:idProducto/comentarios:idComentario?",
-  productosController.detalleComentarios
-);
-
-router.get("/:idProducto", (req, res) => {
-  res.send("Bienvenidos al detalle del producto " + req.params.idProducto);
-});
-
-router.get("/:idProducto/comentarios/:idComentario?", (req, res) => {
-  if (req.params.idComentario == undefined) {
-    res.send(
-      "Bienvenidos a los comentarios del producto " + req.params.idProducto
-    );
-  } else {
-    res.send(
-      "Bienvenidos a los comentarios del producto " +
-        req.params.idProducto +
-        " y estas enfocado en el comentario " +
-        req.params.idComentario
-    );
-  }
-});*/

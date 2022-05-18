@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+      <article class="carrusel"></article>
+      <h2 class="productosDestacados">PRODUCTOS PARA PERROS</h2>
+      <article class="productosDestacados">
+        <% productos.forEach( ( producto ) => { %>
+        <div class="productos">
+          <h3><%= producto.titulo %></h3>
+          <img src="<%= producto.img_path %>" alt="alimento" />
+          <p><%= producto.descripcion %></p>
+          <p class="precioshome"><%= producto.precio %></p>
+          <div class="homeagregaralcarrito">
+            <button class="botonagregaralcarrito">AGREGAR</button>
+          </div>
+        </div>
+        <% }); %>
+      </article>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>
