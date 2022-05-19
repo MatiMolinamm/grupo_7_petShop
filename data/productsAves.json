@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "name": "Dodge",
     "description": "Saratov State Medical University",
@@ -178,4 +179,6 @@
     "class": "aves",
     "amount": 20,
     "image": "alimento-ave-embuche.png"
-  }]
+  }
+  
+]

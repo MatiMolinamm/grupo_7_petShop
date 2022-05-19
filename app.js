@@ -1,11 +1,13 @@
 // Required modules
-const express = require("express");
-const path = require("path");
-const app = express();
+const express   = require("express");
+const path      = require("path");
+const app       = express();
+
 // Required routers
-const routerMain = require("./routes/main");
-const routerProducts = require("./routes/products");
-const publicPath = path.resolve(__dirname, "./public");
+const routerMain        = require("./routes/main");
+const routerProducts    = require("./routes/products");
+const publicPath        = path.resolve(__dirname, "./public");
+
 // Config
 app.set("view engine", "ejs"); // para definir ejs como el motor de vistas
 app.use(express.static(publicPath)); //para hacer publico los archivos

@@ -23,3 +23,6 @@ Pudimos terminar las tareas del Sprint con una semana de anticipación. No queda
 Tuvimos una reunión con Antonio donde ordenamos las rutas y controladores.
 
 Encontramos una mejor dinámica grupal con ayuda de Trello. Nos conocemos mejor, y sabemos para qué es mejor quién, en base a esto asignamos tareas.
+
+----    SPRINT 4    ----
+
