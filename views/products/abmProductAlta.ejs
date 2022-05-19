@@ -7,7 +7,12 @@
     <main>
       <h1>Alta/Baja/Modificación de producto</h1>
 
-      <form class="formabmproducto" action="/abmproducto" method="post">
+      <form
+        class="formabmproducto"
+        action="/abmproducto"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <div class="mainformabmproducto">
           <div class="formimagenabmproducto">
             <img src="/img/products/alimento-gato-excellent.png" />
@@ -64,12 +69,6 @@
             <div class="formbuttonsabmproducto">
               <div class="buttonabmproducto">
                 <input type="submit" value="Agregar producto" />
-              </div>
-              <div class="buttonabmproducto">
-                <input type="submit" value="Modificar producto" />
-              </div>
-              <div class="buttonabmproducto">
-                <input type="submit" value="Eliminar producto" />
               </div>
             </div>
           </div>

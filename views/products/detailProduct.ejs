@@ -43,6 +43,24 @@
                 <p><%= productRenderizar.description %></p>
             </div>
             
+         
+            <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>"" > 
+              
+              <button type="submit" >
+              EDITAR
+            </button>
+          </a>
+            
+          <form
+                action="/products/?_method=delete"
+                method="POST"
+                
+              >
+                <button type="submit" >
+                  ELIMINAR
+                </button>
+                </form>
+            
         </article>
         
 

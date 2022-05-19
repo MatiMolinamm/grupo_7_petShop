@@ -25,9 +25,33 @@ const productsAves = JSON.parse(fs.readFileSync(productsAvesFilePath));
 
 const productsController = {
   abmproduct: (req, res, next) =>
-    res.render("products/abmproduct", {
-      titulo_pagina: "Petit and Fun - Prodcutos",
+    res.render("products/abmProductAlta", {
+      titulo_pagina: "Petit and Fun - Productos",
     }),
+  store: (req, res, next) => {
+    res.render("products/abmProductAlta", {
+      titulo_pagina: "Petit and Fun - Productos",
+    });
+    next();
+  },
+  edit: (req, res, next) => {
+    //res.send("va bien a formulario para editar");
+    res.render("products/abmProductModificacion", {
+      titulo_pagina: "Petit and Fun - Productos",
+    });
+    next();
+  },
+  update: (req, res, next) => {
+    res.render("products/index", {
+      titulo_pagina: "Petit and Fun - Productos",
+    });
+    next();
+  },
+  destroy: (req, res, next) => {
+    res.send("va bien para borrar por delete");
+
+    next();
+  },
   perros: (req, res, next) => {
     res.render("products/perrosProducts", {
       productsPerros,

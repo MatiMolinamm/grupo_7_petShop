@@ -1,9 +1,30 @@
 const express = require("express");
 const router = express.Router();
 const productsController = require("../controllers/products");
+const multer = require("multer");
+const path = require("path");
 
-//router.get("/", productsController.products);
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/img/products");
+  },
+  filename: (req, file, cb) => {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + "-" + path.extname(file.originalname)
+    );
+  },
+});
+
+const uploadFile = multer({ storage });
+
+//RUTA ALTA BAJA MODIFICACION
 router.get("/abmproduct", productsController.abmproduct);
+router.post("/abmproduct", uploadFile.single(), productsController.store);
+router.get("/abmproductEdit/:id", productsController.edit);
+router.put("/abmproduct", uploadFile.single(), productsController.update);
+router.delete("/", productsController.destroy);
+
 //RUTAS PRODUCTOS PARA PERRO
 router.get("/perros", productsController.perros);
 router.get("/perros/:id", productsController.detail);
