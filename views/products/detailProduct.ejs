@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+ <%- include('../partials/head.ejs')%>
+<body>
+  <%- include('../partials/header.ejs')%>
+    <main>
+        <div class="detalleproducto">
+         <% info.forEach( ( producto ) => { %>
+        <article class="detalleproductos">
+            <article class="imagenproducto">
+                <img src="/img/products/<%= producto.image%>">
+            </article>
+            <article class="resumenproducto">
+                <h1 class="tituloresumenproducto"><%= producto.name %> <%= producto.description %></h1>
+                <div class="precioystock">
+                    <span class="precio"><%= producto.price %></span>
+                    <span class="stock">Stock:xx</span>
+                </div>
+                <div class="pesoproducto">
+                <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">3 Kg.</a>
+                <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">15 Kg.</a>
+                <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">18 Kg.</a>
+                </div>
+                <div class="ordencarrito">
+                    <form class="cart" action="/carrito" method="post" enctype="multipart/form-data"><!--enctype es para enviar datos codificados -->
+                    <div class="cantidaddeproducto">
+                       <input type="button" class="sumaryrestarproductominus" value="-">
+                        <input type="number" name="cantidaddeproducto" id="cantidaddeproducto" placeholder="1" class="inputcantidaddeproducto">
+                        <input type="button" class="sumaryrestarproductoplus" value="+">
+                    </div>
+                    </form> 
+                    <div class="agregaralcarrito">
+                        <button class="botonagregaralcarrito">AGREGAR AL CARRITO</button>
+                    </div>
+                    
+                </div>
+                <% }); %>
+            </article>
+            
+        </article>
+        <div class="descripcionproducto">
+            <h2 class="titulodescripcionproducto">Descripción</h2>
+            <p>Purina Excellent Adult Cat CH&R es un alimento Premium para gatos adultos, con un delicioso sabor a
+                pollo y arroz. PROTEÍNAS DE ALTA DIGESTIBILIDAD: Ayudan a mantener una conformación corporal ideal. ÓPTIMA COMBINACIÓN DE INGREDIENTES: Colabora con el mantenimiento de un tracto urinario saludable.<br>
+                ÁCIDOS GRASOS OMEGA 3 Y 6:Aportan elasticidad a la piel y brillo al pelaje.</p>
+        </div>
+
+    </main>
+</div>
+
+<%- include('../partials/footer.ejs')%>
+</body>
+
+</html>
