@@ -25,9 +25,33 @@ const productsAves = JSON.parse(fs.readFileSync(productsAvesFilePath));
 
 const productsController = {
   abmproduct: (req, res, next) =>
-    res.render("products/abmproduct", {
-      titulo_pagina: "Petit and Fun - Prodcutos",
+    res.render("products/abmProductAlta", {
+      titulo_pagina: "Petit and Fun - Productos",
     }),
+  store: (req, res, next) => {
+    res.render("products/abmProductAlta", {
+      titulo_pagina: "Petit and Fun - Productos",
+    });
+    next();
+  },
+  edit: (req, res, next) => {
+    //res.send("va bien a formulario para editar");
+    res.render("products/abmProductModificacion", {
+      titulo_pagina: "Petit and Fun - Productos",
+    });
+    next();
+  },
+  update: (req, res, next) => {
+    res.render("products/index", {
+      titulo_pagina: "Petit and Fun - Productos",
+    });
+    next();
+  },
+  destroy: (req, res, next) => {
+    res.send("va bien para borrar por delete");
+
+    next();
+  },
   perros: (req, res, next) => {
     res.render("products/perrosProducts", {
       productsPerros,
@@ -55,21 +79,18 @@ const productsController = {
   detail: (req, res, next) => {
     let productsSeccion = req.query.class;
     let id = req.params.id;
-    console.log(req.params.id);
 
     let products = [productsAves, productsGatos, productsPerros, productsPeces];
     let info = products.filter((p) => p[0].class == productsSeccion);
     let infoId = info.pop();
-    //console.log(infoId);
 
     let productId = infoId.filter((p) => p.id == id);
+    let productRenderizar = productId.pop();
 
-    res.send(req.params.id);
-    /*res.render("products/detailProduct", {
-      info,
-
-      titulo_pagina: "Petit and Fun - Prodcutos",
-    });*/
+    res.render("products/detailProduct", {
+      productRenderizar,
+      titulo_pagina: "Petit and Fun - Productos",
+    });
   },
 };
 
