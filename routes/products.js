@@ -11,6 +11,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(
       null,
+
       file.fieldname + "-" + Date.now() + "-" + path.extname(file.originalname)
     );
   },
@@ -20,10 +21,18 @@ const uploadFile = multer({ storage });
 
 //RUTA ALTA BAJA MODIFICACION
 router.get("/abmproduct", productsController.abmproduct);
-router.post("/abmproduct", uploadFile.single(), productsController.store);
+router.post(
+  "/abmproduct",
+  uploadFile.single("image"),
+  productsController.store
+);
 router.get("/abmproductEdit/:id", productsController.edit);
-router.put("/abmproduct", uploadFile.single(), productsController.update);
-router.delete("/", productsController.destroy);
+router.put(
+  "/abmproduct",
+  uploadFile.single("image"),
+  productsController.update
+);
+router.delete("/abmproductEdit/:id", productsController.destroy);
 
 //RUTAS PRODUCTOS PARA PERRO
 router.get("/perros", productsController.perros);

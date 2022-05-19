@@ -44,7 +44,7 @@
             </div>
             
          
-            <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>"" > 
+            <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>"> 
               
               <button type="submit" >
               EDITAR
@@ -52,7 +52,7 @@
           </a>
             
           <form
-                action="/products/?_method=delete"
+                action="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>&_method=delete"
                 method="POST"
                 
               >

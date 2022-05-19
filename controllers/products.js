@@ -29,9 +29,68 @@ const productsController = {
       titulo_pagina: "Petit and Fun - Productos",
     }),
   store: (req, res, next) => {
-    res.render("products/abmProductAlta", {
-      titulo_pagina: "Petit and Fun - Productos",
-    });
+    let productsSeccion = req.body.class;
+
+    let productsTotal = [
+      productsAves,
+      productsGatos,
+      productsPerros,
+      productsPeces,
+    ];
+    //console.log(productsTotal) llega bien
+    //console.log(productsSeccion); llega bien
+    let productsSeccionFilter = productsTotal.filter(
+      (p) => p[0].class == productsSeccion
+    );
+    let productsSeccionClass = productsSeccionFilter.pop(); //para sacarlo del array q lo contiene
+    let ultimo = productsSeccionClass.pop();
+    let ultimoId = ultimo.id;
+    productsSeccionClass.push(ultimo);
+
+    let productCreate = {
+      id: ultimoId + 1,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      packaging: req.body.packaging,
+      class: req.body.class,
+      amount: req.body.amount,
+      image: req.file.filename,
+    };
+    productsSeccionClass.push(productCreate);
+    let productsSeccionClassJSON = JSON.stringify(productsSeccionClass);
+    switch (productsSeccion) {
+      case "perros":
+        fs.writeFileSync(productsPerrosFilePath, productsSeccionClassJSON);
+        res.render("products/perrosProducts", {
+          productsPerros,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+
+        break;
+      case "gatos":
+        fs.writeFileSync(productsGatosFilePath, productsSeccionClassJSON);
+        res.render("products/gatosProducts", {
+          productsGatos,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        break;
+      case "peces":
+        fs.writeFileSync(productsPecesFilePath, productsSeccionClassJSON);
+        res.render("products/pecesProducts", {
+          productsPeces,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        break;
+      case "aves":
+        fs.writeFileSync(productsAvesFilePath, productsSeccionClassJSON);
+        res.render("products/avesProducts", {
+          productsAves,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        break;
+    }
+
     next();
   },
   edit: (req, res, next) => {
@@ -48,9 +107,59 @@ const productsController = {
     next();
   },
   destroy: (req, res, next) => {
-    res.send("va bien para borrar por delete");
+    let productsSeccion = req.query.class;
+    let idDelete = req.params.id;
 
-    next();
+    let productsTotal = [
+      productsAves,
+      productsGatos,
+      productsPerros,
+      productsPeces,
+    ];
+
+    let productsSeccionFilter = productsTotal.filter(
+      (p) => p[0].class == productsSeccion
+    );
+    let productsSeccionClass = productsSeccionFilter.pop();
+
+    let notDelete = productsSeccionClass.filter((i) => i.id != idDelete);
+    let notDeleteJSON = JSON.stringify(notDelete);
+
+    switch (productsSeccion) {
+      case "perros":
+        fs.writeFileSync(productsPerrosFilePath, notDeleteJSON);
+        res.render("products/perrosProducts", {
+          productsPerros,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        next();
+
+        break;
+      case "gatos":
+        fs.writeFileSync(productsGatosFilePath, notDeleteJSON);
+        res.render("products/gatosProducts", {
+          productsGatos,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        next();
+        break;
+      case "peces":
+        fs.writeFileSync(productsPecesFilePath, notDeleteJSON);
+        res.render("products/pecesProducts", {
+          productsPeces,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        next();
+        break;
+      case "aves":
+        fs.writeFileSync(productsAvesFilePath, notDeleteJSON);
+        res.render("products/avesProducts", {
+          productsAves,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        next();
+        break;
+    }
   },
   perros: (req, res, next) => {
     res.render("products/perrosProducts", {
