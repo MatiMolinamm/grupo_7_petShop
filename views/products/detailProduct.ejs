@@ -5,15 +5,16 @@
   <%- include('../partials/header.ejs')%>
     <main>
         <div class="detalleproducto">
-         <% info.forEach( ( producto ) => { %>
+       
         <article class="detalleproductos">
             <article class="imagenproducto">
-                <img src="/img/products/<%= producto.image%>">
+                <img src="/img/products/<%= productRenderizar.image%>">
             </article>
             <article class="resumenproducto">
-                <h1 class="tituloresumenproducto"><%= producto.name %> <%= producto.description %></h1>
+                <h1 class="tituloresumenproducto"><%= productRenderizar.name %> </h1>
+              
                 <div class="precioystock">
-                    <span class="precio"><%= producto.price %></span>
+                    <span class="precio"><%= productRenderizar.price %></span>
                     <span class="stock">Stock:xx</span>
                 </div>
                 <div class="pesoproducto">
@@ -28,22 +29,22 @@
                         <input type="number" name="cantidaddeproducto" id="cantidaddeproducto" placeholder="1" class="inputcantidaddeproducto">
                         <input type="button" class="sumaryrestarproductoplus" value="+">
                     </div>
+                    
                     </form> 
                     <div class="agregaralcarrito">
                         <button class="botonagregaralcarrito">AGREGAR AL CARRITO</button>
                     </div>
                     
                 </div>
-                <% }); %>
+               
             </article>
+            <div class="descripcionproducto">
+                <h2 class="titulodescripcionproducto">Descripción</h2>
+                <p><%= productRenderizar.description %></p>
+            </div>
             
         </article>
-        <div class="descripcionproducto">
-            <h2 class="titulodescripcionproducto">Descripción</h2>
-            <p>Purina Excellent Adult Cat CH&R es un alimento Premium para gatos adultos, con un delicioso sabor a
-                pollo y arroz. PROTEÍNAS DE ALTA DIGESTIBILIDAD: Ayudan a mantener una conformación corporal ideal. ÓPTIMA COMBINACIÓN DE INGREDIENTES: Colabora con el mantenimiento de un tracto urinario saludable.<br>
-                ÁCIDOS GRASOS OMEGA 3 Y 6:Aportan elasticidad a la piel y brillo al pelaje.</p>
-        </div>
+        
 
     </main>
 </div>

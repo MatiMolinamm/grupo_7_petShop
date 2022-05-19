@@ -55,21 +55,18 @@ const productsController = {
   detail: (req, res, next) => {
     let productsSeccion = req.query.class;
     let id = req.params.id;
-    console.log(req.params.id);
 
     let products = [productsAves, productsGatos, productsPerros, productsPeces];
     let info = products.filter((p) => p[0].class == productsSeccion);
     let infoId = info.pop();
-    //console.log(infoId);
 
     let productId = infoId.filter((p) => p.id == id);
+    let productRenderizar = productId.pop();
 
-    res.send(req.params.id);
-    /*res.render("products/detailProduct", {
-      info,
-
-      titulo_pagina: "Petit and Fun - Prodcutos",
-    });*/
+    res.render("products/detailProduct", {
+      productRenderizar,
+      titulo_pagina: "Petit and Fun - Productos",
+    });
   },
 };
 
