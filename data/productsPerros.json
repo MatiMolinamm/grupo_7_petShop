@@ -1,82 +1,82 @@
 [
-  {
-    "id": 1,
-    "name": "Pretal",
-    "description": "Pretal para pasear a tu perrit@",
-    "price": "$605.65",
-    "packaging": 1,
-    "class": "perros",
-    "amount": 1,
-    "image": "accesorio-perro-arnes-rojo.png"
-  },
-  {
-    "id": 2,
-    "name": "Alimento Balanced",
-    "description": "Perros adultos, raza grande",
-    "price": "$5739.66",
-    "packaging": 2,
-    "class": "perros",
-    "amount": 2,
-    "image": "alimento-perro-balanced.png"
-  },
-  {
-    "id": 3,
-    "name": "Alimento OldPrince",
-    "description": "Perros adultos, raza grande",
-    "price": "$7477.01",
-    "packaging": 3,
-    "class": "perros",
-    "amount": 3,
-    "image": "alimento-perro-oldprince.png"
-  },
-  {
-    "id": 4,
-    "name": "Alimento Proplan",
-    "description": "Para perros adultos",
-    "price": "$5173.01",
-    "packaging": 4,
-    "class": "perros",
-    "amount": 4,
-    "image": "alimento-perro-proplan.png"
-  },
-  {
-    "id": 5,
-    "name": "Mordillo Antiestres",
-    "description": "Para perritos ansiosos",
-    "price": "$722.94",
-    "packaging": 5,
-    "class": "perros",
-    "amount": 5,
-    "image": "juguete-perro-aro-azul.png"
-  },
-  {
-    "id": 6,
-    "name": "Aro Verde",
-    "description": "Ideal si tu perr@ no destroza",
-    "price": "$638.50",
-    "packaging": 6,
-    "class": "perros",
-    "amount": 6,
-    "image": "juguete-perro-aro-verde.png"
-  },
-  {
-    "id": 7,
-    "name": "Huesito para Morder",
-    "description": "Mordillo antiestrés",
-    "price": "$339.97",
-    "packaging": 7,
-    "class": "perros",
-    "amount": 7,
-    "image": "juguete-perro-mordillo.png"
-  },
-  {
-    "id": 8,
-    "name": "Pelota WaterAction",
-    "description": "Pelota para la pileta",
-    "price": "$642.21",
-    "packaging": 8,
-    "class": "perros",
-    "amount": 8,
-    "image": "juguete-perro-pelota-naranja.png"
-  }
-]
+    {
+      "id": 1,
+      "name": "Pretal",
+      "description": "Pretal para pasear a tu perrit@",
+      "price": "$605.65",
+      "packaging": 1,
+      "class": "perros",
+      "amount": 1,
+      "image": "accesorio-perro-arnes-rojo.png"
+    },
+    {
+      "id": 2,
+      "name": "Alimento Balanced",
+      "description": "Perros adultos, raza grande",
+      "price": "$5739.66",
+      "packaging": 2,
+      "class": "perros",
+      "amount": 2,
+      "image": "alimento-perro-balanced.png"
+    },
+    {
+      "id": 3,
+      "name": "Alimento OldPrince",
+      "description": "Perros adultos, raza grande",
+      "price": "$7477.01",
+      "packaging": 3,
+      "class": "perros",
+      "amount": 3,
+      "image": "alimento-perro-oldprince.png"
+    },
+    {
+      "id": 4,
+      "name": "Alimento Proplan",
+      "description": "Para perros adultos",
+      "price": "$5173.01",
+      "packaging": 4,
+      "class": "perros",
+      "amount": 4,
+      "image": "alimento-perro-proplan.png"
+    },
+    {
+      "id": 5,
+      "name": "Mordillo Antiestres",
+      "description": "Para perritos ansiosos",
+      "price": "$722.94",
+      "packaging": 5,
+      "class": "perros",
+      "amount": 5,
+      "image": "juguete-perro-aro-azul.png"
+    },
+    {
+      "id": 6,
+      "name": "Aro Verde",
+      "description": "Ideal si tu perr@ no destroza",
+      "price": "$638.50",
+      "packaging": 6,
+      "class": "perros",
+      "amount": 6,
+      "image": "juguete-perro-aro-verde.png"
+    },
+    {
+      "id": 7,
+      "name": "Huesito para Morder",
+      "description": "Mordillo antiestrés",
+      "price": "$339.97",
+      "packaging": 7,
+      "class": "perros",
+      "amount": 7,
+      "image": "juguete-perro-mordillo.png"
+    },
+    {
+      "id": 8,
+      "name": "Pelota WaterAction",
+      "description": "Pelota para la pileta",
+      "price": "$642.21",
+      "packaging": 8,
+      "class": "perros",
+      "amount": 8,
+      "image": "juguete-perro-pelota-naranja.png"
+    }
+  ]
