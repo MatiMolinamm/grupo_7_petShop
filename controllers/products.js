@@ -130,7 +130,7 @@ const productsController = {
             ? req.body.packaging
             : toUpdate.packaging,
           stock: req.body.stock ? req.body.stock : toUpdate.stock,
-          classs: req.body.class ? req.body.class : toUpdate.class,
+          class: req.body.class ? req.body.class : toUpdate.class,
           amount: req.body.amount ? req.body.amount : toUpdate.amount,
           image: req.file ? req.file.fielname : toUpdate.image,
         };
