@@ -31,7 +31,7 @@ h5 {
 }
 
 header {
-  background-color: #8c52ff;
+  background-color: #0a1a2a;
   width: 100vw;
 }
 
@@ -42,24 +42,15 @@ header article {
   justify-content: space-between;
 }
 
-main {
-  background-color: #ffffff;
+.productos {
+  background-color: paleturquoise;
+  border-radius: 5px;
 }
 
 /*------Clases del Header-----------*/
 
 .topHeader {
-  background-color: #7a7ae6;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 60px;
-}
-
-.topHeader {
-  color: white;
-  font-size: 14px;
+  display: none;
 }
 
 .topHeader div {
@@ -69,7 +60,7 @@ main {
   justify-content: center;
   text-align: center;
   padding-top: 20px;
-  width: 32%;
+  width: 30%;
 }
 
 .topHeader div i.fa-truck-fast,
@@ -92,25 +83,19 @@ fa-phone {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: 100%;
   justify-content: space-between;
+  padding: 15px;
 }
 
 .centerHeader div#menu {
   margin: auto;
+  color: white;
+  font-size: 2rem;
 }
 
 .centerHeader div#menu i {
-  align-items: center;
-  display: flex;
+  display: block;
   justify-content: center;
-  width: 80%;
-}
-
-.centerHeader div#logo {
-  display: flex;
-  justify-content: center;
-  width: 22%;
 }
 
 .centerHeader div#usuario {
@@ -118,13 +103,11 @@ fa-phone {
   display: flex;
   justify-content: space-around;
   width: 18%;
-  padding: 0 19px 0px 5px;
+  padding: 0 0 0 5px;
 }
 
 .centerHeader img {
-  max-height: 100%;
-  max-width: 85%;
-  padding-right: 30px;
+  display: none;
 }
 
 .centerHeader button {
@@ -150,7 +133,7 @@ fa-phone {
 
 .centerHeader form input {
   border-radius: 24px;
-  border: 1px solid #8c52ff;
+  border: 1px dashed #8c52ff;
   color: black;
   height: 42px;
   width: 90%;
@@ -204,6 +187,7 @@ div a i.fa-user:hover {
 .bottomHeader ul {
   display: none;
   list-style: none;
+  text-decoration: none;
 }
 
 .bottomHeader li {
@@ -214,7 +198,8 @@ div a i.fa-user:hover {
 }
 
 .bottomHeader li:hover {
-  background-color: rgb(102, 186, 251);
+  background-color: rgb(186, 218, 243);
+  transition: all 700ms;
 }
 
 .fa-magnifying-glass:before,
@@ -245,7 +230,10 @@ div a i.fa-user:hover {
 div div.homeagregaralcarrito button.botonagregaralcarrito {
   background-color: rgb(122, 122, 230);
   border: none;
-  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   color: white;
   font-size: 16px;
   height: 43px;
@@ -253,9 +241,16 @@ div div.homeagregaralcarrito button.botonagregaralcarrito {
   width: 60%;
 }
 
+div div.homeagregaralcarrito button.botonagregaralcarrito:hover {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 800ms;
+}
+
 .productosDestacados {
   align-items: center;
-  background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -270,19 +265,23 @@ h2.productosDestacados {
 }
 
 .productos {
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  box-shadow: 0px 0px 10px gray;
   margin-bottom: 20px;
   padding: 15px;
   text-align: center;
   width: 70%;
 }
-
+.productos:hover {
+  box-shadow: 0px 0px 10px yellowgreen;
+  transition: all 800ms;
+}
 .productos h3 {
-  color: black;
+  color: gray;
 }
 
 .productos img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .productos p {
@@ -330,7 +329,7 @@ p.precioshome {
   width: 45px;
   height: 45px;
   line-height: 45px;
-  border-radius: 10px;
+  border-radius: 100%;
   color: #fff;
   margin-right: 10px;
   background-color: #44d1f1;
@@ -409,15 +408,15 @@ div.cantidaddeproducto {
 
 div.cantidaddeproducto input {
   background-color: #efefef;
-    border-width: 1px;
-    border-color: transparent;
-    border-image: initial;
-    font-size: 19px;
-    font-weight: 700;
-    height: 41px;
-    padding: 0px 5px;
-    text-align: center;
-    width: 35px;
+  border-width: 1px;
+  border-color: transparent;
+  border-image: initial;
+  font-size: 19px;
+  font-weight: 700;
+  height: 41px;
+  padding: 0px 5px;
+  text-align: center;
+  width: 35px;
 }
 
 div form input.sumaryrestarproductoplus {
@@ -586,7 +585,7 @@ table.totaldelcarrito {
 }
 
 table th {
-align-items: center;
+  align-items: center;
   background-color: #ffffff;
   border-bottom: #4dbbd4 1px solid;
 }
@@ -597,23 +596,25 @@ table th:not(.center) {
 
 table td {
   align-items: center;
-  text-align:center;
+  text-align: center;
 }
 
 table td.center {
-  text-align:center;
+  text-align: center;
 }
 
 th.cantidaddeproducto {
-  text-align:center;
+  text-align: center;
 }
 
-table tr.headcarrito>:first-child {
-padding: 0 0 5px 20px;
+table tr.headcarrito > :first-child {
+  padding: 0 0 5px 20px;
 }
 
-table tr.headcarrito>:second-child, tr.headcarrito>:third-child, tr.headcarrito>:fourth-child, {
-  text-align:center;
+table tr.headcarrito > :second-child,
+tr.headcarrito > :third-child,
+tr.headcarrito > :fourth-child {
+  text-align: center;
 }
 
 table.tablacarritodetalleproducto {
@@ -693,19 +694,32 @@ form div.buttonabmproducto input {
   background-color: #8c52ff;
 }
 
+/*!Mariano: alta, baja ymodificacion producto*/
+form div.formimagenabmproducto {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
 @media (min-width: 481px) {
+
+  .centerHeader img {
+    display: block;
+    width: 80%;
+  }
+
   .bottomHeader ul {
     display: flex;
     justify-content: space-between;
     width: 95%;
   }
-
+  
   .centerHeader #menu {
     display: none;
   }
 
   .productos {
-    width: 40%;
+    width: 45%;
   }
 
   div.ordencarrito {
@@ -717,16 +731,22 @@ form div.buttonabmproducto input {
   }
 }
 
-/*!Mariano: alta, baja ymodificacion producto*/
-form div.formimagenabmproducto {
-  display: flex;
-  flex-wrap: wrap;
-  width: 40%;
-}
-
 @media (min-width: 769px) {
+
+  /* (Luca S) Traje el topHeader para que se vea en desktop y no se vea en mobile*/
+  .topHeader {
+    background-color: #0a1a2a;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    color: white;
+    font-size: 14px;
+  }
+
   .productos {
-    width: 21%;
+    width: 23%; /* (Luca S) ensanché dos puntos de porcentaje */
   }
 
   div.carritodecompras {
@@ -742,6 +762,7 @@ form div.formimagenabmproducto {
   }
 
   /*Mariano*/
+
   main article.resumenproducto {
     padding: 25px 25px;
     width: 50%;
@@ -751,8 +772,8 @@ form div.formimagenabmproducto {
     font-size: 2rem;
   }
 
-  .centerHeader form {
-    max-width: 476px;
+  .centerHeader .form {
+    max-width: 80%;
   }
 
   .centerHeader div#usuario {
@@ -761,7 +782,7 @@ form div.formimagenabmproducto {
 
   .centerHeader div a {
     display: block;
-    width: 60%;
+    /* width: 60%; (Luca S) Lo comenté porque lo empujaba */
     position: relative;
     overflow: hidden;
   }
@@ -791,52 +812,51 @@ form div.formimagenabmproducto {
     width: 30%;
   }
 
-    /* ---- Luca Spiritini, Miguel Caputo ---- */
-  
-    .footer .grupo-1 {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 50px;
-      padding: 45px 0px;
-    }
-    .footer .grupo-1 .red-social a {
-      transition: all 300ms ease;
-    }
-    .footer .grupo-1 .red-social a:hover {
-      color: purple;
-      border-radius: 5px;
-    }
-    .footer .grupo-2 {
-      background-color: #0a1a2a;
-      padding: 15px 10px;
-      text-align: center;
-      color: #fff;
-    }
-    
+  /* ---- Luca Spiritini, Miguel Caputo ---- */
+
+  .footer .grupo-1 {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
   }
+  .footer .grupo-1 .red-social a {
+    transition: all 300ms ease;
+  }
+  .footer .grupo-1 .red-social a:hover {
+    color: purple;
+    border-radius: 5px;
+  }
+  .footer .grupo-2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+  }
+}
 
 @media (min-width: 1018px) {
-/*Mariano carrito*/
+  
+  /*Mariano carrito*/  
 
-div.carritodecompras {
-  width: 97%;
-}
+  div.carritodecompras {
+    width: 97%;
+  }
 
-div.carritodetalleproducto {
-  border-right: 1px solid rgb(228, 228, 228);
-  width: 60%;
-}
+  div.carritodetalleproducto {
+    border-right: 1px solid rgb(228, 228, 228);
+    width: 60%;
+  }
 
-div.totaldelcarrito {
-  margin-left: 27px;
-  width: 37%;
-}
+  div.totaldelcarrito {
+    margin-left: 27px;
+    width: 37%;
+  }
 }
 
 @media (min-width: 1300px) {
-
   /*Carrito*/
   div.detalleproducto {
     padding: 0px 40px;
@@ -849,7 +869,7 @@ div.totaldelcarrito {
   div.carritodetalleproducto {
     width: 61%;
   }
-  
+
   div.totaldelcarrito {
     width: 34%;
   }
@@ -858,7 +878,6 @@ div.totaldelcarrito {
 
   .centerHeader form {
     width: 60%;
-    max-width: 60%;
   }
 
   .centerHeader div#usuario {
@@ -870,12 +889,6 @@ div.totaldelcarrito {
     width: 60%;
     position: relative;
     overflow: hidden;
-  }
-
-  .centerHeader div a i.fa-user {
-    border-radius: 20px;
-    font-size: 1.3rem;
-    padding: 7px;
   }
 
   .centerHeader div a span:first-child {
@@ -894,26 +907,16 @@ div.totaldelcarrito {
     color: transparent;
     display: flex;
     justify-content: center;
-    position: absolute;
     left: 55px;
-    top: 0;
+    position: absolute;
     right: 0;
+    top: 0;
     transition: width 0.3s, color 0.3s, border 0.3s;
     width: 1px;
   }
 
   .centerHeader div a span i:hover {
-    animation: rotation 0.4s linear;
-  }
-
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(130deg);
-    }
+    animation: rotation 1s linear;
   }
 
   .centerHeader div a:hover span:last-child {
@@ -927,7 +930,15 @@ div.totaldelcarrito {
     font-size: 1.5rem;
     padding: 7px;
   }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
 }
-
-/*!Mariano: alta, baja ymodificacion producto*/
-
