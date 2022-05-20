@@ -5,17 +5,17 @@
   <body>
     <%- include('../partials/header.ejs')%>
     <main>
-      <h1>Alta/Baja/Modificación de producto</h1>
+      <h1>Editar producto</h1>
 
       <form
         class="formabmproducto"
-        action="/abmproducto/?_method=PUT"
+        action="/products/abmproductEdit/<%=productRenderizar.id %>?_method=PUT"
         method="post"
         enctype="multipart/form-data"
       >
         <div class="mainformabmproducto">
           <div class="formimagenabmproducto">
-            <img src="/img/products/alimento-gato-excellent.png" />
+            <img src="/img/products/<%= productRenderizar.image %>" />
             <input
               type="file"
               accept=".jpg,.png,.svg"
@@ -26,23 +26,43 @@
 
           <div class="detailformabmproducto">
             <div>
-              <input type="text" placeholder="Titulo del producto" />
+              <input
+                type="text"
+                placeholder="Titulo del producto"
+                name="name"
+                value="<%= productRenderizar.name %>"
+              />
             </div>
 
             <div>
               <textarea
-                name="descripcionproducto"
-                placeholder="Describí tu producto"
+                name="descripction"
+                value="<%= productRenderizar.description %>"
+                placeholder="<%= productRenderizar.description %>"
+                required
               ></textarea>
             </div>
 
             <div>
-              <input type="number" placeholder="Precio" />
+              <input
+                type="number"
+                name="price"
+                value="<%= productRenderizar.price %>"
+                placeholder="Precio"
+                required
+              />
             </div>
 
             <div class="inputselector">
-              <select name="peso" id="peso" required>
-                <option value="">Seleccioná el tamaño del producto</option>
+              <select
+                name="packaging"
+                id="peso"
+                required
+                value="<%= productRenderizar.packaging %>"
+              >
+                <option value="<%= productRenderizar.packaging %>">
+                  Seleccioná el tamaño del producto
+                </option>
                 <option value="3kg">3kg</option>
                 <option value="5kg">5kg</option>
                 <option value="8kg">8kg</option>
@@ -50,11 +70,18 @@
             </div>
 
             <div>
-              <input type="number" placeholder="Stock" />
+              <input type="number" name="stock" placeholder="Stock" />
             </div>
             <div class="inputselector">
-              <select name="categoria" id="categoria" required>
-                <option value="">Seleccioná una categoria</option>
+              <select
+                name="class"
+                value="<%= productRenderizar.class %>"
+                id="categoria"
+                required
+              >
+                <option value="<%= productRenderizar.class %>">
+                  Seleccioná una categoria
+                </option>
                 <option value="Perros">Perros</option>
                 <option value="Gatos">Gatos</option>
                 <option value="Peces">Peces</option>
@@ -63,18 +90,17 @@
             </div>
 
             <div>
-              <input type="text" placeholder="Cantidad" />
+              <input
+                type="number"
+                name="amount"
+                value="<%= productRenderizar.amount%>"
+                placeholder="Cantidad"
+              />
             </div>
 
             <div class="formbuttonsabmproducto">
               <div class="buttonabmproducto">
-                <input type="submit" value="Agregar producto" />
-              </div>
-              <div class="buttonabmproducto">
                 <input type="submit" value="Modificar producto" />
-              </div>
-              <div class="buttonabmproducto">
-                <input type="submit" value="Eliminar producto" />
               </div>
             </div>
           </div>

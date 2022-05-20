@@ -27,8 +27,9 @@ router.post(
   productsController.store
 );
 router.get("/abmproductEdit/:id", productsController.edit);
+
 router.put(
-  "/abmproduct",
+  "/abmproductEdit/:id",
   uploadFile.single("image"),
   productsController.update
 );

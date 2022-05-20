@@ -55,7 +55,7 @@ const productsController = {
       packaging: req.body.packaging,
       class: req.body.class,
       amount: req.body.amount,
-      image: req.file.filename,
+      image: req.file ? req.file.filename : "logo-PF-tipografico.png",
     };
     productsSeccionClass.push(productCreate);
     let productsSeccionClassJSON = JSON.stringify(productsSeccionClass);
@@ -94,16 +94,84 @@ const productsController = {
     next();
   },
   edit: (req, res, next) => {
-    //res.send("va bien a formulario para editar");
+    let productsSeccion = req.query.class;
+    let id = req.params.id;
+
+    let products = [productsAves, productsGatos, productsPerros, productsPeces];
+    let info = products.filter((p) => p[0].class == productsSeccion);
+    let infoId = info.pop();
+
+    let productId = infoId.filter((p) => p.id == id);
+    let productRenderizar = productId.pop();
+
     res.render("products/abmProductModificacion", {
+      productRenderizar,
       titulo_pagina: "Petit and Fun - Productos",
     });
-    next();
   },
   update: (req, res, next) => {
-    res.render("products/index", {
-      titulo_pagina: "Petit and Fun - Productos",
+    let productsSeccion = req.body.class;
+    let id = req.params.id;
+    let products = [productsAves, productsGatos, productsPerros, productsPeces];
+
+    let classToEdit = products.filter((p) => p[0].class == productsSeccion);
+    let classEdit = classToEdit.pop();
+
+    let classUpdate = classEdit.map((toUpdate) => {
+      if (toUpdate.id == id) {
+        toUpdate = {
+          id: req.body.id ? req.body.id : toUpdate.id,
+          name: req.body.name ? req.body.name : toUpdate.name,
+          description: req.body.description
+            ? req.body.description
+            : toUpdate.description,
+          price: req.body.price ? req.body.price : toUpdate.price,
+          packaging: req.body.packaging
+            ? req.body.packaging
+            : toUpdate.packaging,
+          stock: req.body.stock ? req.body.stock : toUpdate.stock,
+          classs: req.body.class ? req.body.class : toUpdate.class,
+          amount: req.body.amount ? req.body.amount : toUpdate.amount,
+          image: req.file ? req.file.fielname : toUpdate.image,
+        };
+      }
+      return toUpdate;
     });
+    //console.log(classUpdate); array de la clase editado funciona
+
+    let classUptateJSON = JSON.stringify(classUpdate);
+    switch (productsSeccion) {
+      case "perros":
+        fs.writeFileSync(productsPerrosFilePath, classUptateJSON);
+        res.render("products/perrosProducts", {
+          productsPerros,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+
+        break;
+      case "gatos":
+        fs.writeFileSync(productsGatosFilePath, classUptateJSON);
+        res.render("products/gatosProducts", {
+          productsGatos,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        break;
+      case "peces":
+        fs.writeFileSync(productsPecesFilePath, classUptateJSON);
+        res.render("products/pecesProducts", {
+          productsPeces,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        break;
+      case "aves":
+        fs.writeFileSync(productsAvesFilePath, classUptateJSON);
+        res.render("products/avesProducts", {
+          productsAves,
+          titulo_pagina: "Petit and Fun - Productos",
+        });
+        break;
+    }
+
     next();
   },
   destroy: (req, res, next) => {
