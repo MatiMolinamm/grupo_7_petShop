@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs')%>
+<%- include('../partials/head.ejs')%>
+
   <body>
+
     <%- include('../partials/header.ejs')%>
-    <main>
-      <article class="carrusel"></article>
-      <form action="" method="get">
-      <h2 class="productosDestacados">PRODUCTOS PARA PERROS</h2>
-      <article class="productosDestacados">
-        <% productsPerros.forEach( ( producto ) => { %>
-        <a href="/products/perros/<%= producto.id%>/?class=<%=producto.class%>" class="idproducto"><div class="productos">
-          <h3><%= producto.name %></h3>
-          <img src="/img/products/<%= producto.image%>" alt="alimento" />
-          <p><%= producto.description %></p>
-          <p class="precioshome"><%= producto.price %></p>
-        </a>
-          <div class="homeagregaralcarrito">
-            <button class="botonagregaralcarrito">AGREGAR</button>
-          </div>
-        </div>
-        
-        <% }); %>
-      
-      </form>
-      </article>
-    </main>
-    <%- include('../partials/footer.ejs')%>
+
+      <hr />
+
+      <main class="main-index">
+
+        <article class="carrusel"></article>
+
+        <h2 class="productosDestacados">PRODUCTOS PARA PERROS</h2>
+
+        <article class="productosDestacados">
+
+          <% productsPerros.forEach( ( producto )=> { %>
+
+            <div class="productos">
+
+              <h3><%= producto.name %></h3>
+
+              <img src="/img/products/<%= producto.image%>" alt="alimento"/>
+
+              <p><%= producto.description %></p>
+
+              <p class="precioshome"><%= producto.price%></p>
+
+              <div class="homeagregaralcarrito">
+                <button class="botonagregaralcarrito">AGREGAR</button>
+              </div>
+
+            </div>
+
+          <% }); %>
+
+        </article>
+
+      </main>
+
+      <%- include('../partials/footer.ejs')%>
+
   </body>
+
 </html>
