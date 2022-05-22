@@ -90,6 +90,16 @@
     "image": "alimento-gato-excellent.png"
   },
   {
+    "id": 10,
+    "name": "Chrysler",
+    "description": "Universidad Adventista del Plata",
+    "price": "$7958.34",
+    "packaging": 10,
+    "class": "gatos",
+    "amount": 10,
+    "image": "alimento-gato-excellent.png"
+  },
+  {
     "id": 11,
     "name": "Dodge",
     "description": "Université de Saida",
@@ -150,6 +160,16 @@
     "image": "alimento-gato-excellent.png"
   },
   {
+    "id": 17,
+    "name": "Mazda",
+    "description": "Universidad Autónoma de Querétaro",
+    "price": "$216.88",
+    "packaging": 17,
+    "class": "gatos",
+    "amount": 17,
+    "image": "alimento-gato-excellent.png"
+  },
+  {
     "id": 18,
     "name": "Lincoln",
     "description": "Saratov State Agrarian University",
@@ -180,23 +200,13 @@
     "image": "alimento-gato-excellent.png"
   },
   {
-    "id": 19,
-    "name": "Hyundai",
-    "description": "University of St. Thomas, St. Paul",
-    "price": "$1415.39",
-    "packaging": 19,
+    "id": 21,
+    "name": "gato prueba",
+    "description": "asas",
+    "price": "1500",
+    "packaging": "3kg",
     "class": "gatos",
-    "amount": 19,
-    "image": "alimento-gato-excellent.png"
-  },
-  {
-    "id": 19,
-    "name": "Hyundai",
-    "description": "University of St. Thomas, St. Paul",
-    "price": "$1415.39",
-    "packaging": 19,
-    "class": "gatos",
-    "amount": 19,
-    "image": "alimento-gato-excellent.png"
+    "amount": "12",
+    "image": "logo-PF-tipografico.png"
   }
 ]
