@@ -19,7 +19,7 @@
             <input
               type="file"
               accept=".jpg,.png,.svg"
-              name="imagen producto"
+              name="image"
               placeholder="imagen del producto"
             />
           </div>
@@ -36,10 +36,9 @@
 
             <div>
               <textarea
-                name="descripction"
+                name="description"
                 value="<%= productRenderizar.description %>"
                 placeholder="<%= productRenderizar.description %>"
-                required
               ></textarea>
             </div>
 
@@ -49,7 +48,6 @@
                 name="price"
                 value="<%= productRenderizar.price %>"
                 placeholder="Precio"
-                required
               />
             </div>
 
@@ -57,7 +55,6 @@
               <select
                 name="packaging"
                 id="peso"
-                required
                 value="<%= productRenderizar.packaging %>"
               >
                 <option value="<%= productRenderizar.packaging %>">
@@ -77,15 +74,14 @@
                 name="class"
                 value="<%= productRenderizar.class %>"
                 id="categoria"
-                required
               >
                 <option value="<%= productRenderizar.class %>">
-                  Seleccioná una categoria
+                  Categoria
                 </option>
-                <option value="Perros">Perros</option>
-                <option value="Gatos">Gatos</option>
-                <option value="Peces">Peces</option>
-                <option value="Aves">Aves</option>
+                <!-- <option value="perros">Perros</option>
+                <option value="gatos">Gatos</option>
+                <option value="peces">Peces</option>
+                <option value="aves">Aves</option>-->
               </select>
             </div>
 

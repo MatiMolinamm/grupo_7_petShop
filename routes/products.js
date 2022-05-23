@@ -19,20 +19,22 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage });
 
-//RUTA ALTA BAJA MODIFICACION
+//RUTA ALTA
 router.get("/abmproduct", productsController.abmproduct);
 router.post(
   "/abmproduct",
   uploadFile.single("image"),
   productsController.store
 );
+//RUTA EDIT
 router.get("/abmproductEdit/:id", productsController.edit);
-
+///products/abmproductEdit/21?_method=PUT
 router.put(
   "/abmproductEdit/:id",
   uploadFile.single("image"),
   productsController.update
 );
+//RUTA DELETE
 router.delete("/abmproductEdit/:id", productsController.destroy);
 
 //RUTAS PRODUCTOS PARA PERRO
