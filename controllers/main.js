@@ -1,66 +1,16 @@
+const path = require("path");
+const fs = require("fs");
+
 const mainController = {
   index: (req, res, next) => {
-    let productos = [
-      {
-        titulo: "Croquetas el perro feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Croquetas el gato feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Alimento el pez feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Alimento del ave feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Croquetas el perro feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Croquetas el gato feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Alimento el pez feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-      {
-        titulo: "Alimento del ave feliz",
-        img_path: "/img/products/alimento-ave-embuche.png",
-        descripcion:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, voluptatum accusantium fugit placeat obcaecati praesentium.",
-        precio: "$5.255",
-      },
-    ];
+    const productsPerrosFilePath = path.join(
+      __dirname,
+      "../data/productsPerros.json"
+    );
+    const productsPerros = JSON.parse(fs.readFileSync(productsPerrosFilePath));
 
     res.render("index", {
-      productos: productos,
+      productsPerros,
       titulo_pagina: "Petit and Fun",
     });
   },

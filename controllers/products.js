@@ -37,8 +37,7 @@ const productsController = {
       productsPerros,
       productsPeces,
     ];
-    //console.log(productsTotal) llega bien
-    //console.log(productsSeccion); llega bien
+
     let productsSeccionFilter = productsTotal.filter(
       (p) => p[0].class == productsSeccion
     );
@@ -62,30 +61,35 @@ const productsController = {
     switch (productsSeccion) {
       case "perros":
         fs.writeFileSync(productsPerrosFilePath, productsSeccionClassJSON);
-        res.render("products/perrosProducts", {
-          productsPerros,
+        let sectionPerros = "perros";
+        res.render("products/alertStoreOk", {
+          section: sectionPerros,
           titulo_pagina: "Petit and Fun - Productos",
         });
 
         break;
       case "gatos":
         fs.writeFileSync(productsGatosFilePath, productsSeccionClassJSON);
-        res.render("products/gatosProducts", {
-          productsGatos,
+        let sectionGatos = "gatos";
+        res.render("products/alertStoreOk", {
+          section: sectionGatos,
           titulo_pagina: "Petit and Fun - Productos",
         });
+
         break;
       case "peces":
         fs.writeFileSync(productsPecesFilePath, productsSeccionClassJSON);
-        res.render("products/pecesProducts", {
-          productsPeces,
+        let sectionPeces = "peces";
+        res.render("products/alertStoreOk", {
+          section: sectionPeces,
           titulo_pagina: "Petit and Fun - Productos",
         });
         break;
       case "aves":
         fs.writeFileSync(productsAvesFilePath, productsSeccionClassJSON);
-        res.render("products/avesProducts", {
-          productsAves,
+        let sectionAves = "aves";
+        res.render("products/alertStoreOk", {
+          section: sectionAves,
           titulo_pagina: "Petit and Fun - Productos",
         });
         break;
@@ -112,6 +116,8 @@ const productsController = {
   update: (req, res, next) => {
     let productsSeccion = req.body.class;
     let id = req.params.id;
+    // res.send(req.body);
+
     let products = [productsAves, productsGatos, productsPerros, productsPeces];
 
     let classToEdit = products.filter((p) => p[0].class == productsSeccion);
@@ -120,7 +126,7 @@ const productsController = {
     let classUpdate = classEdit.map((toUpdate) => {
       if (toUpdate.id == id) {
         toUpdate = {
-          id: req.body.id ? req.body.id : toUpdate.id,
+          id: id,
           name: req.body.name ? req.body.name : toUpdate.name,
           description: req.body.description
             ? req.body.description
@@ -132,7 +138,7 @@ const productsController = {
           stock: req.body.stock ? req.body.stock : toUpdate.stock,
           class: req.body.class ? req.body.class : toUpdate.class,
           amount: req.body.amount ? req.body.amount : toUpdate.amount,
-          image: req.file ? req.file.fielname : toUpdate.image,
+          image: req.file ? req.file.filename : toUpdate.image,
         };
       }
       return toUpdate;
@@ -143,30 +149,33 @@ const productsController = {
     switch (productsSeccion) {
       case "perros":
         fs.writeFileSync(productsPerrosFilePath, classUptateJSON);
-        res.render("products/perrosProducts", {
-          productsPerros,
+        let sectionPerros = "perros";
+        res.render("products/alertEditOk", {
+          section: sectionPerros,
           titulo_pagina: "Petit and Fun - Productos",
         });
-
         break;
       case "gatos":
         fs.writeFileSync(productsGatosFilePath, classUptateJSON);
-        res.render("products/gatosProducts", {
-          productsGatos,
+        let sectionGatos = "gatos";
+        res.render("products/alertEditOk", {
+          section: sectionGatos,
           titulo_pagina: "Petit and Fun - Productos",
         });
         break;
       case "peces":
         fs.writeFileSync(productsPecesFilePath, classUptateJSON);
-        res.render("products/pecesProducts", {
-          productsPeces,
+        let sectionPeces = "peces";
+        res.render("products/alertEditOk", {
+          section: sectionPeces,
           titulo_pagina: "Petit and Fun - Productos",
         });
         break;
       case "aves":
         fs.writeFileSync(productsAvesFilePath, classUptateJSON);
-        res.render("products/avesProducts", {
-          productsAves,
+        let sectionAves = "aves";
+        res.render("products/alertEditOk", {
+          section: sectionAves,
           titulo_pagina: "Petit and Fun - Productos",
         });
         break;
@@ -196,33 +205,38 @@ const productsController = {
     switch (productsSeccion) {
       case "perros":
         fs.writeFileSync(productsPerrosFilePath, notDeleteJSON);
-        res.render("products/perrosProducts", {
-          productsPerros,
+        let sectionPerros = "perros";
+        res.render("products/alertDestroyOk", {
+          section: sectionPerros,
           titulo_pagina: "Petit and Fun - Productos",
         });
+
         next();
 
         break;
       case "gatos":
         fs.writeFileSync(productsGatosFilePath, notDeleteJSON);
-        res.render("products/gatosProducts", {
-          productsGatos,
+        let sectionGatos = "gatos";
+        res.render("products/alertDestroyOk", {
+          section: sectionGatos,
           titulo_pagina: "Petit and Fun - Productos",
         });
         next();
         break;
       case "peces":
         fs.writeFileSync(productsPecesFilePath, notDeleteJSON);
-        res.render("products/pecesProducts", {
-          productsPeces,
+        let sectionPeces = "peces";
+        res.render("products/alertDestroyOk", {
+          section: sectionPeces,
           titulo_pagina: "Petit and Fun - Productos",
         });
         next();
         break;
       case "aves":
         fs.writeFileSync(productsAvesFilePath, notDeleteJSON);
-        res.render("products/avesProducts", {
-          productsAves,
+        let sectionAves = "aves";
+        res.render("products/alertDestroyOk", {
+          section: sectionAves,
           titulo_pagina: "Petit and Fun - Productos",
         });
         next();
