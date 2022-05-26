@@ -10,10 +10,11 @@
       <article class="carrusel"></article>
       <form action="" method="get">
         <h1>---------------- >> HOME << ------------------</h1>
-      <h2 class="productosDestacados">PRODUCTOS DESTACADOS</h2>
+      <h2 class="productosDestacados">PRODUCTOS EN OFERTA</h2>
       <article class="productosDestacados">
-        <% productsPerros.forEach( ( producto ) => { %>
-        <a href="/products/perros/<%= producto.id%>/?class=<%=producto.class%>" class="idproducto"><div class="productos">
+        <% for (i=0; i<productsOferta.length; i++){ %>
+        <% productsOferta[i].forEach( ( producto ) => { %>
+        <a href="/products/<%=producto.class%>/<%= producto.id%>/?class=<%=producto.class%>" class="idproducto"><div class="productos">
           <h3><%= producto.name %></h3>
           <img src="/img/products/<%= producto.image%>" alt="alimento" />
           <p><%= producto.description %></p>
@@ -26,6 +27,7 @@
         </div>
         
         <% }); %>
+        <% }%>
       
       </form>
       </article>

@@ -54,6 +54,7 @@ const productsController = {
       packaging: req.body.packaging,
       class: req.body.class,
       amount: req.body.amount,
+      oferta: req.body.oferta,
       image: req.file ? req.file.filename : "logo-PF-tipografico.png",
     };
     productsSeccionClass.push(productCreate);
@@ -138,6 +139,7 @@ const productsController = {
           stock: req.body.stock ? req.body.stock : toUpdate.stock,
           class: req.body.class ? req.body.class : toUpdate.class,
           amount: req.body.amount ? req.body.amount : toUpdate.amount,
+          oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
           image: req.file ? req.file.filename : toUpdate.image,
         };
       }
