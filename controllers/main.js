@@ -26,6 +26,8 @@ const mainController = {
       name: req.body.nombre,
       telefono: req.body.telefono,
       email: req.body.email,
+      categoria: req.body.categoria,
+      avatar: req.body.avatar,
       paswword: req.body.paswword,
       paswwordConfirm: req.body.paswwordConfirm,
     };
