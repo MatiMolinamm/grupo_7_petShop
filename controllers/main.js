@@ -18,6 +18,24 @@ const mainController = {
     res.render("users/login", { titulo_pagina: "Petit and Fun - Login" }),
   register: (req, res, next) =>
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
+  storeUsers: (req, res) => {
+    const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
+    const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
+
+    let userNew = {
+      name: req.body.nombre,
+      telefono: req.body.telefono,
+      email: req.body.email,
+      paswword: req.body.paswword,
+      paswwordConfirm: req.body.paswwordConfirm,
+    };
+
+    usersDataBase.push(userNew);
+    const usersDataBaseActualizadaJSON = JSON.stringify(usersDataBase);
+    fs.writeFileSync(usersDataBaseFilePath, usersDataBaseActualizadaJSON);
+    res.redirect("/");
+  },
+
   carrito: (req, res, next) =>
     res.render("users/carrito", { titulo_pagina: "Petit and Fun - Carrito" }),
 };

@@ -28,7 +28,7 @@ router.post(
 );
 //RUTA EDIT
 router.get("/abmproductEdit/:id", productsController.edit);
-///products/abmproductEdit/21?_method=PUT
+
 router.put(
   "/abmproductEdit/:id",
   uploadFile.single("image"),

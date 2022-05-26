@@ -50,7 +50,7 @@ const productsController = {
       id: ultimoId + 1,
       name: req.body.name,
       description: req.body.description,
-      price: req.body.price,
+      price: "$" + req.body.price,
       packaging: req.body.packaging,
       class: req.body.class,
       amount: req.body.amount,
@@ -62,6 +62,7 @@ const productsController = {
       case "perros":
         fs.writeFileSync(productsPerrosFilePath, productsSeccionClassJSON);
         let sectionPerros = "perros";
+
         res.render("products/alertStoreOk", {
           section: sectionPerros,
           titulo_pagina: "Petit and Fun - Productos",
@@ -116,7 +117,6 @@ const productsController = {
   update: (req, res, next) => {
     let productsSeccion = req.body.class;
     let id = req.params.id;
-    // res.send(req.body);
 
     let products = [productsAves, productsGatos, productsPerros, productsPeces];
 
