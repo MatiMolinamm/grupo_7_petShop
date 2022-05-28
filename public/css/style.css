@@ -52,6 +52,12 @@ h5 {
   padding: 8px;
   width: 210px;
 }
+
+.mainIndex {
+  background-image: url(../img/fondo/fondogris.webp);
+  background-repeat: repeat;
+}
+
 main {
   background-color: #ffffff;
 }
@@ -59,7 +65,9 @@ main {
 /*------Clases del Header-----------*/
 
 header {
-  background-color: #0a1a2a;
+  background-color: #4dbbd4;
+  position: sticky;
+  top: 0;
   width: 100vw;
 }
 
@@ -82,8 +90,9 @@ fa-phone {
   font-size: 14px;
 }
 
-.topHeader p {
-  color: white;
+.topHeader p  {
+  color: transparent;
+  display: none;
   font-size: 14px;
   font-weight: bold;
   margin-left: 5%;
@@ -95,8 +104,12 @@ fa-phone {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
-  padding: 14px;
+  padding: 16px 30px;
 }
+
+/*.centerHeader .logo {
+  
+}*/
 
 .centerHeader div#menu i {
   /*menu hamburguesa*/
@@ -111,16 +124,19 @@ fa-phone {
 .centerHeader div#usuario {
   align-items: center;
   display: flex;
+  margin: 0 1px 3px 0px;
   justify-content: space-around;
-  width: 18%;
-  padding: 5px;
+}
+
+.centerHeader div#usuario a {
+  margin: 0 5px;
 }
 
 .centerHeader img {
-  display: none;
+ width: 46vw;
 }
 
-.centerHeader button {
+.bottomHeader button {
   background-color: rgb(34 109 175);
   border: none;
   border-radius: 0px 19px 19px 0px;
@@ -130,30 +146,33 @@ fa-phone {
   right: 18px;
 }
 
-.centerHeader form {
+.bottomHeader form {
   display: flex;
-  margin: auto;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: 13px;
 }
 
-.centerHeader form input {
+.bottomHeader form input {
   border-radius: 24px;
-  border: 1px dashed #8c52ff;
+  border: 0px;
   color: black;
-  height: 42px;
+  height: 37px;
+  width: 72vw;
 }
 
-.centerHeader form input::placeholder {
+.bottomHeader form input::placeholder {
   padding-left: 10px;
 }
 
 .centerHeader div a i.fa-user {
-  background-color: #4dbbd4;
-  border: 1px solid white;
-  border-radius: 25%;
-  box-shadow: 2px 2px 0px white;
-  font-size: 1rem;
-  padding: 5px;
-  margin-right: 5px;
+    color: #4dbbd4;
+    background-color: #ffffff;
+    border: 1px solid white;
+    border-radius: 50%;
+    box-shadow: 2px 0px 0px white;
+    font-size: 14px;
+    padding: 6px;
 }
 
 .centerHeader div a span:last-child {
@@ -161,12 +180,13 @@ fa-phone {
 }
 
 .centerHeader div i.fa-cart-shopping {
-  background-color: #4dbbd4;
+  color: #4dbbd4;
+  background-color: #ffffff;
   border: 1px solid white;
-  border-radius: 25%;
-  box-shadow: 2px 2px 0px white;
-  font-size: 1rem;
-  padding: 5px;
+  border-radius: 49%;
+  box-shadow: 2px 0px 0px white;
+  font-size: 14px;
+  padding: 7px;
 }
 
 .centerHeader div i.fa-cart-shopping:hover,
@@ -174,7 +194,7 @@ div a i.fa-user:hover {
   font-size: 1.5rem;
 }
 
-.bottomHeader {
+.bottomHeader ul {
   display: none;
 }
 
@@ -201,6 +221,25 @@ div a i.fa-user:hover {
   color: black;
 }
 
+/* -- IMAGENES DE CATEGORIAS DE PRODUCTOS HOME --*/
+
+.categoryimages {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: space-around;
+  padding: 10px;
+  text-align: center;
+}
+
+.categoryimages img {
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+  margin: 5px;
+  width: 90%;
+  height:auto;
+}
+
 div div.homeagregaralcarrito button.botonagregaralcarrito {
   background-color: rgb(122, 122, 230);
   border: none;
@@ -213,22 +252,23 @@ div div.homeagregaralcarrito button.botonagregaralcarrito {
 }
 
 .productosDestacados {
-  align-items: center;
-  background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 h2.productosDestacados {
+  background-color: #fdcd10;
+  border-radius: 0px 10px 10px 0px;
   color: black;
   font-size: 16px;
   justify-content: left;
   margin-bottom: 20px;
-  padding: 5px;
+  padding: 7px;
 }
 
 .productos {
+  background-color: white;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
   margin-bottom: 20px;
@@ -368,62 +408,76 @@ p.precioshome {
   text-decoration: none;
 }
 
-/*-------register-------*/
+/*--- Seccion detalle producto-- */
 
-/*!Mariano
-Seccion detalle producto */
+article.resumenproducto div:not(div.ordencarrito, div.cantidaddeproducto, div.agregaralcarrito) {
+  border-bottom: 1px solid rgb(158, 158, 158);
+  border-top: 1px solid rgb(158, 158, 158);
+}
 
 div.agregaralcarrito {
-  padding: 5px;
-  width: 50%;
+    padding: 5px;
+    width: 70%;
+    margin: 0 5%;
 }
 
 div.cantidaddeproducto {
   display: flex;
   justify-content: center;
-  margin-right: 17px;
+  margin: 0px 5%;
 }
 
 div.cantidaddeproducto input {
-  background-color: #efefef;
+  background-color: #fcfcfc;
   border-width: 1px;
   border-color: transparent;
   border-image: initial;
+  box-shadow: 1px 3px 2px  grey;
   font-size: 19px;
   font-weight: 700;
-  height: 41px;
+  height: 34px;
   padding: 0px 5px;
   text-align: center;
   width: 35px;
 }
 
+div.cantidaddeproducto input::placeholder {
+  color: rgb(92, 75, 217);
+}
+
 div form input.sumaryrestarproductoplus {
-  background-color: rgb(77 187 212);
-  border-radius: 2px 14px 14px 1px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 900;
-  height: 41px;
-  padding: 6px 12px 9px;
+    background-color: rgb(255 203 65);
+    border-radius: 2px 14px 14px 1px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    height: 34px;
+    padding: 6px 12px 9px;
 }
 
 div form input.sumaryrestarproductominus {
-  background-color: rgb(77 187 212);
+  background-color: rgb(255 203 65);
   border-radius: 14px 2px 2px 14px;
   color: #ffffff;
   cursor: pointer;
   font-size: 18px;
   font-weight: 900;
-  height: 41px;
+  height: 34px;
   padding: 6px 12px 9px;
 }
 
 div.pesoproducto {
+  align-items: center;
+  background-color: white;
   display: flex;
   justify-content: center;
   padding: 30px 0px;
   text-align: left;
+}
+
+div.pesoproducto p {
+  align-items: left;
 }
 
 div a.botonpesoproducto {
@@ -432,8 +486,9 @@ div a.botonpesoproducto {
   border: 1px solid #c36cac;
   box-shadow: 3px 1px 6px #000000;
   color: #ffffff;
-  margin: 0px 36px 0px 0px;
-  padding: 10px;
+  font-size: 14px;
+  margin: 0px 5px 0px 10px;
+  padding: 4px;
   text-decoration: none;
 }
 
@@ -449,26 +504,29 @@ div button.botonagregaralcarrito {
   color: white;
   height: 43px;
   margin: auto;
-  width: 180px;
+  min-width: 140x;
+  max-width: 288px;
+  width: 100%;
 }
 
 div.ordencarrito {
   align-items: center;
   display: flex;
-  justify-content: center;
 }
 
 div.precioystock {
+  align-items: center;
   display: flex;
+  justify-content: space-around;
   padding: 5px;
 }
 
 div span.precio {
-  color: #c36cac;
-  font-size: 1.5rem !important;
-  font-weight: bold;
-  text-align: left;
-  width: 50%;
+    color: #c36cac;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    text-align: left;
+    width: 80%;
 }
 
 div p.stock {
@@ -489,7 +547,7 @@ main article.imagenproducto img {
 }
 
 main article.resumenproducto {
-  padding: 25px;
+  padding: 13px;
   width: 100%;
 }
 
@@ -501,13 +559,26 @@ main h1.tituloresumenproducto {
 }
 
 main div.descripcionproducto {
-  padding: 25px;
+  padding: 40px 0px;
   width: 100%;
 }
 
 main article.detalleproductos {
   display: flex;
   flex-wrap: wrap;
+}
+
+div.editiondetailbuttons {
+  display: flex;
+  padding: 10px;
+}
+
+div.editiondetailbuttons button {
+  background-color: #4dbbd4;
+  border: 0;
+  border-radius: 5px;
+  margin: 5px 5px 0px 0px;
+  padding: 5px;
 }
 
 /*!Mariano: carrito de compras*/
@@ -659,27 +730,16 @@ form div.formimagenabmproducto {
 }
 
 @media (min-width: 481px) {
-  .bottomHeader ul {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
+  .centerHeader div#usuario {
+    margin: 0 -20px 3px 0px;
+  }
+
+  .centerHeader div#usuario a {
+    padding-right: 10px;
   }
 
   .centerHeader {
     display: flex;
-  }
-
-  .centerHeader .logo {
-    width: 25%;
-  }
-
-  .centerHeader img {
-    display: block;
-    padding: 10px;
-  }
-
-  .centerHeader #menu {
-    display: none;
   }
 
   .productos {
@@ -692,6 +752,10 @@ form div.formimagenabmproducto {
 
   main h1.tituloresumenproducto {
     font-size: 1.7rem;
+  }
+
+  div a.botonpesoproducto {
+    padding: 5px;
   }
 
   /*<-- login -->*/
@@ -722,7 +786,25 @@ form div.formimagenabmproducto {
 }
 
 @media (min-width: 769px) {
+
+  .centerHeader .logo {
+    left: 0;
+    width: 100%;
+  }
+
+  .bottomHeader ul {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+  }
+
+  .centerHeader div#menu i {
+    /*menu hamburguesa*/
+    display: none;
+  }
+
   .productos {
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(226, 226, 226));;
     width: 23%;
   }
 
@@ -736,19 +818,10 @@ form div.formimagenabmproducto {
     transition: all 800ms;
   }
 
-  div.carritodecompras {
-    width: 81%;
-    border-right: none;
-    margin: 0;
-    padding: 0;
-    margin: auto;
-  }
-
   main article.imagenproducto {
     width: 40%;
   }
 
-  /*Mariano*/
   main article.resumenproducto {
     padding: 25px 25px;
     width: 50%;
@@ -760,33 +833,43 @@ form div.formimagenabmproducto {
   /*----    Header    ----*/
 
   .topHeader {
+    background-color: #226daf;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    height: 40px;
-    padding: 5px;
+    height: 41px;
+    padding: 8px;
+    margin-bottom: 41px;
     color: white;
     font-size: 14px;
   }
 
+  .topHeader p  {
+    color: white;
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5%;
+  }
+  
   .topHeader div {
     display: flex;
     flex-wrap: nowrap;
     font-size: 1rem;
     justify-content: center;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 7px;
     width: 30%;
   }
 
   .centerHeader {
-    padding: 5px;
+    padding: 0px 30px 29px 0px;
   }
 
   .centerHeader img {
-    margin-left: 30px;
-    max-width: 200px;
+    margin-left: 20px;
+    max-width: 185px;
   }
 
   .centerHeader input {
@@ -798,18 +881,8 @@ form div.formimagenabmproducto {
     font-size: 18px;
   }
 
-  .centerHeader form input:hover {
-    border: 1px dashed #44d1f1;
-  }
-
   .centerHeader div#usuario {
-    min-width: 250px;
-  }
-
-  .centerHeader div a {
-    display: block;
-    position: relative;
-    overflow: hidden;
+    min-width: 200px;
   }
 
   .centerHeader div a i.fa-user {
@@ -826,14 +899,29 @@ form div.formimagenabmproducto {
     z-index: 10;
   }
 
+  .centerHeader div i.fa-cart-shopping {
+    font-size: 21px;
+    position: relative;
+    top: 6px;
+  }
+
   .bottomHeader {
-    background-color: brown;
+    background-color: #ffcb41;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5px;
     position: relative;
   }
+
+  .bottomHeader form {
+    display: flex;
+    justify-content: center;
+    width: 47%;
+    position: absolute;
+    top: -74px;
+    left: 28vw;
+}
 
   .bottomHeader li {
     color: white;
@@ -848,7 +936,7 @@ form div.formimagenabmproducto {
   }
 
   .bottomHeader li a {
-    color: white;
+    color: #0b5591;
     text-decoration: none;
   }
 
@@ -886,10 +974,72 @@ form div.formimagenabmproducto {
     text-align: center;
     color: #fff;
   }
+
+  
+/* -- IMAGENES DE CATEGORIAS DE PRODUCTOS HOME --*/
+
+.categoryimages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+  text-align: center;
+}
+
+.categoryimages img {
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+  margin: 5px;
+  width: 90%;
+  height:auto;
+}
+
+/* ICONO DE LOGIN Y CARRITO CON ANIMACION*/
+.centerHeader div a i.fa-user {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 7px;
+  position: relative;
+  transition: transform 0.3s;
+  top: 15px;
+  right: 50px;
+  width: 35px;
+  z-index: 10;
+}
+
+.centerHeader div a span:last-child {
+  align-items: center;
+  bottom: 0;
+  border-radius: 20px;
+  color: transparent;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  left: 25px;
+  overflow: hidden;
+  transition: width 0.3s, color 0.3s, border 0.3s;
+  width: 10px;
+}
+
+.centerHeader div a span i:hover {
+  animation: rotation 0.4s linear;
+}
+
+.centerHeader div a:hover span:last-child {
+  background-color: rgb(34 109 175);
+  border: 2px 2px 2px 2px solid white;
+  color: white;
+  height: 30px;  
+  width: 100px;
+}
 }
 
 @media (min-width: 1018px) {
   /*Mariano carrito*/
+
+  .centerHeader img {
+    max-width: 225px;
+   }
 
   div.carritodecompras {
     width: 97%;
@@ -927,60 +1077,38 @@ form div.formimagenabmproducto {
     width: 550px;
   }
 
-  .centerHeader div#usuario {
-    width: 30%;
-  }
+/* SI EL USUARIO ENTRA EN SESSION EL USER IN SESSION APLICA ESTO
+div#usuario {
+  display: none;
+}
 
-  .centerHeader div a {
-    display: block;
-    width: 60%;
-    position: relative;
-    overflow: hidden;
-  }
+div.UserinSessionheader {
+  display: none;
+  left: 47px;
+  transition: transform 0.3s;
+  position: relative;
+  width: 120px;
+  z-index: 10;
+}
 
-  .centerHeader div a i.fa-user {
-    border-radius: 20px;
-    font-size: 1.3rem;
-    padding: 7px;
-  }
-
-  .centerHeader div a span:first-child {
-    display: inline-block;
-    left: 47px;
-    transition: transform 0.3s;
-    position: relative;
-    width: 120px;
-    z-index: 10;
-  }
-
-  .centerHeader div a span:last-child {
-    align-items: center;
-    bottom: 0;
-    border-radius: 20px;
-    color: transparent;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    left: 55px;
-    top: 0;
-    right: 0;
-    transition: width 0.3s, color 0.3s, border 0.3s;
-    width: 1px;
-  }
-
-  .centerHeader div a span i:hover {
-    animation: rotation 0.4s linear;
-  }
-
-  .centerHeader div a:hover span:last-child {
-    background-color: #4dbbd4;
-    border: 1px 1px 1px 0px solid white;
-    color: white;
-    width: 180px;
-  }
+.UserinSessionheader a span:last-child {
+  align-items: center;
+  bottom: 0;
+  border-radius: 20px;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 55px;
+  top: 0;
+  right: 0;
+  transition: width 0.3s, color 0.3s, border 0.3s;
+  width: 1px;
+}*/
 
   .centerHeader div i.fa-cart-shopping {
-    font-size: 1.5rem;
+    border-radius: 20px;
+    font-size: 1.3rem;
     padding: 7px;
   }
 

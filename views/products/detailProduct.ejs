@@ -18,6 +18,7 @@
                     <span class="stock">Stock:xx</span>
                 </div>
                 <div class="pesoproducto">
+                 <p>Medida del paquete</p>
                 <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">3 Kg.</a>
                 <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">15 Kg.</a>
                 <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">18 Kg.</a>
@@ -44,27 +45,29 @@
                 <p>Presentacion: <%= productRenderizar.packaging %> </p>
             </div>
             
-         
-            <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>"> 
+            <div class="editiondetailbuttons">
+              <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>"> 
+                       
               
-              <button type="submit" >
-              EDITAR
-            </button>
-          </a>
-            
-          <form
-                action="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>&_method=delete"
-                method="POST"
                 
-              >
                 <button type="submit" >
-                  ELIMINAR
-                </button>
-                </form>
-            
-        </article>
-        
-
+                EDITAR
+              </button>
+            </a>
+              
+            <form
+                  action="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.class%>&_method=delete"
+                  method="POST"
+                  
+                >
+                  <button type="submit" >
+                    ELIMINAR
+                  </button>
+                  </form>
+                </div>
+          </article>
+          
+      </article>
     </main>
 </div>
 
