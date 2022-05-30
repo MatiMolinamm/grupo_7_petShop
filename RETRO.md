@@ -26,3 +26,10 @@ Encontramos una mejor dinámica grupal con ayuda de Trello. Nos conocemos mejor,
 
 ----    SPRINT 4    ----
 
+Para este Sprint llegamos con más tiempo disponible y con tareas adelantadas.
+
+No surgieron inconvenientes con respecto a la organización grupal.
+
+No fueron necesarias reuniones fuera de las clases practicas.
+
+Seguimos mejorando nuestro sistema de comunicación, usamos más Trello.
