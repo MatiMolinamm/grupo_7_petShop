@@ -58,7 +58,12 @@ const mainController = {
     const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
     const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
 
+    let lastUser = usersDataBase.pop();
+    let lastId = lastUser ? lastUser.id : 0;
+    usersDataBase.push(lastUser);
+
     let userNew = {
+      id: lastId + 1,
       name: req.body.nombre,
       telefono: req.body.telefono,
       email: req.body.email,
