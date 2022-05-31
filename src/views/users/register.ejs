@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <hr />
+    <main>
+      <h1 class="titulosforms">Registro</h1>
+      <h2 class="forms">REGISTRARSE</h2>
+      <form
+        action="/users/register"
+        method="post"
+        class="formloginandregister"
+        enctype="multipart/form-data"
+      >
+        <div class="nombre">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre y apellido"
+            required
+          />
+        </div>
+        <div class="telefono">
+          <input
+            type="number"
+            name="telefono"
+            placeholder="Numero telefónico"
+            required
+          />
+        </div>
+        <div class="email">
+          <input
+            type="email"
+            name="email"
+            placeholder="email@address.com"
+            required
+          />
+        </div>
+        <div class="inputselector">
+          <select name="categoria" id="categoria" required>
+            <option value="categoria">Categoria</option>
+            <option value="admin">Administrador</option>
+            <option value="guest">Cliente</option>
+          </select>
+        </div>
+        <div class="avatar">
+          <input type="file" name="avatar" />
+        </div>
+
+        <div class="pasword">
+          <input
+            type="password"
+            name="password"
+            placeholder="*********"
+            required
+          />
+        </div>
+        <div class="pasword">
+          <input
+            type="password"
+            name="passwordConfirm"
+            placeholder="Confirmar password"
+            required
+          />
+        </div>
+        <div class="boton">
+          <button type="submit">Enviar</button>
+          <button type="reset">Borrar</button>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

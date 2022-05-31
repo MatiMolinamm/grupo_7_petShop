@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+      <article class="carrusel"></article>
+      <ul class="categoryimages">
+        <li><a href="/products/perros"><img src="/img/products/perros.png"></a></li>
+        <li><a href="/products/gatos"><img src="/img/products/gatos.png"></a></li>
+        <li><a href="/products/peces"><img src="/img/products/peces.png"></a></li>
+        <li><a href="/products/aves"><img src="/img/products/aves.png"></a></li>
+      </ul>
+      <h2 class="productosDestacados">PRODUCTOS PARA PECES</h2>
+      <article class="productosDestacados">
+        <% productsPeces.forEach( ( producto ) => { %>
+          <a href="/products/peces/<%= producto.id%>/?class=<%=producto.class%>">
+        <div class="productos">
+          <h3><%= producto.name %></h3>
+          <img src="/img/products/<%= producto.image%>" alt="alimento" />
+          <p><%= producto.description %></p>
+          <p>Presentacion: <%= producto.packaging %> </p>
+          <p class="precioshome"><%= producto.price %></p>
+        </a>
+          <div class="homeagregaralcarrito">
+            <button class="botonagregaralcarrito">AGREGAR</button>
+          </div>
+        </div>
+        <% }); %>
+      </article>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

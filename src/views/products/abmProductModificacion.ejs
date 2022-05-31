@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+      <h1>Editar producto</h1>
+
+      <form
+        class="formabmproducto"
+        action="/products/abmproductEdit/<%=productRenderizar.id %>?_method=PUT"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="mainformabmproducto">
+          <div class="formimagenabmproducto">
+            <img src="/img/products/<%= productRenderizar.image %>" />
+            <input
+              type="file"
+              accept=".jpg,.png,.svg"
+              name="image"
+              placeholder="imagen del producto"
+            />
+          </div>
+
+          <div class="detailformabmproducto">
+            <div>
+              <input
+                type="text"
+                placeholder="Titulo del producto"
+                name="name"
+                value="<%= productRenderizar.name %>"
+              />
+            </div>
+
+            <div>
+              <textarea
+                name="description"
+                value="<%= productRenderizar.description %>"
+                placeholder="<%= productRenderizar.description %>"
+              ></textarea>
+            </div>
+
+            <div>
+              <input
+                type="number"
+                name="price"
+                value="$ <%= productRenderizar.price %>"
+                placeholder="Precio"
+              />
+            </div>
+
+            <div class="inputselector">
+              <select
+                name="packaging"
+                id="peso"
+                value="<%= productRenderizar.packaging %>"
+              >
+                <option value="<%= productRenderizar.packaging %>">
+                  Seleccioná el tamaño del producto
+                </option>
+                <option value="3 kg">3 kg</option>
+                <option value="5 kg">5 kg</option>
+                <option value="8 kg">8 kg</option>
+              </select>
+            </div>
+
+            <div>
+              <input type="number" name="stock" placeholder="Stock" />
+            </div>
+            <div class="inputselector">
+              <select
+                name="class"
+                value="<%= productRenderizar.class %>"
+                id="categoria"
+              >
+                <option value="<%= productRenderizar.class %>">
+                  <%= productRenderizar.class %>
+                </option>
+                <!-- <option value="perros">Perros</option>
+                <option value="gatos">Gatos</option>
+                <option value="peces">Peces</option>
+                <option value="aves">Aves</option>-->
+              </select>
+            </div>
+
+            <div>
+              <input
+                type="number"
+                name="amount"
+                value="<%= productRenderizar.amount%>"
+                placeholder="Cantidad"
+              />
+            </div>
+            <div class="inputselector">
+              <select name="oferta" id="categoria" required>
+                <option value="">En Oferta</option>
+                <option value="true">Si</option>
+                <option value="false">No</option>
+              </select>
+
+            <div class="formbuttonsabmproducto">
+              <div class="buttonabmproducto">
+                <input type="submit" value="Modificar producto" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

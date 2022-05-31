@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+    <hr />
+    <main>
+        <h2>Carrito de compras</h2>
+        <div class="carritodecompras">
+            <form>
+                <div class="carritodetalleproducto">
+                    <table class="tablacarritodetalleproducto">
+                        
+                            <tr class="headcarrito">
+                                <th>Producto</th>
+                                <th class="center">Envío</th>
+                                <th class="center">Precio</th>
+                                <th class="center">Cantidad</th>
+                            <tr class="itemcarritoindividual">
+                                <td class="imgcarritoproducto"><img src="/img/productos/alimento-gato-excellent.png" width="100px"
+                                        alt="alimento-gato-excellent.png"><span>Alimento para Gato XXX</span>
+                                </td>
+                                <td class="center">$ Envío</td>
+                                <td class="center">$ Precio</td>
+                                <td class="center">
+                                    <div class="cantidaddeproducto">
+                                            <input type="button" class="sumaryrestarproductominus" value="-">
+                                            <input type="number" name="cantidaddeproducto" id="cantidaddeproducto" placeholder="1" class="inputcantidaddeproducto">
+                                            <input type="button" class="sumaryrestarproductoplus" value="+">
+                                    </div>
+                                </td>
+                            </tr>                        
+                    </table>
+                </div>
+
+                <div class="totaldelcarrito">
+                    <table class="tablatotalcarrito">
+                        <tr class="headcarrito2">
+                            <th colspan="2">Total Producto</th>
+                        <tr class="itemcarritoindividual">
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>$Subtotal</td>
+                            </tr>
+                            <tr>
+                                <td>Envío</td>
+                                <td>$Envío</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>$Ttotal</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="proceder-checkout">		
+                                    <a href="/checkout/" class="checkout-button">Finalizar compra</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tr>  
+                    </table>
+                </div>  
+        
+        </form>
+        </div>
+    </main> <%- include('../partials/footer.ejs')%>
+</body>
+
+</html>
