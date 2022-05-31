@@ -61,7 +61,7 @@ const mainController = {
     let lastUser = usersDataBase.pop();
     let lastId = lastUser ? lastUser.id : 0;
     usersDataBase.push(lastUser);
-
+    console.log(req.file);
     let userNew = {
       id: lastId + 1,
       name: req.body.nombre,
