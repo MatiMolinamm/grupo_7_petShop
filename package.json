@@ -2,7 +2,7 @@
   "name": "grupo_7_petshop",
   "version": "1.0.0",
   "description": "Proyecto Integrador",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MatiMolinamm/grupo_7_petShop#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
     "method-override": "^3.0.0",
