@@ -21,7 +21,7 @@ const usersController = {
       telefono: req.body.telefono,
       email: req.body.email,
       categoria: req.body.categoria,
-      avatar: req.body.avatar,
+      avatar: req.file ? req.file.filename : null,
       password: bcryptjs.hashSync(req.body.password, 10),
       //passwordConfirm: "" ,
     };
