@@ -1183,14 +1183,14 @@ form div.formimagenabmproducto {
     right: 0;
     transition: width 0.3s, color 0.3s, border 0.3s;
     width: 1px;
-  }*/
-
+    
+  }
   .centerHeader div i.fa-cart-shopping {
     border-radius: 20px;
     font-size: 1.3rem;
     padding: 7px;
   }
-
+  */
   /*
   @keyframes rotation {
     from {
