@@ -7,6 +7,8 @@ const usersController = {
     res.render("users/login", { titulo_pagina: "Petit and Fun - Login" }),
   register: (req, res) =>
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
+  profile: (req, res) =>
+    res.render("users/profile", { titulo_pagina: "Petit and Fun - Profile" }),
   storeUsers: (req, res) => {
     const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
     const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));

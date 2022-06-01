@@ -32,4 +32,7 @@ router.post(
 // RUTAS LOGIN DE USUARIOS
 router.get("/login", usersController.login);
 
+//RUTA PERFIL DE USUARIOS
+router.get("/profile", usersController.profile)
+
 module.exports = router;
