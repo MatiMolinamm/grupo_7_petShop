@@ -109,12 +109,22 @@ fa-phone {
 
 .centerHeader div#menu i {
   /*menu hamburguesa*/
-  padding: 7px;
-  background-color: rgb(34 109 175);
-  border-radius: 7px;
   align-items: center;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: #4dbbd4;
   display: block;
+  font-size: 1.1rem;
   justify-content: center;
+  padding: 7px;
+}
+.centerHeader div#menu i:hover {
+  background-color: purple;
+  border: 1px solid #4dbbd4;
+  border-radius: 5px;
+  color: white;
+  transition: all 1s;
 }
 
 .centerHeader div#usuario {
@@ -151,19 +161,20 @@ fa-phone {
 
 .bottomHeader form input {
   border-radius: 24px;
-  border: 0px;
-  color: black;
+  border: 1px solid white;
   height: 37px;
   width: 72vw;
 }
 
 .bottomHeader form input::placeholder {
   padding-left: 10px;
+  color: gray;
 }
 
 .centerHeader div a i.fa-user {
   color: #4dbbd4;
   background-color: #ffffff;
+  border: 1px solid white;
   border-radius: 20px;
   box-shadow: 2px white;
   font-size: 14px;
@@ -177,6 +188,7 @@ fa-phone {
 .centerHeader div i.fa-cart-shopping {
   color: #4dbbd4;
   background-color: #ffffff;
+  border: 1px solid white;
   border-radius: 20px;
   box-shadow: 2px white;
   font-size: 14px;
@@ -187,6 +199,9 @@ fa-phone {
 div a i.fa-user:hover {
   color: white;
   background-color: purple;
+  border: 1px solid #4dbbd4;
+  border-radius: 5px;
+  transition: all 1s;
 }
 
 .bottomHeader ul {
@@ -229,7 +244,7 @@ div a i.fa-user:hover {
 
 .categoryimages img {
   border-radius: 15px;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 0 5px 5px 0 rgb(122, 122, 230);
   margin: 5px;
   width: 90%;
   height: auto;
@@ -903,6 +918,7 @@ form div.formimagenabmproducto {
 
   div div.homeagregaralcarrito button.botonagregaralcarrito:hover {
     border-radius: 5px;
+    border: 1px solid white;
     transition: all 800ms;
   }
 
@@ -983,9 +999,13 @@ form div.formimagenabmproducto {
     justify-content: center;
     width: 47%;
     position: absolute;
-    top: -74px;
+    top: -100px;
     left: 28vw;
   }
+
+  /* .bottomHeader form input:hover {
+    border: 1px solid white;
+  } Quiero que al seleccionar el input para buscar algo, se haga un borde solido de 1 px blanco */
 
   .bottomHeader li {
     color: white;
@@ -1051,7 +1071,7 @@ form div.formimagenabmproducto {
 
   .categoryimages img {
     border-radius: 15px;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 0 5px 5px 0 rgb(122, 122, 230);
     margin: 5px;
     width: 90%;
     height: auto;
@@ -1134,6 +1154,22 @@ form div.formimagenabmproducto {
 }
 
 @media (min-width: 1300px) {
+
+  .mainIndex {
+    max-width: 1450px;
+    text-align: center;
+    margin: auto;
+  }
+
+  /* Darle ancho máximo
+  header {
+    max-width: 1450px;
+  }
+  body {
+    max-width: 1450px;
+  }
+  */
+
   /*Carrito*/
   div.detalleproducto {
     padding: 0px 40px;
@@ -1154,6 +1190,13 @@ form div.formimagenabmproducto {
   /*Header*/
   .centerHeader input {
     width: 550px;
+  }
+
+  .centerHeader .logo {
+    margin-left: 50px;
+  }
+  .centerHeader .usuario {
+    margin-right: 30px;
   }
 
   /* SI EL USUARIO ENTRA EN SESSION EL USER IN SESSION APLICA ESTO
