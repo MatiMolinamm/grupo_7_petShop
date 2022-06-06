@@ -7,6 +7,7 @@
     <main>
       <h1 class="titulosforms">Registro</h1>
       <h2 class="forms">REGISTRARSE</h2>
+
       <form
         action="/users/register"
         method="post"
@@ -18,7 +19,7 @@
             type="text"
             name="nombre"
             placeholder="Nombre y apellido"
-            required
+            value="<%= locals.old && old.nombre? old.nombre:null %>"
           />
         </div>
         <div class="telefono">
@@ -33,9 +34,12 @@
           <input
             type="email"
             name="email"
+            value="<%= locals.old && old.email %>"
             placeholder="email@address.com"
-            required
           />
+          <% if (locals.errors && errors.email) { %>
+          <p><%= errors.email.msg %></p>
+          <% } %>
         </div>
         <div class="inputselector">
           <select name="categoria" id="categoria" required>
@@ -55,6 +59,9 @@
             placeholder="*********"
             required
           />
+          <% if (locals.errors && errors.password) { %>
+          <p><%= errors.password.msg %></p>
+          <% } %>
         </div>
         <div class="pasword">
           <input
