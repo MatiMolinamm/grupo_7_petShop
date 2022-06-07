@@ -419,6 +419,24 @@ LOGIN - REGISTER - PROFILE*/
   text-decoration: none;
 }
 
+div.text-danger {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+  padding: 0 0 5px 5px;
+}
+
+div input.is-invalid {
+  border: 2px solid red;
+}
+
+/*REGISTRO EXITOSO*/
+.succesFullRegistered {
+  background-image: url(/PROYECTOINTEGRADOR/grupo_7_petShop/public/img/logo/okRegistration.jpg);
+  border-radius: 50%;
+}
+
 /* PROFILE */
 
 form {

@@ -1,16 +1,32 @@
 const path = require("path");
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
+<<<<<<< HEAD
 //const { validationResult } = require("express-validator");
 
+=======
+const {validationResult} = require("express-validator");
+const validation = require("../middlewares/validation");
+console.log(validation);
+>>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
 const usersController = {
-  login: (req, res) =>
-    res.render("users/login", { titulo_pagina: "Petit and Fun - Login" }),
+  login: validation.loginValidation,  
   register: (req, res) =>
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
   profile: (req, res) =>
     res.render("users/profile", { titulo_pagina: "Petit and Fun - Profile" }),
-  storeUsers: (req, res) => {
+  storeUsers: //validation.registerValidation
+  
+  function ( req, res) {
+    const resultValidation = validationResult(req);
+    
+    if (resultValidation.errors.length > 0) {
+        return res.render( "users/register", { titulo_pagina: "Petit and Fun - Registro", 
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+    }
+   
     const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
     const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
 
@@ -23,7 +39,7 @@ const usersController = {
 
     let userNew = {
       id: lastId + 1,
-      name: req.body.nombre,
+      name: req.body.name,
       telefono: req.body.telefono,
       email: req.body.email,
       categoria: req.body.categoria,
@@ -36,13 +52,19 @@ const usersController = {
     const usersDataBaseActualizadaJSON = JSON.stringify(usersDataBase);
     fs.writeFileSync(usersDataBaseFilePath, usersDataBaseActualizadaJSON);
     res.redirect("/");
+<<<<<<< HEAD
     //} else
     res.render("users/register", {
       errors: errors.mapped(),
       old: req.body,
       titulo_pagina: "Petit and Fun - Registro",
     });
+=======
+  
+>>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
   },
 };
+
+console.log(usersController.login)
 
 module.exports = usersController;

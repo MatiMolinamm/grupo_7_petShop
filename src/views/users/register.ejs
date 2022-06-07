@@ -17,39 +17,72 @@
         <div class="nombre">
           <input
             type="text"
+<<<<<<< HEAD
             name="nombre"
             placeholder="Nombre y apellido"
             value="<%= locals.old && old.nombre? old.nombre:null %>"
           />
+=======
+            name="name"
+            placeholder="Nombre y apellido" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.name : null %>"
+          >
+          <% if (locals.errors && errors.name) { %>
+            <div class="text-danger">
+              <%= errors.name.msg %> 
+            </div>
+          <% } %>
+>>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
         </div>
         <div class="telefono">
           <input
             type="number"
             name="telefono"
-            placeholder="Numero telefónico"
-            required
-          />
+            placeholder="Numero telefónico"  class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.telefono : null %>"
+          >
+          <% if (locals.errors && errors.telefono) { %>
+            <div class="text-danger">
+              <%= errors.telefono.msg %> 
+            </div>
+          <% } %>
         </div>
         <div class="email">
           <input
             type="email"
             name="email"
+<<<<<<< HEAD
             value="<%= locals.old && old.email %>"
             placeholder="email@address.com"
           />
           <% if (locals.errors && errors.email) { %>
           <p><%= errors.email.msg %></p>
+=======
+            placeholder="email@address.com" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.email : null %>"
+          >
+          <% if (locals.errors && errors.email) { %>
+            <div class="text-danger">
+              <%= errors.email.msg %> 
+            </div>
+>>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
           <% } %>
         </div>
         <div class="inputselector">
-          <select name="categoria" id="categoria" required>
+          <select name="categoria" id="categoria" >
             <option value="categoria">Categoria</option>
             <option value="admin">Administrador</option>
             <option value="guest">Cliente</option>
           </select>
         </div>
         <div class="avatar">
-          <input type="file" name="avatar" />
+          <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+          >
+          <% if (locals.errors && errors.avatar) { %>
+            <div class="text-danger">
+              <%= errors.avatar.msg %>
+            </div>
+          <% } %>
         </div>
 
         <div class="pasword">
@@ -57,10 +90,20 @@
             type="password"
             name="password"
             placeholder="*********"
+<<<<<<< HEAD
             required
           />
           <% if (locals.errors && errors.password) { %>
           <p><%= errors.password.msg %></p>
+=======
+            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.password : null %>"
+          >
+          <% if (locals.errors && errors.password) { %>
+            <div class="text-danger">
+              <%= errors.password.msg %> 
+            </div>
+>>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
           <% } %>
         </div>
         <div class="pasword">
@@ -68,7 +111,6 @@
             type="password"
             name="passwordConfirm"
             placeholder="Confirmar password"
-            required
           />
         </div>
         <div class="boton">
