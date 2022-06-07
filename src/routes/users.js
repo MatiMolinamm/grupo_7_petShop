@@ -41,7 +41,7 @@ router.post(
   "/register",
   //validate despues de multer
   uploadFile.single("avatar"),
-  validate,
+  /*validate,*/
   usersController.storeUsers
 );
 
