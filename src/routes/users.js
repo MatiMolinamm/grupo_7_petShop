@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
-const { check } = require("express-validator");
+//const { check } = require("express-validator");
 const usersController = require("../controllers/users");
 
 //CONFIG
@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 //CONSTANTES
 const uploadFile = multer({ storage });
-const validate = [
+/*const validate = [
   check("email")
     .notEmpty()
     .withMessage("debes ingresar un email valido")
@@ -33,7 +33,7 @@ const validate = [
     .notEmpty()
     .isLength({ min: 5 })
     .withMessage("debe contener minimo 5 caractares"),
-];
+];*/
 
 //RUTAS REGISTRO DE USUARIOS
 router.get("/register", usersController.register);
@@ -47,5 +47,8 @@ router.post(
 
 // RUTAS LOGIN DE USUARIOS
 router.get("/login", usersController.login);
+
+//RUTA PERFIL DE USUARIOS
+router.get("/profile", usersController.profile);
 
 module.exports = router;

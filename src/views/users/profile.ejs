@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs')%>
+    <body>
+        <%- include('../partials/header.ejs')%>
+        <hr />
+        <main>
+            <h1 class="titulosforms">Perfil</h1>
+            <h2 class="forms">DATOS DEL USUARIO</h2>
+            <form
+                action="/register"
+                method="post"
+                class="formuserprofile"
+                enctype="multipart/form-data"
+            >
+                <div class="userprofile">
+                        <div class="formimageuserprofile">
+                            <img src="/img/usersAvatar/avatar-1654102994967.jpg" />
+                            <div class="file-select" id="src-file" >
+                                <input type="file" 
+                                name="imagen usuario" 
+                                accept=".jpg,.png,.svg"
+                                placeholder="imagen del usuario">
+                                </input>
+                            </div>
+                            
+                        </div>
+                            <div class="inputuserprofile">
+                                    <div class="nombre">
+                                        <input
+                                            type="text"
+                                            name="nombre"
+                                            placeholder="Nombre y apellido"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="telefono">
+                                        <input
+                                            type="number"
+                                            name="telefono"
+                                            placeholder="Numero telefónico"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="email">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="email@address.com"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="inputselectoruserprofile">
+                                        <select name="categoria" id="categoria" required disabled>
+                                            <option value="">Categoría</option>
+                                            <option value="admin">Administrador</option>
+                                            <option value="guest">Cliente</option>
+                                        </select>
+                                    </div>
+                                    <div class="pasword">
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            placeholder="*********"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="pasword">
+                                        <input
+                                            type="password"
+                                            name="passwordConfirm"
+                                            placeholder="Confirmar password"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="boton">
+                                        <button type="submit">Actualizar</button>
+                                        <button type="reset">Borrar</button>
+                                    </div>
+
+                            </div>
+                        
+                </div>
+               
+            </form>
+        </main>
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

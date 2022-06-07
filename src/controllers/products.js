@@ -20,7 +20,10 @@ const productsGatosFilePath = path.join(
 );
 const productsGatos = JSON.parse(fs.readFileSync(productsGatosFilePath));
 //DATA AVES
-const productsAvesFilePath = path.join(__dirname, "../data/productsAves.json");
+const productsAvesFilePath = path.join(
+  __dirname, 
+  "../data/productsAves.json"
+);
 const productsAves = JSON.parse(fs.readFileSync(productsAvesFilePath));
 
 const productsController = {
@@ -131,13 +134,9 @@ const productsController = {
         toUpdate = {
           id: id,
           name: req.body.name ? req.body.name : toUpdate.name,
-          description: req.body.description
-            ? req.body.description
-            : toUpdate.description,
+          description: req.body.description ? req.body.description : toUpdate.description,
           price: req.body.price ? req.body.price : toUpdate.price,
-          packaging: req.body.packaging
-            ? req.body.packaging
-            : toUpdate.packaging,
+          packaging: req.body.packaging ? req.body.packaging : toUpdate.packaging,
           stock: req.body.stock ? req.body.stock : toUpdate.stock,
           class: req.body.class ? req.body.class : toUpdate.class,
           amount: req.body.amount ? req.body.amount : toUpdate.amount,
