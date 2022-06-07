@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
+const {validationResult} = require("express-validator");
 
 const usersController = {
   login: (req, res) =>
@@ -9,7 +10,18 @@ const usersController = {
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
   profile: (req, res) =>
     res.render("users/profile", { titulo_pagina: "Petit and Fun - Profile" }),
-  storeUsers: (req, res) => {
+  storeUsers: function ( req, res) {
+    console.log('Hola');
+    const resultValidation = validationResult(req);
+    
+    if (resultValidation.errors.length > 0) {
+      console.log(resultValidation);
+        return res.render( "users/register", { titulo_pagina: "Petit and Fun - Registro", 
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+    }  
+   
     const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
     const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
 
@@ -19,7 +31,7 @@ const usersController = {
 
     let userNew = {
       id: lastId + 1,
-      name: req.body.nombre,
+      name: req.body.name,
       telefono: req.body.telefono,
       email: req.body.email,
       categoria: req.body.categoria,
@@ -32,6 +44,7 @@ const usersController = {
     const usersDataBaseActualizadaJSON = JSON.stringify(usersDataBase);
     fs.writeFileSync(usersDataBaseFilePath, usersDataBaseActualizadaJSON);
     res.redirect("/");
+  
   },
 };
 
