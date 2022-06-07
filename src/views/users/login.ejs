@@ -12,17 +12,28 @@
           <input
             type="email"
             name="email"
-            placeholder="Ingrese su email@address.com"
-            required
-          />
-        </div>
+            placeholder="Ingrese su email"
+            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.email : null %>"
+          >
+          <% if (locals.errors && errors.email) { %>
+            <div class="text-danger">
+              <%= errors.email.msg %> 
+            </div>
+          <% } %>
         <div class="pasword">
           <input
             type="password"
             name="password"
             placeholder="Contraseña"
-            required
-          />
+            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.password : null %>"
+          >
+          <% if (locals.errors && errors.password) { %>
+            <div class="text-danger">
+              <%= errors.password.msg %> 
+            </div>
+          <% } %>
         </div>
 
         <div class="boton">

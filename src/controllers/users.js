@@ -2,25 +2,25 @@ const path = require("path");
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const {validationResult} = require("express-validator");
-
+const validation = require("../middlewares/validation");
+console.log(validation);
 const usersController = {
-  login: (req, res) =>
-    res.render("users/login", { titulo_pagina: "Petit and Fun - Login" }),
+  login: validation.loginValidation,  
   register: (req, res) =>
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
   profile: (req, res) =>
     res.render("users/profile", { titulo_pagina: "Petit and Fun - Profile" }),
-  storeUsers: function ( req, res) {
-    console.log('Hola');
+  storeUsers: //validation.registerValidation
+  
+  function ( req, res) {
     const resultValidation = validationResult(req);
     
     if (resultValidation.errors.length > 0) {
-      console.log(resultValidation);
         return res.render( "users/register", { titulo_pagina: "Petit and Fun - Registro", 
             errors: resultValidation.mapped(),
             oldData: req.body
         });
-    }  
+    }
    
     const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
     const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
@@ -47,5 +47,7 @@ const usersController = {
   
   },
 };
+
+console.log(usersController.login)
 
 module.exports = usersController;
