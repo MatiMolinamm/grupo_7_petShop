@@ -1,38 +1,34 @@
 const path = require("path");
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
-<<<<<<< HEAD
-//const { validationResult } = require("express-validator");
-
-=======
-const {validationResult} = require("express-validator");
+const { validationResult } = require("express-validator");
 const validation = require("../middlewares/validation");
-console.log(validation);
->>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
+const { reset } = require("nodemon");
+
 const usersController = {
-  login: validation.loginValidation,  
+  login: (req, res) =>
+    res.render("users/login", { titulo_pagina: "Petit and Fun -Login" }),
+  profile: (req, res) => {
+    console.log(req.body);
+    //res.render("users/profile", { titulo_pagina: "Petit and Fun - Profile" })
+  },
   register: (req, res) =>
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
-  profile: (req, res) =>
-    res.render("users/profile", { titulo_pagina: "Petit and Fun - Profile" }),
-  storeUsers: //validation.registerValidation
-  
-  function ( req, res) {
+
+  storeUsers: function (req, res) {
     const resultValidation = validationResult(req);
-    
+
     if (resultValidation.errors.length > 0) {
-        return res.render( "users/register", { titulo_pagina: "Petit and Fun - Registro", 
-            errors: resultValidation.mapped(),
-            oldData: req.body
-        });
+      return res.render("users/register", {
+        titulo_pagina: "Petit and Fun - Registro",
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
     }
-   
+
     const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
     const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
 
-    //let errors = validationResult(req);
-
-    // if (errors.isEmpty()) {
     let lastUser = usersDataBase.pop();
     let lastId = lastUser ? lastUser.id : 0;
     usersDataBase.push(lastUser);
@@ -52,19 +48,7 @@ const usersController = {
     const usersDataBaseActualizadaJSON = JSON.stringify(usersDataBase);
     fs.writeFileSync(usersDataBaseFilePath, usersDataBaseActualizadaJSON);
     res.redirect("/");
-<<<<<<< HEAD
-    //} else
-    res.render("users/register", {
-      errors: errors.mapped(),
-      old: req.body,
-      titulo_pagina: "Petit and Fun - Registro",
-    });
-=======
-  
->>>>>>> 07bf4f41067463f25067dec58c722d2a2d8c733a
   },
 };
-
-console.log(usersController.login)
 
 module.exports = usersController;
