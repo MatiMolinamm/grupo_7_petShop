@@ -1,8 +1,6 @@
 const express = require("express");
-const multer = require("multer");
-const path = require("path");
 const usersController = require("../controllers/users");
-const validationRules = require("../middlewares/validationRules");
+const validation = require("../middlewares/validationMiddleware");
 const uploadFile = require("../middlewares/multerMiddleware");
 
 //CONFIG
@@ -13,13 +11,13 @@ router.get("/register", usersController.register);
 router.post(
   "/register",
   uploadFile.single("avatar"),
-  validationRules,
+  validation.rulesRegister,
   usersController.storeUsers
 );
 
 // RUTAS LOGIN DE USUARIOS
 router.get("/login", usersController.login);
-router.post("/login", validationRules, usersController.profile);
+router.post("/login", validation.rulesLogin, usersController.processLogin);
 
 //RUTA PERFIL DE USUARIOS
 router.get("/profile", usersController.profile);

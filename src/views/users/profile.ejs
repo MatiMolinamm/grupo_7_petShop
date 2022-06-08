@@ -15,7 +15,7 @@
             >
                 <div class="userprofile">
                         <div class="formimageuserprofile">
-                            <img src="/img/usersAvatar/avatar-1654102994967.jpg" />
+                            <img src="/img/usersAvatar/<%= user.avatar?user.avatar:'default.jpg' %> " />
                             <div class="file-select" id="src-file" >
                                 <input type="file" 
                                 name="imagen usuario" 
@@ -30,15 +30,16 @@
                                         <input
                                             type="text"
                                             name="nombre"
-                                            placeholder="Nombre y apellido"
+                                            value="<%= user.name %>"
                                             required
+
                                         />
                                     </div>
                                     <div class="telefono">
                                         <input
                                             type="number"
                                             name="telefono"
-                                            placeholder="Numero telefónico"
+                                            value="<%= user.telefono %>"
                                             required
                                         />
                                     </div>
@@ -46,13 +47,13 @@
                                         <input
                                             type="email"
                                             name="email"
-                                            placeholder="email@address.com"
+                                            value="<%= user.email %>"
                                             required
                                         />
                                     </div>
                                     <div class="inputselectoruserprofile">
+                                        <label for="categoria">Usted tiene categoria <%= user.categoria %>. Cambiar:</label><br>
                                         <select name="categoria" id="categoria" required disabled>
-                                            <option value="">Categoría</option>
                                             <option value="admin">Administrador</option>
                                             <option value="guest">Cliente</option>
                                         </select>
