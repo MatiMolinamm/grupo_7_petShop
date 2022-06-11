@@ -78,6 +78,13 @@ header article {
   justify-content: space-between;
 }
 
+/*------ id avatar hay que emprolijar el lugar donde va en el codigo de css y es estilo----------*/
+#avatar {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50px;
+}
+
 .topHeader {
   display: none;
 }
@@ -859,7 +866,6 @@ form div.formimagenabmproducto {
 }
 
 @media (min-width: 481px) {
-  
   .centerHeader {
     display: flex;
   }
@@ -1156,7 +1162,6 @@ form div.formimagenabmproducto {
 }
 
 @media (min-width: 1018px) {
-
   /*Mariano carrito*/
   div.carritodecompras {
     width: 97%;
@@ -1172,7 +1177,6 @@ form div.formimagenabmproducto {
 }
 
 @media (min-width: 1300px) {
-
   .mainIndex {
     max-width: 1450px;
     text-align: center;
