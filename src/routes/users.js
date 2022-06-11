@@ -1,13 +1,14 @@
 const express = require("express");
 const usersController = require("../controllers/users");
 const validation = require("../middlewares/validationMiddleware");
-const uploadFile = require("../middlewares/multerMiddleware");
-
+const uploadFile = require("../middlewares/multerUserMiddleware");
+const loggedMiddleware = require("../middlewares/loggedMiddleware"); //middle ruta usuario logueado
+const notLoggedMiddleware = require("../middlewares/notLoggedMiddleware"); //middle ruta usuario no logueado
 //CONFIG
 const router = express.Router();
 
 //RUTAS REGISTRO DE USUARIOS
-router.get("/register", usersController.register);
+router.get("/register", loggedMiddleware, usersController.register);
 router.post(
   "/register",
   uploadFile.single("avatar"),
@@ -16,10 +17,12 @@ router.post(
 );
 
 // RUTAS LOGIN DE USUARIOS
-router.get("/login", usersController.login);
+router.get("/login", loggedMiddleware, usersController.login);
 router.post("/login", validation.rulesLogin, usersController.processLogin);
 
 //RUTA PERFIL DE USUARIOS
-router.get("/profile", usersController.profile);
+router.get("/profile", notLoggedMiddleware, usersController.profile);
+//RUTA LOGOUT DE USUARIO
+router.get("/logout", usersController.logout);
 
 module.exports = router;

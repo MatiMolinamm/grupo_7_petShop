@@ -8,33 +8,33 @@ const usersController = {
     res.render("users/login", { titulo_pagina: "Petit and Fun -Login" }),
   processLogin: (req, res) => {
     let notError = validation.loginValidation(req, res);
-    if (notError ? notError : false) {
-      const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
-      const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
+    const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
+    const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
+    let userToLogin = usersDataBase.find((i) => req.body.email === i.email);
 
-      let userToLogin = usersDataBase.filter((i) => req.body.email === i.email);
-      let userToLoginObj = userToLogin.pop();
-      if (userToLoginObj) {
-        let isOkThePassword = bcryptjs.compareSync(
-          req.body.password,
-          userToLoginObj.password
-        );
-        if (isOkThePassword) {
-          delete userToLogin.password;
-          req.session.userLogged = userToLoginObj;
-
-          return res.redirect("/users/profile");
+    if (notError && userToLogin) {
+      let isOkThePassword = bcryptjs.compareSync(
+        req.body.password,
+        userToLogin.password
+      );
+      if (isOkThePassword) {
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+        if (req.body.remember_user) {
+          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
-        return res.render("users/login", {
-          errors: {
-            email: {
-              msg: "Las credenciales son inválidas",
-            },
-          },
-          titulo_pagina: "Petit and Fun -Login",
-        });
+
+        return res.redirect("/users/profile");
       }
     }
+    return res.render("users/login", {
+      errors: {
+        email: {
+          msg: "Las credenciales son inválidas",
+        },
+      },
+      titulo_pagina: "Petit and Fun -Login",
+    });
   },
   profile: (req, res) => {
     res.render("users/profile", {
@@ -48,7 +48,7 @@ const usersController = {
   storeUsers: (req, res) => {
     let notError = validation.registerValidation(req, res);
 
-    if (notError ? notError : false) {
+    if (notError) {
       const usersDataBaseFilePath = path.join(__dirname, "../data/users.json");
       const usersDataBase = JSON.parse(fs.readFileSync(usersDataBaseFilePath));
       let dataBaseFiltrada = usersDataBase.filter(
@@ -84,9 +84,14 @@ const usersController = {
         usersDataBase.push(userNew);
         const usersDataBaseActualizadaJSON = JSON.stringify(usersDataBase);
         fs.writeFileSync(usersDataBaseFilePath, usersDataBaseActualizadaJSON);
-        res.redirect("/");
+        res.redirect("/users/login");
       }
     }
+  },
+  logout: (req, res) => {
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    return res.redirect("/");
   },
 };
 

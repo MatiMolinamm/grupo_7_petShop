@@ -26,17 +26,23 @@
         <img src="/img/logo/PAF-logo-2.svg" />
       </a>
     </div>
-
+    <% if(locals.isLogged){ %>
     <div id="usuario">
-      <a href="/users/profile">
-        <span><i class="fa-solid fa-user"></i></span>
-        <p>Hi!! aca lleva al profile</p>
-        <span>Ingreso</span>
-      </a>
+      <span
+        ><a href="/users/profile"
+          ><img
+            id="avatar"
+            src="/img/usersAvatar/<%=locals.isLogged? locals.userLogged.avatar:'default.png' %>  %> "
+            alt="img user" /></a
+      ></span>
+      <p>Hi!! <%= locals.isLogged? locals.userLogged.name:'' %></p>
+      <a href="/users/logout">Logout</a>
+      <% } else { %>
       <a href="/users/login">
         <span><i class="fa-solid fa-user"></i></span>
         <span>Ingreso</span>
       </a>
+      <% } %>
       <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
 

@@ -5,6 +5,7 @@ const app = express();
 const methodOverride = require("method-override"); //para poder utilizar PUT Y DELETE
 const session = require("express-session");
 const cookies = require("cookie-parser");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware"); //middleware global usuario log si/no
 
 // Required routers
 const routerMain = require("./routes/main");
@@ -22,6 +23,7 @@ app.use(
   session({ secret: "session user", resave: false, saveUninitialized: false })
 );
 app.use(cookies());
+app.use(userLoggedMiddleware);
 
 // Routes
 app.use("/", routerMain);
