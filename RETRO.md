@@ -33,3 +33,10 @@ No surgieron inconvenientes con respecto a la organización grupal.
 No fueron necesarias reuniones fuera de las clases practicas.
 
 Seguimos mejorando nuestro sistema de comunicación, usamos más Trello.
+
+---- SPRINT 5 ----
+
+Tuvimos bajas de compañeros de equipo. Quedamos tres integrantes.
+
+Sprint finalizado con días de sobra para adelantar otras tareas.
+

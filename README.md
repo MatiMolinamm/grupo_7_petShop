@@ -33,11 +33,9 @@ Somos un equipo de emprendedores entusiastas que entendemos el vínculo entre un
 
 Nuestro DEV Team, está compuesto por:
 
-- Luca Santino Murarotto - vivo en la provincia de Buenos Aires, tengo un zoo en casa.
 - Luca Spiritini - vivo en CABA, acróbata, dos perros.
 - Mariano Javier Gecelewicz - un programador entusiasta y empedernido.
 - Matias Molina - de Villa Nueva Córdoba me gustan los perro y el padel.
-- Miguel Caputo - soy de zona sur, Avellaneda, tengo una tortuga.
 
 SITIOS WEB DE REFERENCIA
 https://www.puppis.com.ar/
