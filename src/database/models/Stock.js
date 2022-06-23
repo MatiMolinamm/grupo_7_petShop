@@ -1,41 +1,33 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "User";
+  let alias = "Stock";
   let cols = {
     id: {
       type: dataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
-    },
-    name: {
-      type: dataTypes.STRING(100),
       allowNull: false,
     },
-    phone: {
+
+    amount: {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
-    email: {
-      type: dataTypes.STRING(100),
-      allowNull: false,
-    },
-    avatar: {
-      type: dataTypes.STRING(100),
-      allowNull: false,
-    },
-    password: {
-      type: dataTypes.STRING(100),
-      allowNull: false,
-    },
-    category_id: {
+
+    product_id: {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
   };
   let config = {
-    tableName: "users",
+    tableName: "stock",
     timestamps: false,
   };
-  const User = sequelize.define(alias, cols, config);
-
-  return User;
+  const Stock = sequelize.define(alias, cols, config);
+  Stock.associate = function (models) {
+    Stock.hasMany(models.Stock, {
+      as: "Product",
+      foreignKey: "stock_id",
+    });
+  };
+  return Stock;
 };

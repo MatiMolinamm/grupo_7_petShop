@@ -5,6 +5,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
+      allowNull: false,
     },
     name: {
       type: dataTypes.STRING(100),
@@ -36,6 +37,18 @@ module.exports = (sequelize, dataTypes) => {
     timestamps: false,
   };
   const User = sequelize.define(alias, cols, config);
-
+  User.associate = function (models) {
+    User.belongsTo(models.Category, {
+      as: "Category",
+      foreignKey: "category_id",
+    });
+    User.belongsToMany(models.Product, {
+      as: "User_Product",
+      through: "user_product",
+      foreignKey: "user_id",
+      otherKey: "product_id",
+      timestamps: false,
+    });
+  };
   return User;
 };
