@@ -35,7 +35,7 @@
             src="/img/usersAvatar/<%=locals.isLogged? locals.userLogged.avatar:'default.png' %>  %> "
             alt="img user" /></a
       ></span>
-      <p>Hi!! <%= locals.isLogged? locals.userLogged.name:'' %></p>
+      <p><%= locals.isLogged? locals.userLogged.name:'' %></p>
       <a href="/users/logout">Logout</a>
       <% } else { %>
       <a href="/users/login">
