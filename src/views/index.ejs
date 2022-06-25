@@ -18,9 +18,9 @@
         <h1>----------------  HOME  ------------------</h1>
       <h2 class="productosDestacados">PRODUCTOS EN OFERTA</h2>
       <article class="productosDestacados">
-        <% for (i=0; i<productsOferta.length; i++){ %>
-        <% productsOferta[i].forEach( ( producto ) => { %>
-        <a href="/products/<%=producto.class%>/<%= producto.id%>/?class=<%=producto.class%>" class="idproducto"><div class="productos">
+        
+        <% productsOferta.forEach( ( producto ) => { %>
+        <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>" class="idproducto"><div class="productos">
           <h3><%= producto.name %></h3>
           <img src="/img/products/<%= producto.image%>" alt="alimento" />
           <p><%= producto.description %></p>
@@ -33,7 +33,7 @@
         </div>
         
         <% }); %>
-        <% }%>
+      
       
       </form>
       </article>

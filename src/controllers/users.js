@@ -1,5 +1,3 @@
-const path = require("path");
-const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const validation = require("../middlewares/validationMiddleware");
 const db = require("../database/models");

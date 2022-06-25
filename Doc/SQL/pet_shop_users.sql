@@ -16,12 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `phone` bigint NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `avatar` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `category_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  KEY `category_id_idx` (`category_id`),
+  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `users`
 --
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Matias Molina',3534827154,'molina.matias.87@gmail.com','avatar-1655869576246.png','$2a$10$xxXohFTfK7CQkSV8K3wt.e8TjhBJnZEQoWiVOKRkR8L2PIH6F1jKi',1),(8,'mate',132465879,'molina.matias.78998787@gmail.com','avatar-1655875402026.png','$2a$10$u/uj.geMVfWsqauPjrDMMOkvNHvt.NYl/SHtGQZI87KOG24hqKG6a',1),(9,'mate',132465879,'molina.matias.78998@gmail.com','avatar-1655875464554.png','$2a$10$uU46tqPhRlSrc1BmGGusr.RD9rhiQFiOvGyHuYNJ/ZgK46RFCe8CC',1),(10,'mate',132465879,'molina.matias.7998@gmail.com','avatar-1655875509853.png','$2a$10$NHfQxu2p/hJ2mJ/d.IqxDepozOKtFfFaroLBaXjyu0mS1Jnb94AY.',1),(11,'mate',132465879,'molina.matias.79898989898@gmail.com','avatar-1655875547715.png','$2a$10$zk20eInHh1UV0kvNO5Te.OVE.LN881BuAQeJnd/zRVptDqpCGAAfS',1),(12,'Matias Molina',7978798798,'7777olina.matias.87@gmail.com','avatar-1655875618326.png','$2a$10$dpFjXtQ4WXNuDISM7gODbuPVHazd6CpdUxyfVG2b3lFa1Qwp5N5Fm',1),(13,'asas',1212121,'luca@gmail.com','avatar-1655875675698.png','$2a$10$1eXq//nEscPF96dPD3dfsOK6uIkyt1q.X74RZRZpkIipfXYKz.IFu',2),(14,'juan1234',1234,'juan1234@gmail.com','avatar-1655875854372.png','$2a$10$lOt1mllPn8HOrCvmmuL9WujJa17Ceob0bPET33yonn5T/heVPSdve',1);
+INSERT INTO `users` VALUES (1,'Matias Molina',3534827154,'molina.matias.87@gmail.com','avatar-1655869576246.png','$2a$10$xxXohFTfK7CQkSV8K3wt.e8TjhBJnZEQoWiVOKRkR8L2PIH6F1jKi',1),(8,'mate',132465879,'molina.matias.78998787@gmail.com','avatar-1655875402026.png','$2a$10$u/uj.geMVfWsqauPjrDMMOkvNHvt.NYl/SHtGQZI87KOG24hqKG6a',1),(9,'mate',132465879,'molina.matias.78998@gmail.com','avatar-1655875464554.png','$2a$10$uU46tqPhRlSrc1BmGGusr.RD9rhiQFiOvGyHuYNJ/ZgK46RFCe8CC',1),(10,'mate',132465879,'molina.matias.7998@gmail.com','avatar-1655875509853.png','$2a$10$NHfQxu2p/hJ2mJ/d.IqxDepozOKtFfFaroLBaXjyu0mS1Jnb94AY.',1),(11,'mate',132465879,'molina.matias.79898989898@gmail.com','avatar-1655875547715.png','$2a$10$zk20eInHh1UV0kvNO5Te.OVE.LN881BuAQeJnd/zRVptDqpCGAAfS',1),(12,'Matias Molina',7978798798,'7777olina.matias.87@gmail.com','avatar-1655875618326.png','$2a$10$dpFjXtQ4WXNuDISM7gODbuPVHazd6CpdUxyfVG2b3lFa1Qwp5N5Fm',1),(13,'asas',1212121,'luca@gmail.com','avatar-1655875675698.png','$2a$10$1eXq//nEscPF96dPD3dfsOK6uIkyt1q.X74RZRZpkIipfXYKz.IFu',2),(14,'juan1234',1234,'juan1234@gmail.com','avatar-1655875854372.png','$2a$10$lOt1mllPn8HOrCvmmuL9WujJa17Ceob0bPET33yonn5T/heVPSdve',1),(15,'mate',1234,'mate@gmail.com','avatar-1655878830859.jpg','$2a$10$mvXzZjyxhxMyCpmJZ8AHuuvcU6mSntgOsCojBDkeVHdfMUkFopWoa',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -34,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-22  2:57:02
+-- Dump completed on 2022-06-24 23:53:23

@@ -14,7 +14,7 @@
       <h2 class="productosDestacados">PRODUCTOS PARA GATOS</h2>
       <article class="productosDestacados">
         <% productsGatos.forEach( ( producto ) => { %>
-          <a href="/products/gatos/<%= producto.id%>/?class=<%=producto.class%>">
+          <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
         <div class="productos">
           <h3><%= producto.name %></h3>
           <img src="/img/products/<%= producto.image%>" alt="alimento" />

@@ -25,19 +25,19 @@ router.put(
 router.delete("/abmproductEdit/:id", productsController.destroy);
 
 //RUTAS PRODUCTOS PARA PERRO
-router.get("/perros", productsController.perros);
-router.get("/perros/:id", productsController.detail);
+router.get("/1", productsController.perros);
+router.get("/1/:id", productsController.detail);
 
 //RUTAS PRODUCTOS GATOS
-router.get("/gatos", productsController.gatos);
-router.get("/gatos/:id", productsController.detail);
+router.get("/2", productsController.gatos);
+router.get("/2/:id", productsController.detail);
 
 //RUTAS PRODUCTOS PECES
-router.get("/peces", productsController.peces);
-router.get("/peces/:id", productsController.detail);
+router.get("/3", productsController.peces);
+router.get("/3/:id", productsController.detail);
 
 //RUTAS PRODUCTOS AVES
-router.get("/aves", productsController.aves);
-router.get("/aves/:id", productsController.detail);
+router.get("/4", productsController.aves);
+router.get("/4/:id", productsController.detail);
 
 module.exports = router;

@@ -40,6 +40,9 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER,
       allowNull: true,
     },
+    oferta: {
+      type: dataTypes.BOOLEAN,
+    },
   };
   let config = {
     tableName: "products",

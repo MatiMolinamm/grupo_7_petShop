@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const db = require("../database/models");
 
 const productsController = {
@@ -17,167 +15,103 @@ const productsController = {
       image: req.file ? req.file.filename : "logo-PF-tipografico.png",
       section_id: req.body.class,
       stock_id: null,
-      //oferta: req.body.oferta,
+      oferta: req.body.oferta,
+    }).then((resultado) => {
+      switch (req.body.class) {
+        case "1":
+          res.redirect("/products/perros");
+
+          break;
+        case "2":
+          res.redirect("/products/gatos");
+          break;
+        case "3":
+          res.redirect("/products/peces");
+          break;
+        case "4":
+          res.redirect("/products/aves");
+
+          break;
+      }
     });
-
-    switch (req.body.class) {
-      case "1":
-        res.redirect("/products/perros");
-
-        break;
-      case "2":
-        res.redirect("/products/gatos");
-        break;
-      case "3":
-        res.redirect("/products/peces");
-        break;
-      case "4":
-        res.redirect("/products/aves");
-
-        break;
-    }
   },
   edit: (req, res) => {
-    let productsSeccion = req.query.class;
-    let id = req.params.id;
-
-    let products = [productsAves, productsGatos, productsPerros, productsPeces];
-    let info = products.filter((p) => p[0].class == productsSeccion);
-    let infoId = info.pop();
-
-    let productId = infoId.filter((p) => p.id == id);
-    let productRenderizar = productId.pop();
-
-    res.render("products/abmProductModificacion", {
-      productRenderizar,
-      titulo_pagina: "Petit and Fun - Productos",
+    db.Product.findOne({
+      where: { id: req.params.id, section_id: req.query.class },
+    }).then((productRenderizar) => {
+      console.log(productRenderizar);
+      res.render("products/abmProductModificacion", {
+        productRenderizar,
+        titulo_pagina: "Petit and Fun - Productos",
+      });
     });
   },
   update: (req, res) => {
-    let productsSeccion = req.body.class;
-    let id = req.params.id;
-
-    let products = [productsAves, productsGatos, productsPerros, productsPeces];
-
-    let classToEdit = products.filter((p) => p[0].class == productsSeccion);
-    let classEdit = classToEdit.pop();
-
-    let classUpdate = classEdit.map((toUpdate) => {
-      if (toUpdate.id == id) {
-        toUpdate = {
-          id: id,
-          name: req.body.name ? req.body.name : toUpdate.name,
-          description: req.body.description
-            ? req.body.description
-            : toUpdate.description,
-          price: req.body.price ? req.body.price : toUpdate.price,
-          packaging: req.body.packaging
-            ? req.body.packaging
-            : toUpdate.packaging,
-          stock: req.body.stock ? req.body.stock : toUpdate.stock,
-          class: req.body.class ? req.body.class : toUpdate.class,
-          amount: req.body.amount ? req.body.amount : toUpdate.amount,
-          oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
-          image: req.file ? req.file.filename : toUpdate.image,
-        };
-      }
-      return toUpdate;
+    let toUpdate = db.Product.findOne({
+      where: { id: req.params.id, section_id: req.query.class },
     });
-    //console.log(classUpdate); array de la clase editado funciona
+    let update = db.Product.update(
+      {
+        name: req.body.name ? req.body.name : toUpdate.name,
+        description: req.body.description
+          ? req.body.description
+          : toUpdate.description,
+        price: req.body.price ? req.body.price : toUpdate.price,
+        packaging: req.body.packaging ? req.body.packaging : toUpdate.packaging,
+        stock: req.body.stock ? req.body.stock : toUpdate.stock,
+        class: req.body.class ? req.body.class : toUpdate.class,
+        amount: req.body.stock ? req.body.stock : toUpdate.stock,
+        oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
+        image: req.file ? req.file.filename : toUpdate.image,
+        section_id: req.body.class ? req.body.class : toUpdate.section_id,
+        stock_id: null,
+        oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
+      },
+      {
+        where: { id: req.params.id, section_id: req.query.class },
+      }
+    );
 
-    let classUptateJSON = JSON.stringify(classUpdate);
-    switch (productsSeccion) {
-      case "perros":
-        fs.writeFileSync(productsPerrosFilePath, classUptateJSON);
-        let sectionPerros = "perros";
-        res.render("products/alertEditOk", {
-          section: sectionPerros,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-        break;
-      case "gatos":
-        fs.writeFileSync(productsGatosFilePath, classUptateJSON);
-        let sectionGatos = "gatos";
-        res.render("products/alertEditOk", {
-          section: sectionGatos,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-        break;
-      case "peces":
-        fs.writeFileSync(productsPecesFilePath, classUptateJSON);
-        let sectionPeces = "peces";
-        res.render("products/alertEditOk", {
-          section: sectionPeces,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-        break;
-      case "aves":
-        fs.writeFileSync(productsAvesFilePath, classUptateJSON);
-        let sectionAves = "aves";
-        res.render("products/alertEditOk", {
-          section: sectionAves,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-        break;
-    }
+    Promise.all([toUpdate, update]).then((r) => {
+      switch (req.query.class) {
+        case "1":
+          res.redirect("/products/1");
+
+          break;
+        case "2":
+          res.redirect("/products/2");
+          break;
+        case "3":
+          res.redirect("/products/3");
+          break;
+        case "4":
+          res.redirect("/products/4");
+
+          break;
+      }
+    });
   },
   destroy: (req, res) => {
-    let productsSeccion = req.query.class;
-    let idDelete = req.params.id;
+    db.Product.destroy({
+      where: { id: req.params.id, section_id: req.query.class },
+    }).then((r) => {
+      switch (req.query.class) {
+        case "1":
+          res.redirect("/products/1");
 
-    let productsTotal = [
-      productsAves,
-      productsGatos,
-      productsPerros,
-      productsPeces,
-    ];
+          break;
+        case "2":
+          res.redirect("/products/2");
+          break;
+        case "3":
+          res.redirect("/products/3");
+          break;
+        case "4":
+          res.redirect("/products/4");
 
-    let productsSeccionFilter = productsTotal.filter(
-      (p) => p[0].class == productsSeccion
-    );
-    let productsSeccionClass = productsSeccionFilter.pop();
-
-    let notDelete = productsSeccionClass.filter((i) => i.id != idDelete);
-    let notDeleteJSON = JSON.stringify(notDelete);
-
-    switch (productsSeccion) {
-      case "perros":
-        fs.writeFileSync(productsPerrosFilePath, notDeleteJSON);
-        let sectionPerros = "perros";
-        res.render("products/alertDestroyOk", {
-          section: sectionPerros,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-
-        break;
-      case "gatos":
-        fs.writeFileSync(productsGatosFilePath, notDeleteJSON);
-        let sectionGatos = "gatos";
-        res.render("products/alertDestroyOk", {
-          section: sectionGatos,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-
-        break;
-      case "peces":
-        fs.writeFileSync(productsPecesFilePath, notDeleteJSON);
-        let sectionPeces = "peces";
-        res.render("products/alertDestroyOk", {
-          section: sectionPeces,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-
-        break;
-      case "aves":
-        fs.writeFileSync(productsAvesFilePath, notDeleteJSON);
-        let sectionAves = "aves";
-        res.render("products/alertDestroyOk", {
-          section: sectionAves,
-          titulo_pagina: "Petit and Fun - Productos",
-        });
-
-        break;
-    }
+          break;
+      }
+    });
   },
   perros: (req, res) => {
     db.Product.findAll({
@@ -222,19 +156,13 @@ const productsController = {
   },
 
   detail: (req, res) => {
-    let productsSeccion = req.query.class;
-    let id = req.params.id;
-
-    let products = [productsAves, productsGatos, productsPerros, productsPeces];
-    let info = products.filter((p) => p[0].class == productsSeccion);
-    let infoId = info.pop();
-
-    let productId = infoId.filter((p) => p.id == id);
-    let productRenderizar = productId.pop();
-
-    res.render("products/detailProduct", {
-      productRenderizar,
-      titulo_pagina: "Petit and Fun - Productos",
+    db.Product.findOne({
+      where: { id: req.params.id, section_id: req.query.class },
+    }).then((productRenderizar) => {
+      res.render("products/detailProduct", {
+        productRenderizar,
+        titulo_pagina: "Petit and Fun - Productos",
+      });
     });
   },
 };
