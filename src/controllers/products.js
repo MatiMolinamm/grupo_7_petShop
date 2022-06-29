@@ -39,7 +39,6 @@ const productsController = {
     db.Product.findOne({
       where: { id: req.params.id, section_id: req.query.class },
     }).then((productRenderizar) => {
-      console.log(productRenderizar);
       res.render("products/abmProductModificacion", {
         productRenderizar,
         titulo_pagina: "Petit and Fun - Productos",
@@ -116,6 +115,7 @@ const productsController = {
   perros: (req, res) => {
     db.Product.findAll({
       where: { section_id: 1 },
+      include: ["section"],
     }).then((productsPerros) => {
       res.render("products/perrosProducts", {
         productsPerros,

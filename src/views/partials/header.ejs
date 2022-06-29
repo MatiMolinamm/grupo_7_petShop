@@ -56,8 +56,12 @@
   </article>
 
   <article class="bottomHeader">
-    <form class="homesearch">
-      <input type="search" placeholder="Buscar productos, marcas y más..." />
+    <form class="homesearch" action="/search" method="get">
+      <input
+        type="search"
+        name="search"
+        placeholder="Buscar productos, marcas y más..."
+      />
       <button type="submit">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
