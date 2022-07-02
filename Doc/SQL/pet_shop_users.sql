@@ -1,1 +1,0 @@
-SELECT * FROM pet_shop.users;
