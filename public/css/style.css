@@ -84,7 +84,13 @@ header article {
   max-height: 40px;
   border-radius: 50px;
 }
-
+#profileAvatar {
+  width: 15%;
+  height: 20%;
+  border-radius: 50px;
+  display: flexbox;
+  justify-content: center;
+}
 .topHeader {
   display: none;
 }

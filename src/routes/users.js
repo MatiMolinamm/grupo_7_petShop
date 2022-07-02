@@ -22,6 +22,13 @@ router.post("/login", validation.rulesLogin, usersController.processLogin);
 
 //RUTA PERFIL DE USUARIOS
 router.get("/profile", notLoggedMiddleware, usersController.profile);
+router.put(
+  "/profile",
+  uploadFile.single("avatar"),
+  validation.rulesEditUser,
+  usersController.editUser
+);
+router.delete("/profile", usersController.destroy);
 //RUTA LOGOUT DE USUARIO
 router.get("/logout", usersController.logout);
 

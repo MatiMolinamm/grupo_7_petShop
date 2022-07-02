@@ -32,7 +32,6 @@ const usersController = {
             resultado[0].dataValues.password
           );
           if (isOkThePassword) {
-            delete resultado[0].dataValues.password;
             req.session.userLogged = resultado[0].dataValues;
             if (req.body.remember_user) {
               res.cookie("userEmail", req.body.email, {
@@ -60,6 +59,63 @@ const usersController = {
       user: req.session.userLogged,
     });
   },
+  editUser: (req, res) => {
+    let toUpdate = req.session.userLogged;
+    let notError = validation.editUserValidation(req, res);
+
+    if (notError) {
+      db.User.findAll({ where: { email: req.body.email } }).then(
+        (resultado) => {
+          if (
+            resultado.length > 0
+              ? resultado[0].dataValues.email
+              : null == req.body.email
+          ) {
+            return res.render("users/profile", {
+              errors: {
+                email: {
+                  msg: "Este email ya está registrado",
+                },
+              },
+              titulo_pagina: "Petit and Fun - Registro",
+              oldData: req.body,
+              user: req.session.userLogged,
+            });
+          } else if (req.body.password !== req.body.passwordConfirm) {
+            return res.render("users/profile", {
+              errors: {
+                password: {
+                  msg: "Las contraseñas no coinciden",
+                },
+              },
+              titulo_pagina: "Petit and Fun - Registro",
+              oldData: req.body,
+              user: req.session.userLogged,
+            });
+          } else {
+            db.User.update(
+              {
+                name: req.body.name ? req.body.name : toUpdate.name,
+                phone: req.body.telefono ? req.body.telefono : toUpdate.phone,
+                email: req.body.email ? req.body.email : toUpdate.email,
+                avatar: req.file ? req.file.filename : toUpdate.avatar,
+                password: req.body.password
+                  ? bcryptjs.hashSync(req.body.password, 10)
+                  : toUpdate.password,
+                category_id: req.body.categoria
+                  ? req.body.categoria
+                  : toUpdate.category_id,
+              },
+              { where: { id: toUpdate.id } }
+            ).then((r) => {
+              req.session.destroy();
+              return res.redirect("/");
+            });
+          }
+        }
+      );
+    }
+  },
   register: (req, res) =>
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
 
@@ -78,6 +134,16 @@ const usersController = {
               errors: {
                 email: {
                   msg: "Este email ya está registrado",
+                },
+              },
+              titulo_pagina: "Petit and Fun - Registro",
+              oldData: req.body,
+            });
+          } else if (req.body.password !== req.body.passwordConfirm) {
+            return res.render("users/register", {
+              errors: {
+                password: {
+                  msg: "Las contraseñas no coinciden",
                 },
               },
               titulo_pagina: "Petit and Fun - Registro",
@@ -104,6 +170,13 @@ const usersController = {
     req.session.destroy();
     return res.redirect("/");
   },
+  destroy: (req, res) => {
+    db.User.destroy({
+      where: { id: req.session.userLogged.id },
+    }).then((r) => {
+      req.session.destroy();
+      res.redirect("/");
+    });
+  },
 };
-
 module.exports = usersController;
