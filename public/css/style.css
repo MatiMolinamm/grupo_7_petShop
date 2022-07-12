@@ -66,6 +66,7 @@ main {
 
 header {
   background-color: #4dbbd4;
+  max-height: 40%;
   position: sticky;
   top: 0;
   width: 100vw;
@@ -82,9 +83,24 @@ header article {
 #avatar {
   max-width: 40px;
   max-height: 40px;
-  border-radius: 50px;
+  border-radius: 50%;
 }
-#profileAvatar {
+
+div.profileAvatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 4px solid #e8f0fe;
+  display: flex;
+  height: 125px;
+  margin: 28px auto 0px;
+  min-width: 150px;
+  min-height: 150px;
+  width: 125px;
+}
+
+div img#profileAvatar {
   width: 15%;
   height: 20%;
   border-radius: 50px;
@@ -117,7 +133,11 @@ fa-phone {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
-  padding: 16px 30px;
+  padding: 16px 9%;
+}
+
+.centerHeader a {
+  color: white;
 }
 
 .centerHeader div#menu i {
@@ -185,7 +205,7 @@ fa-phone {
 }
 
 .centerHeader div a i.fa-user {
-  color: #4dbbd4;
+  color: #ffffff;
   background-color: #ffffff;
   border: 1px solid white;
   border-radius: 20px;
@@ -194,12 +214,12 @@ fa-phone {
   padding: 7px;
 }
 
-.centerHeader div a span:last-child {
+.centerHeader a span:last-child {
   display: none;
 }
 
 .centerHeader div i.fa-cart-shopping {
-  color: #4dbbd4;
+  color: #ffffff;
   background-color: #ffffff;
   border: 1px solid white;
   border-radius: 20px;
@@ -376,12 +396,12 @@ LOGIN - REGISTER - PROFILE*/
   align-items: center;
   background-color: #ffffff;
   display: flex;
-  margin: 40px 0;
+  margin: 10px 0px 20px 0;
   flex-direction: column;
 }
 
 .formloginandregister input {
-  background-color: #8c52ff;
+  background-color: #e8f0fe;
   border: 0px solid;
   border-radius: 15px;
   margin: 8px 0px;
@@ -392,7 +412,7 @@ LOGIN - REGISTER - PROFILE*/
 }
 
 .formloginandregister input::placeholder {
-  color: #ffffff;
+  color: #000000;
   padding: 5px;
 }
 
@@ -414,6 +434,15 @@ LOGIN - REGISTER - PROFILE*/
   font-weight: 900;
 }
 
+div.form-group-form-check {
+  font-size: 13px;
+}
+
+div.form-group-form-check input {
+  margin: 10px -114px 41px -95%;
+  width: 5px;
+}
+
 .linkto {
   align-items: center;
   color: #000000;
@@ -422,7 +451,6 @@ LOGIN - REGISTER - PROFILE*/
   justify-content: center;
   padding-top: 10px;
   margin-top: 10px;
-  width: 200px;
 }
 
 .linkto a {
@@ -454,7 +482,7 @@ div input.is-invalid {
 
 form {
   text-align: center;
-  padding: 30px 0;
+  padding: 15px 0;
 }
 
 form div.userprofile {
@@ -876,6 +904,10 @@ form div.formimagenabmproducto {
     display: flex;
   }
 
+  .centerHeader a {
+    font-size: 4vw;
+  }
+  
   .productos {
     width: 45%;
   }
@@ -915,7 +947,7 @@ form div.formimagenabmproducto {
     justify-content: space-between;
     padding-top: 10px;
     margin-top: 10px;
-    width: 400px;
+
   }
 }
 
@@ -923,6 +955,11 @@ form div.formimagenabmproducto {
   .centerHeader .logo {
     left: 20;
     width: 100%;
+  }
+
+  .centerHeader a {
+    font-size: 3vw;
+    padding: 16px 25px;
   }
 
   .bottomHeader ul {
@@ -1165,9 +1202,39 @@ form div.formimagenabmproducto {
     position: relative;
     bottom: 61px;
   }
+
+  div.profile {
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px;
+    width: 60%;
+  }
+  
+  div.profileAvatar {
+    margin: 28px 10% 0 10%;
+  }
+
+  div.processProfile {
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 1018px) {
+
+  .centerHeader a {
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .centerHeader a span {
+  padding: 0 5px;
+  }
+
+  .centerHeader a span:last-child {
+    display: inline-block;
+  }
+
   /*Mariano carrito*/
   div.carritodecompras {
     width: 97%;
@@ -1225,6 +1292,10 @@ form div.formimagenabmproducto {
   }
   .centerHeader .usuario {
     margin-right: 30px;
+  }
+
+ .centerHeader a {
+    color: white;
   }
 
   /* SI EL USUARIO ENTRA EN SESSION EL USER IN SESSION APLICA ESTO
