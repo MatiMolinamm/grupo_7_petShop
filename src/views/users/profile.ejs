@@ -6,106 +6,109 @@
     <hr />
     <main>
       <h1 class="titulosforms">Perfil</h1>
-      <img
-        id="profileAvatar"
-        src="/img/usersAvatar/<%= user.avatar %>  "
-        alt="img user"
-      />
-      <form
-        action="/users/profile/?_method=put"
-        method="post"
-        class="formloginandregister"
-        enctype="multipart/form-data"
-      >
-        <div class="nombre">
-          <input
-          autofocus
-            type="text"
-            name="name"
-            placeholder="Nombre y apellido"
-            class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.name : user.name %>"
-          />
-          <% if (locals.errors && errors.name) { %>
-          <div class="text-danger"><%= errors.name.msg %></div>
-          <% } %>
-        </div>
-        <div class="telefono">
-          <input
-            type="number"
-            name="telefono"
-            placeholder="Numero telefónico"
-            class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.telefono : user.phone %>"
-          />
-          <% if (locals.errors && errors.telefono) { %>
-          <div class="text-danger"><%= errors.telefono.msg %></div>
-          <% } %>
-        </div>
-        <div class="email">
-          <input
-            type="email"
-            name="email"
-            placeholder="email@address.com"
-            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.email : user.email %>"
-          />
-          <% if (locals.errors && errors.email) { %>
-          <div class="text-danger"><%= errors.email.msg %></div>
-          <% } %>
-        </div>
-        <div class="inputselector">
-          <label for="categoria">Selecciona la categoria</label>
-          <select name="category_id" id="categoria">
-            <% if(user.category_id==1) {%>
-            <option value="1" selected>Administrador</option>
-            <option value="2">Cliente</option>
-            <% } %> <% if(user.category_id==2) {%>
-            <option value="1">Administrador</option>
-            <option value="2" selected>Cliente</option>
-            <% } %>
-          </select>
-        </div>
-        <div class="avatar">
-          <input
-            type="file"
-            name="avatar"
-            value="<%=user.avatar %> "
-            class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
-          />
-          <% if (locals.errors && errors.avatar) { %>
-          <div class="text-danger"><%= errors.avatar.msg %></div>
-          <% } %>
-        </div>
 
-        <div class="pasword">
-          <input
-            type="password"
-            name="password"
-            placeholder="Ingresar password"
-            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.password : null %>"
-          />
-          <% if (locals.errors && errors.password) { %>
-          <div class="text-danger"><%= errors.password.msg %></div>
-          <% } %>
-        </div>
-        <div class="pasword">
-          <input
-            type="password"
-            name="passwordConfirm"
-            placeholder="Confirmar password"
-          />
-        </div>
-        <div class="boton">
-          <button type="submit">Enviar</button>
-          <button type="reset">Borrar</button>
-        </div>
-      </form>
-      <form action="/users/profile/?_method=delete" method="post" class="formloginandregister">
-        <div class="boton">
-          <button type="submit">Eliminar cuenta</button>
-      </form>
+      <div class="profile">
+
+              <div class="profileAvatar"style="background-image: url(../img/usersAvatar/<%= user.avatar %>  ">
+              </div>
+              <form
+                action="/users/profile/?_method=put"
+                method="post"
+                class="formloginandregister"
+                enctype="multipart/form-data"
+              >
+                <div class="nombre">
+                  <input
+                  autofocus
+                    type="text"
+                    name="name"
+                    placeholder="Nombre y apellido"
+                    class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.name : user.name %>"
+                  />
+                  <% if (locals.errors && errors.name) { %>
+                  <div class="text-danger"><%= errors.name.msg %></div>
+                  <% } %>
+                </div>
+                <div class="telefono">
+                  <input
+                    type="number"
+                    name="telefono"
+                    placeholder="Numero telefónico"
+                    class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.telefono : user.phone %>"
+                  />
+                  <% if (locals.errors && errors.telefono) { %>
+                  <div class="text-danger"><%= errors.telefono.msg %></div>
+                  <% } %>
+                </div>
+                <div class="email">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email@address.com"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : user.email %>"
+                  />
+                  <% if (locals.errors && errors.email) { %>
+                  <div class="text-danger"><%= errors.email.msg %></div>
+                  <% } %>
+                </div>
+                <div class="inputselector">
+                  <label for="categoria">Selecciona la categoria</label>
+                  <select name="category_id" id="categoria">
+                    <% if(user.category_id==1) {%>
+                    <option value="1" selected>Administrador</option>
+                    <option value="2">Cliente</option>
+                    <% } %> <% if(user.category_id==2) {%>
+                    <option value="1">Administrador</option>
+                    <option value="2" selected>Cliente</option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="avatar">
+                  <input
+                    type="file"
+                    name="avatar"
+                    value="<%=user.avatar %> "
+                    class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+                  />
+                  <% if (locals.errors && errors.avatar) { %>
+                  <div class="text-danger"><%= errors.avatar.msg %></div>
+                  <% } %>
+                </div>
+
+                <div class="pasword">
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="*********"
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.password : null %>"
+                  />
+                  <% if (locals.errors && errors.password) { %>
+                  <div class="text-danger"><%= errors.password.msg %></div>
+                  <% } %>
+                </div>
+                <div class="pasword">
+                  <input
+                    type="password"
+                    name="passwordConfirm"
+                    placeholder="Confirmar password"
+                  />
+                </div>
+              <div class="processProfile">
+                      <div class="boton">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Borrar</button>
+                      </div>
+                    </form>
+                    <form action="/users/profile/?_method=delete" method="post" class="formloginandregister">
+                      <div class="boton">
+                        <button type="submit">Eliminar cuenta</button>
+                    </form>
+              </div>
+      </div>    
     </main>
     <%- include('../partials/footer.ejs')%>
   </body>
