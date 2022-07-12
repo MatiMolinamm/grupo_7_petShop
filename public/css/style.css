@@ -4,7 +4,9 @@
   margin: 0%;
   display: block;
 }
-
+head {
+  display: none;
+}
 /*Mariano*! padding para todos los h*/
 h1 {
   font-size: 1.5rem;
@@ -908,7 +910,7 @@ form div.formimagenabmproducto {
   .centerHeader a {
     font-size: 4vw;
   }
-  
+
   .productos {
     width: 45%;
   }
@@ -948,7 +950,6 @@ form div.formimagenabmproducto {
     justify-content: space-between;
     padding-top: 10px;
     margin-top: 10px;
-
   }
 }
 
@@ -1210,7 +1211,7 @@ form div.formimagenabmproducto {
     padding: 0 30px;
     width: 60%;
   }
-  
+
   div.profileAvatar {
     margin: 28px 10% 0 10%;
   }
@@ -1218,46 +1219,45 @@ form div.formimagenabmproducto {
   div.processProfile {
     display: flex;
     flex-direction: column;
-}
-
-@media (min-width: 1018px) {
-
-  .centerHeader a {
-    display: flex;
-    text-decoration: none;
-    font-size: 18px;
   }
 
-  .centerHeader a span {
-  padding: 0 5px;
+  @media (min-width: 1018px) {
+    .centerHeader a {
+      display: flex;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .centerHeader a span {
+      padding: 0 5px;
+    }
+
+    .centerHeader a span:last-child {
+      display: inline-block;
+    }
+
+    /*Mariano carrito*/
+    div.carritodecompras {
+      width: 97%;
+    }
+    div.carritodetalleproducto {
+      border-right: 1px solid rgb(228, 228, 228);
+      width: 60%;
+    }
+    div.totaldelcarrito {
+      margin-left: 27px;
+      width: 37%;
+    }
   }
 
-  .centerHeader a span:last-child {
-    display: inline-block;
-  }
+  @media (min-width: 1300px) {
+    .mainIndex {
+      max-width: 1450px;
+      text-align: center;
+      margin: auto;
+    }
 
-  /*Mariano carrito*/
-  div.carritodecompras {
-    width: 97%;
-  }
-  div.carritodetalleproducto {
-    border-right: 1px solid rgb(228, 228, 228);
-    width: 60%;
-  }
-  div.totaldelcarrito {
-    margin-left: 27px;
-    width: 37%;
-  }
-}
-
-@media (min-width: 1300px) {
-  .mainIndex {
-    max-width: 1450px;
-    text-align: center;
-    margin: auto;
-  }
-
-  /* Darle ancho máximo
+    /* Darle ancho máximo
   header {
     max-width: 1450px;
   }
@@ -1266,40 +1266,40 @@ form div.formimagenabmproducto {
   }
   */
 
-  /*Carrito*/
-  div.detalleproducto {
-    padding: 0px 40px;
-  }
+    /*Carrito*/
+    div.detalleproducto {
+      padding: 0px 40px;
+    }
 
-  div.carritodecompras {
-    width: 100%;
-  }
+    div.carritodecompras {
+      width: 100%;
+    }
 
-  div.carritodetalleproducto {
-    width: 61%;
-  }
+    div.carritodetalleproducto {
+      width: 61%;
+    }
 
-  div.totaldelcarrito {
-    width: 34%;
-  }
+    div.totaldelcarrito {
+      width: 34%;
+    }
 
-  /*Header*/
-  .centerHeader input {
-    width: 550px;
-  }
+    /*Header*/
+    .centerHeader input {
+      width: 550px;
+    }
 
-  .centerHeader .logo {
-    margin-left: 50px;
-  }
-  .centerHeader .usuario {
-    margin-right: 30px;
-  }
+    .centerHeader .logo {
+      margin-left: 50px;
+    }
+    .centerHeader .usuario {
+      margin-right: 30px;
+    }
 
- .centerHeader a {
-    color: white;
-  }
+    .centerHeader a {
+      color: white;
+    }
 
-  /* SI EL USUARIO ENTRA EN SESSION EL USER IN SESSION APLICA ESTO
+    /* SI EL USUARIO ENTRA EN SESSION EL USER IN SESSION APLICA ESTO
   div#usuario {
     display: none;
   }
@@ -1334,7 +1334,7 @@ form div.formimagenabmproducto {
     padding: 7px;
   }
   */
-  /*
+    /*
   @keyframes rotation {
     from {
       transform: rotate(0deg);
@@ -1345,4 +1345,5 @@ form div.formimagenabmproducto {
     }
   }
   */
+  }
 }

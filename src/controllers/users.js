@@ -38,7 +38,7 @@ const usersController = {
                 maxAge: 1000 * 60 * 60,
               });
             }
-
+            console.log(req.session.userLogged);
             return res.redirect("/users/profile");
           }
         }
@@ -120,6 +120,7 @@ const usersController = {
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
 
   storeUsers: (req, res) => {
+    console.log(req.file);
     let notError = validation.registerValidation(req, res);
 
     if (notError) {
@@ -138,6 +139,7 @@ const usersController = {
               },
               titulo_pagina: "Petit and Fun - Registro",
               oldData: req.body,
+              oldFile: req.file,
             });
           } else if (req.body.password !== req.body.passwordConfirm) {
             return res.render("users/register", {
@@ -148,6 +150,7 @@ const usersController = {
               },
               titulo_pagina: "Petit and Fun - Registro",
               oldData: req.body,
+              oldFile: req.file,
             });
           } else {
             db.User.create({
