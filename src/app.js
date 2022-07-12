@@ -15,6 +15,8 @@ const publicPath = path.resolve(__dirname, "../public");
 
 // Config
 app.set("view engine", "ejs"); // para definir ejs como el motor de vistas
+app.set("views", path.join(__dirname, "/views"));
+
 app.use(express.static(publicPath)); //para hacer publico los archivos
 app.use(express.json()); //para que funcione el metodo post en formularios
 app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
