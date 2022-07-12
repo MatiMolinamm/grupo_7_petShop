@@ -38,7 +38,7 @@ const usersController = {
                 maxAge: 1000 * 60 * 60,
               });
             }
-            console.log(req.session.userLogged);
+
             return res.redirect("/users/profile");
           }
         }
@@ -120,7 +120,6 @@ const usersController = {
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
 
   storeUsers: (req, res) => {
-    console.log(req.file);
     let notError = validation.registerValidation(req, res);
 
     if (notError) {
