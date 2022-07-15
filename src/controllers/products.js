@@ -19,17 +19,17 @@ const productsController = {
     }).then((resultado) => {
       switch (req.body.class) {
         case "1":
-          res.redirect("/products/perros");
+          res.redirect("/products/1");
 
           break;
         case "2":
-          res.redirect("/products/gatos");
+          res.redirect("/products/2");
           break;
         case "3":
-          res.redirect("/products/peces");
+          res.redirect("/products/3");
           break;
         case "4":
-          res.redirect("/products/aves");
+          res.redirect("/products/4");
 
           break;
       }

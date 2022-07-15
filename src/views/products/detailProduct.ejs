@@ -47,7 +47,7 @@
                   <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.section_id%>"> 
                            
                   
-                    
+                    <% if (locals.isLogged && locals.userLogged.category_id == 1 ){ %>
                     <button type="submit" >
                     EDITAR
                   </button>
@@ -62,6 +62,7 @@
                         ELIMINAR
                       </button>
                       </form>
+                      <% } %> 
                     </div>
           </article>
           

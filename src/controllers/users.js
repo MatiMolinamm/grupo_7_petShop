@@ -33,9 +33,10 @@ const usersController = {
           );
           if (isOkThePassword) {
             req.session.userLogged = resultado[0].dataValues;
+
             if (req.body.remember_user) {
               res.cookie("userEmail", req.body.email, {
-                maxAge: 1000 * 60 * 60,
+                maxAge: 1000 * 60 * 2,
               });
             }
 
@@ -168,10 +169,16 @@ const usersController = {
   },
 
   logout: (req, res) => {
-    res.clearCookie("userEmail");
-    req.session.destroy();
-    return res.redirect("/");
+    //CONSULTAR PARA MEJORAR EL LOGOUT CUANDO RECORDAS USUARIO
+    if (req.cookies.userEmail) {
+      res.clearCookie("userEmail");
+      return res.redirect("/");
+    } else {
+      req.session.destroy();
+      return res.redirect("/");
+    }
   },
+
   destroy: (req, res) => {
     db.User.destroy({
       where: { id: req.session.userLogged.id },

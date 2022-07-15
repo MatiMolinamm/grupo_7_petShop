@@ -1,6 +1,6 @@
 const express = require("express");
 const mainController = require("../controllers/main");
-
+const notLoggedMiddleware = require("../middlewares/notLoggedMiddleware");
 //CONFIG
 const router = express.Router();
 
@@ -9,6 +9,6 @@ router.get("/", mainController.index);
 router.get("/search", mainController.search);
 
 // CARRO DE COMPRAS
-router.get("/carrito", mainController.carrito);
+router.get("/carrito", notLoggedMiddleware, mainController.carrito);
 
 module.exports = router;

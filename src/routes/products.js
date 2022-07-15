@@ -1,12 +1,19 @@
 const express = require("express");
 const productsController = require("../controllers/products");
 const uploadFile = require("../middlewares/multerProductMiddleware");
+const notAdmindMiddleware = require("../middlewares/notAdmindMiddleware");
+const notLoggedMiddleware = require("../middlewares/notLoggedMiddleware");
 
 //CONFIG
 const router = express.Router();
 
 //RUTA ALTA PRODUCTO
-router.get("/abmproduct", productsController.abmproduct);
+router.get(
+  "/abmproduct",
+  notLoggedMiddleware,
+  notAdmindMiddleware,
+  productsController.abmproduct
+);
 router.post(
   "/abmproduct",
   uploadFile.single("image"),
@@ -14,7 +21,12 @@ router.post(
 );
 
 //RUTA EDIT PRODUCTO
-router.get("/abmproductEdit/:id", productsController.edit);
+router.get(
+  "/abmproductEdit/:id",
+  notLoggedMiddleware,
+  notAdmindMiddleware,
+  productsController.edit
+);
 router.put(
   "/abmproductEdit/:id",
   uploadFile.single("image"),
@@ -22,7 +34,12 @@ router.put(
 );
 
 //RUTA DELETE PRODUCTO
-router.delete("/abmproductEdit/:id", productsController.destroy);
+router.delete(
+  "/abmproductEdit/:id",
+  notLoggedMiddleware,
+  notAdmindMiddleware,
+  productsController.destroy
+);
 
 //RUTAS PRODUCTOS PARA PERRO
 router.get("/1", productsController.perros);

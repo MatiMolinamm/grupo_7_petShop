@@ -37,13 +37,13 @@
       ></span>
       <p><%= locals.isLogged? locals.userLogged.name:'' %></p>
       <a href="/users/logout">Logout</a>
+      <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
       <% } else { %>
       <a href="/users/login">
         <span><i class="fa-solid fa-user"></i></span>
         <span>Ingreso</span>
       </a>
       <% } %>
-      <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
 
     <!-- SI EL USUARIO SE LOGUEA Y ESTA EN SESSION ENTONCES SE MUESTRA FIJO EL USER IN SESSION 
@@ -74,7 +74,9 @@
       <li><a href="/products/3">Peces</a></li>
       <li><a href="#">Promociones</a></li>
       <li><a href="#">Sucursales</a></li>
+      <% if (locals.isLogged && locals.userLogged.category_id == 1 ){ %>
       <li><a href="/products/abmproduct">Agregar Producto</a></li>
+      <% } %>
     </ul>
   </article>
 </header>
