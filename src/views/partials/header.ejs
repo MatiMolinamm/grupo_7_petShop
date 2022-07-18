@@ -26,24 +26,39 @@
         <img src="/img/logo/PAF-logo-2.svg" />
       </a>
     </div>
-    <% if(locals.isLogged){ %>
+    <form class="homesearch" action="/search" method="get">
+      <input
+        type="search"
+        name="search"
+        placeholder="Buscar productos, marcas y más..."
+      />
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
     <div id="usuario">
-      <span
-        ><a href="/users/profile"
-          ><img
-            id="avatar"
-            src="/img/usersAvatar/<%=locals.isLogged? locals.userLogged.avatar:'default.png' %>  %> "
-            alt="img user" /></a
-      ></span>
-      <p><%= locals.isLogged? locals.userLogged.name:'' %></p>
-      <a href="/users/logout">Logout</a>
+      <div class="userState">
+    <% if(locals.isLogged){ %>    
+            <span>
+              <a href="/users/profile">
+                <div class="userAvatar" style="background-image: url(../img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:'default.png' %>  %> ">
+                </div>
+                <!-- SE REMPLAZÓ CON EL DIV DE ARRIBA PARA DARLE MEJOR FORMATO A LA IMAGEN<img
+                  id="avatar"
+                  src="/img/usersAvatar/<%=locals.isLogged? locals.userLogged.avatar:'default.png' %>  %> "
+                  alt="img user" />-->
+              </a>
+            </span>
+            <p id="userLoggedName"><%= locals.isLogged? locals.userLogged.name:'' %></p>
+            <a href="/users/logout" id="logout">Logout</a>
+            <% } else { %>
+            <a href="/users/login">
+              <span><i class="fa-solid fa-user"></i></span>
+              <span>Ingreso</span>
+            </a>
+            <% } %>
+          </div>
       <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-      <% } else { %>
-      <a href="/users/login">
-        <span><i class="fa-solid fa-user"></i></span>
-        <span>Ingreso</span>
-      </a>
-      <% } %>
     </div>
 
     <!-- SI EL USUARIO SE LOGUEA Y ESTA EN SESSION ENTONCES SE MUESTRA FIJO EL USER IN SESSION 
@@ -56,17 +71,6 @@
   </article>
 
   <article class="bottomHeader">
-    <form class="homesearch" action="/search" method="get">
-      <input
-        type="search"
-        name="search"
-        placeholder="Buscar productos, marcas y más..."
-      />
-      <button type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
-
     <ul>
       <li><a href="/products/1">Perros</a></li>
       <li><a href="/products/2">Gatos</a></li>
