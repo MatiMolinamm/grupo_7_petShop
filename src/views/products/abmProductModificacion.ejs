@@ -9,7 +9,7 @@
 
       <form
         class="formabmproducto"
-        action="/products/abmproductEdit/<%=productRenderizar.id %>/?class=<%=productRenderizar.section_id%>&_method=PUT"  
+        action="/products/abmproductEdit/<%=productRenderizar.id %>/?class=<%=productRenderizar.section_id%>&_method=PUT"
         method="post"
         enctype="multipart/form-data"
       >
@@ -21,7 +21,11 @@
               accept=".jpg,.png,.svg"
               name="image"
               placeholder="imagen del producto"
+              value="<%= locals.oldData ? oldData.image : productRenderizar.image%>"
             />
+            <% if (locals.errors && errors.image) { %>
+            <div class="text-danger"><%= errors.image.msg %></div>
+            <% } %>
           </div>
 
           <div class="detailformabmproducto">
@@ -30,32 +34,44 @@
                 type="text"
                 placeholder="Titulo del producto"
                 name="name"
-                value="<%= productRenderizar.name %>"
+                value="<%= locals.oldData ? oldData.name : productRenderizar.name %>"
               />
+              <% if (locals.errors && errors.name) { %>
+              <div class="text-danger"><%= errors.name.msg %></div>
+              <% } %>
             </div>
 
             <div>
               <textarea
                 name="description"
-                value="<%= productRenderizar.description %>"
+                value="<%= locals.oldData ? oldData.description :productRenderizar.description %>"
                 placeholder="<%= productRenderizar.description %>"
-              ></textarea>
+              >
+<%= locals.oldData ? oldData.description :productRenderizar.description %></textarea
+              >
+              <% if (locals.errors && errors.description) { %>
+              <div class="text-danger"><%= errors.description.msg %></div>
+              <% } %>
             </div>
 
             <div>
               <input
                 type="number"
                 name="price"
-                value="$ <%= productRenderizar.price %>"
+                value="<%= locals.oldData ? oldData.price : productRenderizar.price %>"
                 placeholder="Precio"
               />
+              <% if (locals.errors && errors.price) { %>
+              <div class="text-danger"><%= errors.price.msg %></div>
+              <% } %>
             </div>
 
             <div class="inputselector">
               <select
                 name="packaging"
                 id="peso"
-                value="<%= productRenderizar.packaging %>"
+                selected
+                value="<%= locals.oldData ? oldData.packaging : productRenderizar.packaging%>"
               >
                 <option value="<%= productRenderizar.packaging %>">
                   Seleccioná el tamaño del producto
@@ -64,18 +80,29 @@
                 <option value="5 kg">5 kg</option>
                 <option value="8 kg">8 kg</option>
               </select>
+              <% if (locals.errors && errors.packaging) { %>
+              <div class="text-danger"><%= errors.packaging.msg %></div>
+              <% } %>
             </div>
 
             <div>
-              <input type="number" name="stock" placeholder="Stock" />
+              <input
+                type="number"
+                name="stock"
+                placeholder="Stock"
+                value="<%= locals.oldData ? oldData.stock : productRenderizar.stock %>"
+              />
             </div>
             <div class="inputselector">
               <select
                 name="class"
-                value="<%= productRenderizar.class %>"
+                selected
+                value="<%= locals.oldData ? oldData.class :productRenderizar.class %>"
                 id="categoria"
               >
-                <option value="<%= productRenderizar.class %>">
+                <option
+                  value="<%= locals.oldData ? oldData.class :productRenderizar.class %>"
+                >
                   <%= productRenderizar.class %>
                 </option>
                 <!-- <option value="perros">Perros</option>
@@ -89,16 +116,28 @@
               <input
                 type="number"
                 name="amount"
-                value="<%= productRenderizar.amount%>"
+                value="<%= locals.oldData ? oldData.amount : productRenderizar.amount %>"
                 placeholder="Cantidad"
               />
+              <% if (locals.errors && errors.amount) { %>
+              <div class="text-danger"><%= errors.amount.msg %></div>
+              <% } %>
             </div>
             <div class="inputselector">
-              <select name="oferta" id="categoria" required>
+              <select
+                name="oferta"
+                id="categoria"
+                selected
+                value="<%= locals.oldData ? oldData.oferta :productRenderizar.oferta %>"
+              >
                 <option value="">En Oferta</option>
                 <option value="true">Si</option>
                 <option value="false">No</option>
               </select>
+              <% if (locals.errors && errors.oferta) { %>
+              <div class="text-danger"><%= errors.oferta.msg %></div>
+              <% } %>
+            </div>
 
             <div class="formbuttonsabmproducto">
               <div class="buttonabmproducto">

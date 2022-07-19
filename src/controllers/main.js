@@ -9,7 +9,7 @@ const mainController = {
     });
   },
   search: (req, res) => {
-    db.Product.findAll({
+    let notFind = db.Product.findAll({
       where: { name: { [op.like]: "%" + req.query.search + "%" } },
     }).then((productsSearch) => {
       res.render("indexSearchList", {

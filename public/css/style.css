@@ -115,7 +115,6 @@ fa-phone {
   color: white;
 }
 
-
 .centerHeader div#menu i {
   /*menu hamburguesa*/
   align-items: center;
@@ -150,7 +149,7 @@ fa-phone {
 }
 
 .centerHeader div a i.fa-user {
-  color: #4dbbd4;;
+  color: #4dbbd4;
   background-color: #ffffff;
   border: 1px solid white;
   border-radius: 20px;
@@ -162,7 +161,6 @@ fa-phone {
 .centerHeader a span:last-child {
   display: none;
 }
-
 
 /*------ avatar header----------*/
 div.userAvatar {
@@ -420,7 +418,6 @@ div img#profileAvatar {
   justify-content: center;
 }
 
-
 .formloginandregister {
   align-items: center;
   background-color: #ffffff;
@@ -610,7 +607,8 @@ form div.formimageuserprofile img {
 
 /*--- Seccion detalle producto-- */
 
-article.resumenproducto div:not(div.ordencarrito, div.cantidaddeproducto, div.agregaralcarrito) {
+article.resumenproducto
+  div:not(div.ordencarrito, div.cantidaddeproducto, div.agregaralcarrito) {
   border-bottom: 1px solid rgb(158, 158, 158);
   border-top: 1px solid rgb(158, 158, 158);
 }
@@ -805,7 +803,7 @@ div.proceder-checkout {
   border-radius: 5px;
   left: 10%;
   padding: 10px;
-  position: relative;
+
   text-align: center;
 }
 
@@ -856,13 +854,13 @@ th.cantidaddeproducto {
   text-align: center;
 }
 
-table tr.headcarrito> :first-child {
+table tr.headcarrito > :first-child {
   padding: 0 0 5px 20px;
 }
 
-table tr.headcarrito> :second-child,
-tr.headcarrito> :third-child,
-tr.headcarrito> :fourth-child {
+table tr.headcarrito > :second-child,
+tr.headcarrito > :third-child,
+tr.headcarrito > :fourth-child {
   text-align: center;
 }
 
@@ -1015,30 +1013,28 @@ form div.formimagenabmproducto {
     justify-content: space-between;
     padding-top: 10px;
     margin-top: 10px;
-
   }
 }
 
 @media (min-width: 769px) {
-
   .centerHeader button {
     right: 28%;
-}
+  }
 
-/*Mariano carrito*/
-div.carritodecompras {
-  width: 97%;
-}
+  /*Mariano carrito*/
+  div.carritodecompras {
+    width: 97%;
+  }
 
-div.carritodetalleproducto {
-  border-right: 1px solid rgb(228, 228, 228);
-  width: 60%;
-}
+  div.carritodetalleproducto {
+    border-right: 1px solid rgb(228, 228, 228);
+    width: 60%;
+  }
 
-div.totaldelcarrito {
-  margin-left: 27px;
-  width: 37%;
-}
+  div.totaldelcarrito {
+    margin-left: 27px;
+    width: 37%;
+  }
 
   .productos {
     background-image: linear-gradient(rgb(255, 255, 255), rgb(226, 226, 226));
@@ -1169,7 +1165,7 @@ div.totaldelcarrito {
   } Quiero que al seleccionar el input para buscar algo, se haga un borde solido de 1 px blanco */
 
   /* -- BOTTOM HEADER --*/
-  
+
   .bottomHeader ul {
     display: flex;
     justify-content: space-between;
@@ -1193,17 +1189,17 @@ div.totaldelcarrito {
     text-decoration: none;
   }
 
-/* -- ABM PRODUCTO --*/
-form div.mainformabmproducto {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  width: 100%;
-}
+  /* -- ABM PRODUCTO --*/
+  form div.mainformabmproducto {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 100%;
+  }
 
-form div.formbuttonsabmproducto div {
-  width: 30%;
-}
+  form div.formbuttonsabmproducto div {
+    width: 30%;
+  }
 
   /* -- TOP HEADER --*/
 
@@ -1359,39 +1355,38 @@ form div.formbuttonsabmproducto div {
   }
 }
 
-  @media (min-width: 1018px) {
+@media (min-width: 1018px) {
+  .centerHeader a {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+  }
 
-    .centerHeader a {
-      align-items: center;
-      display: flex;
-      text-decoration: none;
-      font-size: 18px;
-    }
+  .centerHeader a span {
+    padding: 0 5px;
+  }
 
-    .centerHeader a span {
-      padding: 0 5px;
-    }
+  .centerHeader a span:last-child {
+    display: inline-block;
+  }
 
-    .centerHeader a span:last-child {
-      display: inline-block;
-    }
+  .centerHeader button {
+    right: 27%;
+  }
 
-    .centerHeader button {
-      right: 27%;
-    }
+  .centerHeader div#userNotLogged {
+    margin: 0 0px -2px 0px;
+    width: 28%;
+  }
 
-    .centerHeader div#userNotLogged {
-      margin: 0 0px -2px 0px;
-      width: 28%;
-    }
-
-    .centerHeader img {
-      max-width: 187px;
+  .centerHeader img {
+    max-width: 187px;
   }
 
   .centerHeader form.homesearch {
     width: 45%;
-}
+  }
 
   @media (min-width: 1300px) {
     .mainIndex {

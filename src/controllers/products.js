@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const validation = require("../middlewares/validationMiddleware");
 
 const productsController = {
   abmproduct: (req, res) =>
@@ -6,34 +7,37 @@ const productsController = {
       titulo_pagina: "Petit and Fun - Productos",
     }),
   store: (req, res) => {
-    db.Product.create({
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      packaging: req.body.packaging,
-      amount: req.body.stock,
-      image: req.file ? req.file.filename : "logo-PF-tipografico.png",
-      section_id: req.body.class,
-      stock_id: null,
-      oferta: req.body.oferta,
-    }).then((resultado) => {
-      switch (req.body.class) {
-        case "1":
-          res.redirect("/products/1");
+    let notError = validation.crudProducValidation(req, res);
+    notError.then((r) => console.log(r + "estoy aca"));
 
-          break;
-        case "2":
-          res.redirect("/products/2");
-          break;
-        case "3":
-          res.redirect("/products/3");
-          break;
-        case "4":
-          res.redirect("/products/4");
-
-          break;
-      }
-    });
+    if (notError) {
+      db.Product.create({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        packaging: req.body.packaging,
+        amount: req.body.stock,
+        image: req.file ? req.file.filename : "logo-PF-tipografico.png",
+        section_id: req.body.class,
+        stock_id: null,
+        oferta: req.body.oferta,
+      }).then((resultado) => {
+        switch (req.body.class) {
+          case "1":
+            res.redirect("/products/1");
+            break;
+          case "2":
+            res.redirect("/products/2");
+            break;
+          case "3":
+            res.redirect("/products/3");
+            break;
+          case "4":
+            res.redirect("/products/4");
+            break;
+        }
+      });
+    }
   },
   edit: (req, res) => {
     db.Product.findOne({
@@ -46,50 +50,67 @@ const productsController = {
     });
   },
   update: (req, res) => {
-    let toUpdate = db.Product.findOne({
-      where: { id: req.params.id, section_id: req.query.class },
+    let toUpdate = validation.editProducValidation(req, res);
+    toUpdate.then((r) => {
+      let product = r;
+      console.log(product);
+      // tengo q acceder a product dataValues para poder continuar
     });
-    let update = db.Product.update(
-      {
-        name: req.body.name ? req.body.name : toUpdate.name,
-        description: req.body.description
-          ? req.body.description
-          : toUpdate.description,
-        price: req.body.price ? req.body.price : toUpdate.price,
-        packaging: req.body.packaging ? req.body.packaging : toUpdate.packaging,
-        stock: req.body.stock ? req.body.stock : toUpdate.stock,
-        class: req.body.class ? req.body.class : toUpdate.class,
-        amount: req.body.stock ? req.body.stock : toUpdate.stock,
-        oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
-        image: req.file ? req.file.filename : toUpdate.image,
-        section_id: req.body.class ? req.body.class : toUpdate.section_id,
-        stock_id: null,
-        oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
-      },
-      {
-        where: { id: req.params.id, section_id: req.query.class },
-      }
-    );
+    // toUpdate
+    //   .then((toUpdate) => {
+    //     if (toUpdate<1 || true) {
+    //       db.Product.update(
+    //         {
+    //           name: req.body.name ? req.body.name : toUpdate.name,
+    //           description: req.body.description
+    //             ? req.body.description
+    //             : toUpdate.description,
+    //           price: req.body.price ? req.body.price : toUpdate.price,
+    //           packaging: req.body.packaging
+    //             ? req.body.packaging
+    //             : toUpdate.packaging,
+    //           stock: req.body.stock ? req.body.stock : toUpdate.stock,
+    //           class: req.body.class ? req.body.class : toUpdate.class,
+    //           amount: req.body.stock ? req.body.stock : toUpdate.stock,
+    //           oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
+    //           image: req.file ? req.file.filename : toUpdate.image,
+    //           section_id: req.body.class ? req.body.class : toUpdate.section_id,
+    //           stock_id: null,
+    //           oferta: req.body.oferta ? req.body.oferta : toUpdate.oferta,
+    //         },
+    //         {
+    //           where: { id: req.params.id, section_id: req.query.class },
+    //         }
+    //       );
+    //     }
+    //   })
+    //   .then((r) => {
+    //     res.redirect("/");
+    //   });
 
-    Promise.all([toUpdate, update]).then((r) => {
-      switch (req.query.class) {
-        case "1":
-          res.redirect("/products/1");
+    // let update =
 
-          break;
-        case "2":
-          res.redirect("/products/2");
-          break;
-        case "3":
-          res.redirect("/products/3");
-          break;
-        case "4":
-          res.redirect("/products/4");
+    // Promise.all(toUpdate, update).then((r) => {
+    //   console.log(r);
+    //   switch (req.query.class) {
+    //     case "1":
+    //       res.redirect("/products/1");
 
-          break;
-      }
-    });
+    //       break;
+    //     case "2":
+    //       res.redirect("/products/2");
+    //       break;
+    //     case "3":
+    //       res.redirect("/products/3");
+    //       break;
+    //     case "4":
+    //       res.redirect("/products/4");
+
+    //       break;
+    //   }
+    // });
   },
+
   destroy: (req, res) => {
     db.Product.destroy({
       where: { id: req.params.id, section_id: req.query.class },

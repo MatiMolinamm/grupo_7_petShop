@@ -15,7 +15,8 @@
         <li><a href="/products/4"><img src="/img/products/aves.png"></a></li>
       </ul>
       <form action="" method="get">
-        <h1>RESULTADO DE LA BUSQUEDA:</h1>
+        <h1>RESULTADO DE LA BUSQUEDA:<div class="resultadoCero" autofocus></div></h1>
+        
       <h2 class="productosDestacados"></h2>
       <article class="productosDestacados">
         
@@ -31,14 +32,14 @@
             <button class="botonagregaralcarrito">AGREGAR</button>
           </div>
         </div>
-        
         <% }); %>
-      
+       
       
       </form>
       </article>
     </main>
     <%- include('./partials/footer.ejs')%>
+    <script src="/js/search.js"></script>
 
   </body>
 

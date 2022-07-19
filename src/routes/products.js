@@ -1,9 +1,10 @@
 const express = require("express");
+const { validationResult } = require("express-validator");
 const productsController = require("../controllers/products");
 const uploadFile = require("../middlewares/multerProductMiddleware");
 const notAdmindMiddleware = require("../middlewares/notAdmindMiddleware");
 const notLoggedMiddleware = require("../middlewares/notLoggedMiddleware");
-
+const validation = require("../middlewares/validationMiddleware");
 //CONFIG
 const router = express.Router();
 
@@ -17,6 +18,7 @@ router.get(
 router.post(
   "/abmproduct",
   uploadFile.single("image"),
+  validation.rulesAbmProductsAlta,
   productsController.store
 );
 
@@ -30,6 +32,7 @@ router.get(
 router.put(
   "/abmproductEdit/:id",
   uploadFile.single("image"),
+  validation.rulesAbmProductsEdit,
   productsController.update
 );
 

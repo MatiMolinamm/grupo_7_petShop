@@ -28,6 +28,7 @@
     </div>
     <form class="homesearch" action="/search" method="get">
       <input
+        id="homesearch"
         type="search"
         name="search"
         placeholder="Buscar productos, marcas y más..."
@@ -38,26 +39,32 @@
     </form>
     <div id="usuario">
       <div class="userState">
-    <% if(locals.isLogged){ %>    
-            <span>
-              <a href="/users/profile">
-                <div class="userAvatar" style="background-image: url(../img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:'default.png' %>  %> ">
-                </div>
-                <!-- SE REMPLAZÓ CON EL DIV DE ARRIBA PARA DARLE MEJOR FORMATO A LA IMAGEN<img
+        <% if(locals.isLogged){ %>
+        <span>
+          <a href="/users/profile">
+            <div
+              class="userAvatar"
+              style="
+                background-image: url(../img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:null%>);
+              "
+            ></div>
+            <!-- SE REMPLAZÓ CON EL DIV DE ARRIBA PARA DARLE MEJOR FORMATO A LA IMAGEN<img
                   id="avatar"
                   src="/img/usersAvatar/<%=locals.isLogged? locals.userLogged.avatar:'default.png' %>  %> "
                   alt="img user" />-->
-              </a>
-            </span>
-            <p id="userLoggedName"><%= locals.isLogged? locals.userLogged.name:'' %></p>
-            <a href="/users/logout" id="logout">Logout</a>
-            <% } else { %>
-            <a href="/users/login">
-              <span><i class="fa-solid fa-user"></i></span>
-              <span>Ingreso</span>
-            </a>
-            <% } %>
-          </div>
+          </a>
+        </span>
+        <p id="userLoggedName">
+          <%= locals.isLogged? locals.userLogged.name:'' %>
+        </p>
+        <a href="/users/logout" id="logout">Logout</a>
+        <% } else { %>
+        <a href="/users/login">
+          <span><i class="fa-solid fa-user"></i></span>
+          <span>Ingreso</span>
+        </a>
+        <% } %>
+      </div>
       <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
 

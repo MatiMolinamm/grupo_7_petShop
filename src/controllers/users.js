@@ -36,7 +36,7 @@ const usersController = {
 
             if (req.body.remember_user) {
               res.cookie("userEmail", req.body.email, {
-                maxAge: 1000 * 60 * 2,
+                maxAge: 1000 * 60 * 60,
               });
             }
 
@@ -121,9 +121,9 @@ const usersController = {
     res.render("users/register", { titulo_pagina: "Petit and Fun - Registro" }),
 
   storeUsers: (req, res) => {
-    let notError = validation.registerValidation(req, res);
+    let error = validation.registerValidation(req, res);
 
-    if (notError) {
+    if (error) {
       db.User.findAll({ where: { email: req.body.email } }).then(
         (resultado) => {
           if (
@@ -169,14 +169,9 @@ const usersController = {
   },
 
   logout: (req, res) => {
-    //CONSULTAR PARA MEJORAR EL LOGOUT CUANDO RECORDAS USUARIO
-    if (req.cookies.userEmail) {
-      res.clearCookie("userEmail");
-      return res.redirect("/");
-    } else {
-      req.session.destroy();
-      return res.redirect("/");
-    }
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    return res.redirect("/");
   },
 
   destroy: (req, res) => {
