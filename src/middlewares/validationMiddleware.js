@@ -159,7 +159,7 @@ let validations = {
       .withMessage("Debe ingresar números enteros")
       .isLength({ min: 3 })
       .withMessage("Debe tener mas de 3 caracteres"),
-    body("email").notEmpty().withMessage("Debe completar el campo").bail(),
+    // body("email").notEmpty().withMessage("Debe completar el campo").bail(),
     body("password")
       .notEmpty()
       .withMessage("Debe completar el campo")
@@ -240,22 +240,23 @@ let validations = {
       });
     } else return true;
   },
-  editProducValidation: function (req, res) {
+  editProducValidation: async function (req, res) {
     const resultValidation = validationResult(req);
-    let toUpdate = db.Product.findOne({
+    let consulta = await db.Product.findOne({
       where: { id: req.params.id, section_id: req.query.class },
-    }).then((productRenderizar) => {
-      if (resultValidation.errors.length > 0) {
-        console.log(resultValidation.errors.length);
-        res.render("products/abmProductModificacion", {
-          productRenderizar,
-          titulo_pagina: "Petit and Fun - Productos",
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-        });
-      } else return productRenderizar;
     });
-    return toUpdate;
+
+    if (resultValidation.errors.length > 0) {
+      res.render("products/abmProductModificacion", {
+        productRenderizar: consulta,
+        titulo_pagina: "Petit and Fun - Productos",
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+    if (resultValidation.errors.length == 0) {
+      return consulta;
+    }
   },
 };
 

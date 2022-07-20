@@ -98,7 +98,7 @@ const usersController = {
               {
                 name: req.body.name ? req.body.name : toUpdate.name,
                 phone: req.body.telefono ? req.body.telefono : toUpdate.phone,
-                email: req.body.email ? req.body.email : toUpdate.email,
+                //email: req.body.email ? req.body.email : toUpdate.email,
                 avatar: req.file ? req.file.filename : toUpdate.avatar,
                 password: req.body.password
                   ? bcryptjs.hashSync(req.body.password, 10)

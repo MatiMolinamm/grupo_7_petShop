@@ -30,6 +30,7 @@
 
           <div class="detailformabmproducto">
             <div>
+              <label for="name">Nombre del producto</label>
               <input
                 type="text"
                 placeholder="Titulo del producto"
@@ -42,12 +43,13 @@
             </div>
 
             <div>
+              <label for="description">Descripcion</label>
               <textarea
                 name="description"
                 value="<%= locals.oldData ? oldData.description :productRenderizar.description %>"
                 placeholder="<%= productRenderizar.description %>"
               >
-<%= locals.oldData ? oldData.description :productRenderizar.description %></textarea
+              <%= locals.oldData ? oldData.description :productRenderizar.description %></textarea
               >
               <% if (locals.errors && errors.description) { %>
               <div class="text-danger"><%= errors.description.msg %></div>
@@ -55,6 +57,7 @@
             </div>
 
             <div>
+              <label for="price">Precio</label>
               <input
                 type="number"
                 name="price"
@@ -67,6 +70,7 @@
             </div>
 
             <div class="inputselector">
+              <label for="packaging">packaging</label>
               <select
                 name="packaging"
                 id="peso"
@@ -86,6 +90,7 @@
             </div>
 
             <div>
+              <label for="stock">Stock</label>
               <input
                 type="number"
                 name="stock"
@@ -94,6 +99,7 @@
               />
             </div>
             <div class="inputselector">
+              <label for="class">Categoria</label>
               <select
                 name="class"
                 selected
@@ -113,6 +119,7 @@
             </div>
 
             <div>
+              <label for="amount">Cantidad</label>
               <input
                 type="number"
                 name="amount"
@@ -124,6 +131,7 @@
               <% } %>
             </div>
             <div class="inputselector">
+              <label for="oferta">Estado de oferta</label>
               <select
                 name="oferta"
                 id="categoria"
