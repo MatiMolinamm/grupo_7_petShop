@@ -9,7 +9,7 @@
 
       <div class="profile">
 
-              <div class="profileAvatar"style="background-image: url(../img/usersAvatar/<%= user.avatar %>); ">
+              <div class="profileAvatar"style="background-image: url(../img/usersAvatar/<%= user.avatar %>  ">
               </div>
               <form
                 action="/users/profile/?_method=put"
@@ -17,17 +17,6 @@
                 class="formloginandregister"
                 enctype="multipart/form-data"
               >
-              <div class="avatar">
-                <input
-                  type="file"
-                  name="avatar"
-                  value="<%= locals.oldFile? oldFile.filename: null %>"
-                  class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
-                />
-                <% if (locals.errors && errors.avatar) { %>
-                <div class="text-danger"><%= errors.avatar.msg %></div>
-                <% } %>
-              </div>
                 <div class="nombre">
                   <input
                   autofocus
@@ -57,9 +46,9 @@
                   <input
                     type="email"
                     name="email"
-                    placeholder="<%= locals.oldData ? oldData.email : user.email %>"
+                    placeholder="email@address.com"
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                    
+                    value="<%= locals.oldData ? oldData.email : user.email %>"
                   />
                   <% if (locals.errors && errors.email) { %>
                   <div class="text-danger"><%= errors.email.msg %></div>
@@ -77,7 +66,17 @@
                     <% } %>
                   </select>
                 </div>
-               
+                <div class="avatar">
+                  <input
+                    type="file"
+                    name="avatar"
+                    value="<%=user.avatar %> "
+                    class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+                  />
+                  <% if (locals.errors && errors.avatar) { %>
+                  <div class="text-danger"><%= errors.avatar.msg %></div>
+                  <% } %>
+                </div>
 
                 <div class="pasword">
                   <input
@@ -99,14 +98,11 @@
                   />
                 </div>
               <div class="processProfile">
-                      <div class="boton">
-                        <button type="submit">Editar</button>
-                        <button type="reset">Borrar</button>
-                      </div>
-                    </form>
+                      <button type="submit">Guardar</button>        
+              </form>
+
                     <form action="/users/profile/?_method=delete" method="post" class="formloginandregister">
-                      <div class="boton">
-                        <button type="submit">Eliminar cuenta</button>
+                      <button type="submit">Eliminar cuenta</button>
                     </form>
               </div>
       </div>    
