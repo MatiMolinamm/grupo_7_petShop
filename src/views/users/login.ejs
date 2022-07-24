@@ -22,7 +22,7 @@
               <%= errors.email.msg %> 
             </div>
           <% } %>
-        <div class="pasword">
+        <div class="password">
           <input
             type="password"
             name="password"
@@ -36,8 +36,10 @@
             </div>
           <% } %>
         </div>
-        <div > <!-- class="form-group-form-check" comente por q no me mostraba el checkbox-->
-            <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+        <div class="rememberUser"> <!-- class="form-group-form-check" comente por q no me mostraba el checkbox-->
+            <input type="checkbox" class="checkUser" name="remember_user" id="userremember">
+            <label for
+            ="userremember">Recordar mi usuario</label>
         </div>
         <div class="boton">
           <button type="submit">Enviar</button>

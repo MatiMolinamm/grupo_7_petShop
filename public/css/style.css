@@ -469,6 +469,24 @@ div.form-group-form-check input {
   width: 5px;
 }
 
+div.rememberUser {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  flex-direction: row;
+  margin: 10px 88px;
+  width: 111%;
+}
+
+div.rememberUser input {
+    margin: 0px -130px 0px -44%;
+    width: 10%;
+}
+
+div.rememberUser label {
+  width: 30%;
+}
+
 .linkto {
   align-items: center;
   color: #000000;
@@ -1188,6 +1206,13 @@ form div.formimagenabmproducto {
     color: #0b5591;
     text-decoration: none;
   }
+
+  /* LOGIN */
+  div.rememberUser input {
+    margin: 0px -140px 0px -35%;
+    width: 10%;
+}
+
 
   /* -- ABM PRODUCTO --*/
   form div.mainformabmproducto {
