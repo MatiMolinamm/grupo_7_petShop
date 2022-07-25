@@ -5,7 +5,7 @@
   <body>
     <%- include('../partials/header.ejs')%>
     <main>
-      <h1>Editar producto</h1>
+      <h1 class="titulosforms">Editar producto</h1>
 
       <form
         class="formabmproducto"
@@ -13,6 +13,7 @@
         method="post"
         enctype="multipart/form-data"
       >
+      
         <div class="mainformabmproducto">
           <div class="formimagenabmproducto">
             <img src="/img/products/<%= productRenderizar.image %>" />

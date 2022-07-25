@@ -8,7 +8,7 @@ const productsController = {
     }),
   store: (req, res) => {
     let notError = validation.crudProducValidation(req, res);
-    notError.then((r) => console.log(r + "estoy aca"));
+    //notError.then((r) => console.log(r + "estoy aca"));
 
     if (notError) {
       db.Product.create({
