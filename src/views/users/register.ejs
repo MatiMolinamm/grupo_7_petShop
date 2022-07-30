@@ -15,6 +15,7 @@
       >
         <div class="nombre">
           <input
+            id="nombre"
             autofocus
             type="text"
             name="name"
@@ -28,6 +29,7 @@
         </div>
         <div class="telefono">
           <input
+            id="telefono"
             type="number"
             name="telefono"
             placeholder="Numero telefónico"
@@ -40,7 +42,7 @@
         </div>
         <div class="email">
           <input
-            type="email"
+            id="email"
             name="email"
             placeholder="email@address.com"
             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
@@ -55,10 +57,14 @@
           <select name="categoria" id="categoria">
             <option value="1">Administrador</option>
             <option value="2">Cliente</option>
+            <% if (locals.errors && errors.category_id) { %>
+            <div class="text-danger"><%= errors.category_id.msg %></div>
+            <% } %>
           </select>
         </div>
         <div class="avatar">
           <input
+            id="avatar"
             type="file"
             name="avatar"
             value="<%= locals.oldFile? oldFile.filename: null %>"
@@ -71,6 +77,7 @@
 
         <div class="pasword">
           <input
+            id="password"
             type="password"
             name="password"
             placeholder="Ingresar password"
@@ -83,6 +90,7 @@
         </div>
         <div class="pasword">
           <input
+            id="passwordConfirm"
             type="password"
             name="passwordConfirm"
             placeholder="Confirmar password"
@@ -95,5 +103,6 @@
       </form>
     </main>
     <%- include('../partials/footer.ejs')%>
+    <script src="/js/registerForm.js"></script>
   </body>
 </html>

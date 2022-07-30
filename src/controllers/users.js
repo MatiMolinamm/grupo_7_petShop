@@ -46,7 +46,7 @@ const usersController = {
         return res.render("users/login", {
           errors: {
             email: {
-              msg: "Las credenciales son inválidas",
+              msg: "Contraseña incorrecta, ingrese nuevamente su usuario y contraseña",
             },
           },
           titulo_pagina: "Petit and Fun -Login",
@@ -122,6 +122,7 @@ const usersController = {
 
   storeUsers: (req, res) => {
     let error = validation.registerValidation(req, res);
+    console.log(req.body);
 
     if (error) {
       db.User.findAll({ where: { email: req.body.email } }).then(
@@ -175,6 +176,8 @@ const usersController = {
   },
 
   destroy: (req, res) => {
+    res.clearCookie("userEmail");
+
     db.User.destroy({
       where: { id: req.session.userLogged.id },
     }).then((r) => {

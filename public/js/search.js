@@ -2,7 +2,7 @@ window.addEventListener("load", function (e) {
   let divResultado = document.querySelectorAll(".productos");
   let resultadoCero = document.querySelector(".resultadoCero");
   let homeSearch = document.querySelector("#homesearch");
-  console.log(homeSearch);
+
   homeSearch.addEventListener("keypress", function (e) {
     //alert("se presiono la tecla" + " " + e.key);
     resultadoCero.focus();

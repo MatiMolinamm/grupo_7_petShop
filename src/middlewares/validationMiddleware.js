@@ -7,7 +7,7 @@ let validations = {
   rulesAbmProductsAlta: [
     body("image").custom((value, { req }) => {
       let file = req.file;
-      let acceptedExtensions = [".jpg", ".png", ".gif"];
+      let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
       if (!file) {
         throw new Error("Tienes que subir una imagen");
@@ -24,13 +24,19 @@ let validations = {
 
       return true;
     }),
-    body("name").notEmpty().withMessage("Debe completar el campo"),
+    body("name")
+      .notEmpty()
+      .withMessage("Debe completar el campo")
+      .isLength({ min: 3 })
+      .withMessage("Debe tener más de 2 caracteres"),
     body("description")
       .notEmpty()
       .withMessage("Debe completar el campo")
       //.isAlpha(). withMessage('Solo puede utilizar letras')
       .isLength({ max: 100 })
-      .withMessage("Maximo 100 caracteres"),
+      .withMessage("Maximo 100 caracteres")
+      .isLength({ min: 20 })
+      .withMessage("Debe tener más de 20 caracteres"),
     body("price")
       .notEmpty()
       .withMessage("Debe completar el campo")
@@ -71,13 +77,19 @@ let validations = {
 
       return true;
     }),
-    body("name").notEmpty().withMessage("Debe completar el campo"),
+    body("name")
+      .notEmpty()
+      .withMessage("Debe completar el campo")
+      .isLength({ min: 3 })
+      .withMessage("Debe tener más de 2 caracteres"),
     body("description")
       .notEmpty()
       .withMessage("Debe completar el campo")
       //.isAlpha(). withMessage('Solo puede utilizar letras')
       .isLength({ max: 100 })
-      .withMessage("Maximo 100 caracteres"),
+      .withMessage("Maximo 100 caracteres")
+      .isLength({ min: 20 })
+      .withMessage("Debe tener más de 20 caracteres"),
     body("price")
       .notEmpty()
       .withMessage("Debe completar el campo")
@@ -104,7 +116,7 @@ let validations = {
       .withMessage("Debe completar el campo")
       //.isAlpha(). withMessage('Solo puede utilizar letras')
       .isLength({ min: 3 })
-      .withMessage("Debe tener más de 3 caracteres"),
+      .withMessage("Debe tener más de 2 caracteres"),
     body("telefono")
       .notEmpty()
       .withMessage("Debe completar el campo")
@@ -113,18 +125,24 @@ let validations = {
       .withMessage("Debe ingresar números")
       .isInt()
       .withMessage("Debe ingresar números enteros")
-      .isLength({ min: 3 })
-      .withMessage("Debe tener mas de 3 caracteres"),
-    body("email").notEmpty().withMessage("Debe completar el campo").bail(),
+      .isLength({ min: 6 })
+      .withMessage("Debe tener mas de 5 caracteres"),
+    body("email")
+      .notEmpty()
+      .withMessage("Debe completar el campo")
+      .bail()
+      .isEmail()
+      .withMessage("Formato no válido, debes ingresar un email"),
+    body("categoria").notEmpty().withMessage("Debes seleccionar una opcion"),
     body("password")
       .notEmpty()
       .withMessage("Debe completar el campo")
       .bail()
       .isLength({ min: 6 })
-      .withMessage("Debe tener mas de 6 caracteres"),
+      .withMessage("Debe tener mas de 5 caracteres"),
     body("avatar").custom((value, { req }) => {
       let file = req.file;
-      let acceptedExtensions = [".jpg", ".png", ".gif"];
+      let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
       if (!file) {
         throw new Error("Tienes que subir una imagen");
@@ -148,7 +166,7 @@ let validations = {
       .withMessage("Debe completar el campo")
       //.isAlpha(). withMessage('Solo puede utilizar letras')
       .isLength({ min: 3 })
-      .withMessage("Debe tener más de 3 caracteres"),
+      .withMessage("Debe tener más de 2 caracteres"),
     body("telefono")
       .notEmpty()
       .withMessage("Debe completar el campo")
@@ -165,11 +183,11 @@ let validations = {
       .withMessage("Debe completar el campo")
       .bail()
       .isLength({ min: 6 })
-      .withMessage("Debe tener mas de 6 caracteres"),
+      .withMessage("Debe tener mas de 5 caracteres"),
 
     body("avatar").custom((value, { req }) => {
       let file = req.file;
-      let acceptedExtensions = [".jpg", ".png", ".gif"];
+      let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
       if (file) {
         let fileExtension = path.extname(file.originalname);
@@ -186,7 +204,12 @@ let validations = {
     }),
   ],
   rulesLogin: [
-    body("email").notEmpty().withMessage("Debe completar el campo").bail(),
+    body("email")
+      .notEmpty()
+      .withMessage("Debe completar el campo")
+      .bail()
+      .isEmail()
+      .withMessage("Formato no válido, debes ingresar un email"),
     body("password")
       .notEmpty()
       .withMessage("Debe completar el campo")
