@@ -23,8 +23,9 @@
             class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.name : null %>"
           />
+          <div class="text-danger" id="dangerName"></div>
           <% if (locals.errors && errors.name) { %>
-          <div class="text-danger"><%= errors.name.msg %></div>
+          <div class="text-danger name"><%= errors.name.msg %></div>
           <% } %>
         </div>
         <div class="telefono">
@@ -36,6 +37,7 @@
             class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.telefono : null %>"
           />
+          <div class="text-danger" id="dangerTelefono"></div>
           <% if (locals.errors && errors.telefono) { %>
           <div class="text-danger"><%= errors.telefono.msg %></div>
           <% } %>
@@ -48,6 +50,7 @@
             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.email : null %>"
           />
+          <div class="text-danger" id="dangerEmail"></div>
           <% if (locals.errors && errors.email) { %>
           <div class="text-danger"><%= errors.email.msg %></div>
           <% } %>
@@ -57,6 +60,7 @@
           <select name="categoria" id="categoria">
             <option value="1">Administrador</option>
             <option value="2">Cliente</option>
+            <div class="text-danger" id="dangerCategoria"></div>
             <% if (locals.errors && errors.category_id) { %>
             <div class="text-danger"><%= errors.category_id.msg %></div>
             <% } %>
@@ -70,6 +74,7 @@
             value="<%= locals.oldFile? oldFile.filename: null %>"
             class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
           />
+          <div class="text-danger" id="dangerAvatar"></div>
           <% if (locals.errors && errors.avatar) { %>
           <div class="text-danger"><%= errors.avatar.msg %></div>
           <% } %>
@@ -84,6 +89,7 @@
             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.password : null %>"
           />
+          <div class="text-danger" id="dangerPassword"></div>
           <% if (locals.errors && errors.password) { %>
           <div class="text-danger"><%= errors.password.msg %></div>
           <% } %>
@@ -95,6 +101,7 @@
             name="passwordConfirm"
             placeholder="Confirmar password"
           />
+          <div class="text-danger" id="dangerPasswordConfirm"></div>
         </div>
         <div class="boton">
           <button type="submit">Enviar</button>

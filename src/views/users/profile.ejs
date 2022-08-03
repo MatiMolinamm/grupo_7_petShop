@@ -20,12 +20,13 @@
                 <div class="nombre">
                   <input
                   autofocus
+                  id="nombre"
                     type="text"
                     name="name"
                     placeholder="Nombre y apellido"
                     class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.name : user.name %>"
-                  />
+                  /><div class="text-danger" id="dangerName"></div>
                   <% if (locals.errors && errors.name) { %>
                   <div class="text-danger"><%= errors.name.msg %></div>
                   <% } %>
@@ -34,22 +35,24 @@
                   <input
                     type="number"
                     name="telefono"
+                    id="telefono"
                     placeholder="Numero telefónico"
                     class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.telefono : user.phone %>"
-                  />
+                  /> <div class="text-danger" id="dangerTelefono"></div>
                   <% if (locals.errors && errors.telefono) { %>
                   <div class="text-danger"><%= errors.telefono.msg %></div>
                   <% } %>
                 </div>
                 <div class="email">
                   <input
+                  id="email"
                     type="email"
                     name="email"
                     placeholder="email@address.com"
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : user.email %>"
-                  />
+                  /><div class="text-danger" id="dangerEmail"></div>
                   <% if (locals.errors && errors.email) { %>
                   <div class="text-danger"><%= errors.email.msg %></div>
                   <% } %>
@@ -68,11 +71,12 @@
                 </div>
                 <div class="avatar">
                   <input
+                  id="avatar"
                     type="file"
                     name="avatar"
                     value="<%=user.avatar %> "
                     class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
-                  />
+                  /><div class="text-danger" id="dangerAvatar"></div>
                   <% if (locals.errors && errors.avatar) { %>
                   <div class="text-danger"><%= errors.avatar.msg %></div>
                   <% } %>
@@ -80,22 +84,24 @@
 
                 <div class="pasword">
                   <input
+                  id="password"
                     type="password"
                     name="password"
                     placeholder="Ingresar password"
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.password : null %>"
-                  />
+                  /> <div class="text-danger" id="dangerPassword"></div>
                   <% if (locals.errors && errors.password) { %>
                   <div class="text-danger"><%= errors.password.msg %></div>
                   <% } %>
                 </div>
                 <div class="pasword">
                   <input
+                  id="passwordConfirm"
                     type="password"
                     name="passwordConfirm"
                     placeholder="Confirmar password"
-                  />
+                  /> <div class="text-danger" id="dangerPasswordConfirm"></div>
                 </div>
               <div class="processProfile">
                       <button type="submit">Guardar</button>        
@@ -106,6 +112,7 @@
                     </form>
               </div>
       </div>    
+      <script src="/js/registerForm.js"></script>
     </main>
     <%- include('../partials/footer.ejs')%>
   </body>

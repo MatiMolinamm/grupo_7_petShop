@@ -13,10 +13,11 @@
           autofocus
             type="email"
             name="email"
+            id="email"
             placeholder="Ingrese su email"
             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.email : null %>"
-          >
+          ><div class="text-danger" id="dangerEmail"></div>
           <% if (locals.errors && errors.email) { %>
             <div class="text-danger">
               <%= errors.email.msg %> 
@@ -25,11 +26,12 @@
         <div class="password">
           <input
             type="password"
+            id="password"
             name="password"
             placeholder="Contraseña"
             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.password : null %>"
-          >
+          ><div class="text-danger" id="dangerPassword"></div>
           <% if (locals.errors && errors.password) { %>
             <div class="text-danger">
               <%= errors.password.msg %> 
@@ -50,6 +52,7 @@
           <a href="#">Olvide mi Contraseña</a>
         </div>
       </form>
+      <script src="/js/loginForm.js"></script>
     </main>
     <%- include('../partials/footer.ejs')%>
   </body>

@@ -262,7 +262,9 @@ div a i.fa-user:hover {
 }
 
 /* -- IMAGENES DE CATEGORIAS DE PRODUCTOS HOME --*/
-
+.productosList img {
+  max-width: 15%;
+}
 .categoryimages {
   display: flex;
   flex-direction: column;
@@ -479,8 +481,8 @@ div.rememberUser {
 }
 
 div.rememberUser input {
-    margin: 0px -130px 0px -44%;
-    width: 10%;
+  margin: 0px -130px 0px -44%;
+  width: 10%;
 }
 
 div.rememberUser label {
@@ -1211,8 +1213,7 @@ form div.formimagenabmproducto {
   div.rememberUser input {
     margin: 0px -140px 0px -35%;
     width: 10%;
-}
-
+  }
 
   /* -- ABM PRODUCTO --*/
   form div.mainformabmproducto {

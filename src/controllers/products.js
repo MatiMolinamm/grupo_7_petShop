@@ -163,6 +163,14 @@ const productsController = {
       });
     });
   },
+  list: (req, res) => {
+    db.Product.findAll().then((products) => {
+      res.render("products/listProducts", {
+        products,
+        titulo_pagina: "Petit and Fun - Prodcutos",
+      });
+    });
+  },
 
   detail: (req, res) => {
     db.Product.findOne({

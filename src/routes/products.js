@@ -43,6 +43,8 @@ router.delete(
   notAdmindMiddleware,
   productsController.destroy
 );
+//LISTADO DE TODOS LOS PRODUCTOS
+router.get("/list", productsController.list);
 
 //RUTAS PRODUCTOS PARA PERRO
 router.get("/1", productsController.perros);
