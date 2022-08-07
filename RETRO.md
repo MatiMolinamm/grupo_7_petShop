@@ -6,7 +6,7 @@ En este archivo nos hacemos tres preguntas:
 - Hubo algún problema? Cuál fué su posible causa?
 - Como podríamos hacerlo mejor?
 
-----    SPRINT 2    ----
+----    SPRINT 2  HTML + CSS  ----
 
 El resultado fue bueno en general, además mejoramos la forma de ordenar el trabajo en Trello, asignando uno o más compañeros por tarea.
 
@@ -16,7 +16,7 @@ A pesar de las tareas diarias de cada compañero pactamos un día a la semana pa
 
 La tarea pendiente era agregar la descripción de cada integrante al archivo README, lo resolvimos en la primer reunion luego de la devolucion del Sprint, cada integrante escribió en Discord una línea, luego un compañero lo agregó al repositorio. Fué el único pendiendo del Sprint1, se nos pasó, por no tenerla escrita en Trello.
 
-----    SPRINT 3    ----
+----    SPRINT 3  Template Engines  ----
 
 Pudimos terminar las tareas del Sprint con una semana de anticipación. No quedaron tareas pendientes, adelantamos uno o dos puntos del siguiente Sprint en la clase en vivo grupal del día 09/05/2022.
 
@@ -24,7 +24,7 @@ Tuvimos una reunión con Antonio donde ordenamos las rutas y controladores.
 
 Encontramos una mejor dinámica grupal con ayuda de Trello. Nos conocemos mejor, y sabemos para qué es mejor quién, en base a esto asignamos tareas.
 
-----    SPRINT 4    ----
+----    SPRINT 4  JSON + HTTP  ----
 
 Para este Sprint llegamos con más tiempo disponible y con tareas adelantadas.
 
@@ -34,9 +34,19 @@ No fueron necesarias reuniones fuera de las clases practicas.
 
 Seguimos mejorando nuestro sistema de comunicación, usamos más Trello.
 
----- SPRINT 5 ----
+----    SPRINT 5  Middlewares + Authentication  ----
 
 Tuvimos bajas de compañeros de equipo. Quedamos tres integrantes.
 
 Sprint finalizado con días de sobra para adelantar otras tareas.
+
+----    SPRINT 6  Bases de Datos  ----
+
+Sprint realizado por un integrante del equipo, dos integrantes tuvieron inconvenientes personales y no participaron activamente del Sprint.
+
+----    SPRINT 7  Validaciones Frontend  ----
+
+Dejamos de lado Trello, hay que retomarlo.
+
+----    SPRINT 8  APIs + React  ----
 
