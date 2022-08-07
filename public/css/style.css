@@ -953,12 +953,6 @@ form div.buttonabmproducto input {
   background-color: #4dbbd4;
 }
 
-/*!Mariano: alta, baja ymodificacion producto*/
-/* form div.formimagenabmproducto {
-  display: flex;
-  flex-wrap: wrap;
-  width: 40%;
-} */
 
 div.buttonsFormProfileContainer {
   display: flex;
@@ -966,6 +960,11 @@ div.buttonsFormProfileContainer {
   align-items: center;
   justify-content: center;
 }
+
+.formloginandregister button {
+  cursor: pointer;
+}
+
 
 @media (min-width: 481px) {
   .centerHeader {

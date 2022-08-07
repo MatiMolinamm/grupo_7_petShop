@@ -9,14 +9,19 @@
         <h1 class="titulosforms">Perfil</h1>
 
         <div class="profile">
+
           <div class="imageContainer">
             <div class="profileAvatar" style="background-image: url(../img/usersAvatar/<%= user.avatar %>)">
             </div>
           </div>
 
           <div class="formContainer">
-            <form action="/users/profile/?_method=put" method="post" class="formloginandregister"
-              enctype="multipart/form-data">
+            <form 
+              action="/users/profile/?_method=put" 
+              method="post" 
+              class="formloginandregister" 
+              enctype="multipart/form-data" 
+            >
 
               <div class="nombre">
                 <input autofocus id="nombre" type="text" name="name" placeholder="Nombre y Apellido"
@@ -89,15 +94,14 @@
                 <input id="passwordConfirm" type="password" name="passwordConfirm" placeholder="Confirmar password" />
                 <div class="text-danger" id="dangerPasswordConfirm"></div>
               </div>
+              <div class="formloginandregister">
+                <button type="submit">Guardar</button>
+              </div>
 
             </form>
           </div>
 
           <div class="buttonsFormProfileContainer">
-
-            <div class="formloginandregister">
-              <button type="submit">Guardar</button>
-            </div>
 
             <form action="/users/profile/?_method=delete" method="post" class="formloginandregister">
               <button type="submit">Eliminar cuenta</button>
