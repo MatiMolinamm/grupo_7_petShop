@@ -16,10 +16,12 @@
 
             <div class="formimagenabmproducto <%= locals.errors && errors.image ? 'is-invalid' : null %>">
 
-              <img src="/img/products/alimento-gato-excellent.png" />
+              <img src="/img/undef-file-image.png" />
+              
 
               <input id="image" type="file" accept=".jpg,.png,.svg" name="image" placeholder="Imagen del producto"
-                value="<%= locals.oldData ? oldData.image : null %>" />
+                value="<%= locals.oldData ? oldData.image : null %>"
+              />
 
               <div class="text-danger" id="dangerImage"></div>
 
@@ -132,7 +134,7 @@
                   </div>
                   <% } %>
               </div>
-              
+
               <div class="inputselector <%= locals.errors && errors.oferta? 'is-invalid' : null %>">
                 <select name="oferta" id="oferta">
                   <option selected value="<%= locals.oldData ? oldData.oferta : null %>">

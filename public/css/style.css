@@ -404,11 +404,11 @@ div.profileAvatar {
   border-radius: 50%;
   border: 4px solid #e8f0fe;
   display: flex;
-  height: 125px;
-  margin: 28px auto 0px;
+  height: 150px;
+  margin: auto;
   min-width: 150px;
   min-height: 150px;
-  width: 125px;
+  max-width: 150px;
 }
 
 div img#profileAvatar {
@@ -423,7 +423,6 @@ div img#profileAvatar {
   align-items: center;
   background-color: #ffffff;
   display: flex;
-  margin: 10px 0px 20px 0;
   flex-direction: column;
 }
 
@@ -926,10 +925,9 @@ form div.detailformabmproducto div {
 div.detailformabmproducto input,
 div.detailformabmproducto select,
 div.detailformabmproducto textarea {
-  background-color: #8c52ff;
+  background-color: #e8f0fe;
   border: 0px solid;
   border-radius: 15px;
-  color: white;
   margin: 8px 0px;
   min-width: 266px;
   max-width: 530px;
@@ -956,10 +954,17 @@ form div.buttonabmproducto input {
 }
 
 /*!Mariano: alta, baja ymodificacion producto*/
-form div.formimagenabmproducto {
+/* form div.formimagenabmproducto {
   display: flex;
   flex-wrap: wrap;
   width: 40%;
+} */
+
+div.buttonsFormProfileContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 481px) {
@@ -1033,9 +1038,15 @@ form div.formimagenabmproducto {
     padding-top: 10px;
     margin-top: 10px;
   }
+
 }
 
 @media (min-width: 769px) {
+
+  div.buttonsFormProfileContainer {
+    display: flex;
+    align-items: center;
+  }
   .centerHeader button {
     right: 28%;
   }
@@ -1179,10 +1190,6 @@ form div.formimagenabmproducto {
     position: relative;
   }
 
-  /* .bottomHeader form input:hover {
-    border: 1px solid white;
-  } Quiero que al seleccionar el input para buscar algo, se haga un borde solido de 1 px blanco */
-
   /* -- BOTTOM HEADER --*/
 
   .bottomHeader ul {
@@ -1304,46 +1311,6 @@ form div.formimagenabmproducto {
     height: auto;
   }
 
-  /* ICONO DE LOGIN Y CARRITO CON ANIMACION
-  .centerHeader div a i.fa-user {
-    display: inline-block;
-    border-radius: 50px;
-    padding: 7px;
-    position: relative;
-    transition: transform 0.3s;
-    top: 15px;
-    right: 50px;
-    width: 35px;
-    z-index: 10;
-  }
-
-  .centerHeader div a span:last-child {
-    align-items: center;
-    bottom: 0;
-    border-radius: 20px;
-    color: transparent;
-    display: flex;
-    font-size: 14px;
-    justify-content: center;
-    left: 25px;
-    overflow: hidden;
-    transition: width 0.3s, color 0.3s, border 0.3s;
-    width: 10px;
-  }
-
-  .centerHeader div a span i:hover {
-    animation: rotation 0.4s linear;
-  }
-
-  .centerHeader div a:hover span:last-child {
-    background-color: rgb(34 109 175);
-    border: 2px 2px 2px 2px solid white;
-    color: white;
-    height: 30px;
-    width: 100px;
-  }
-  */
-
   /* -- USER PROFILE --*/
 
   form div.userprofile {
@@ -1366,18 +1333,17 @@ form div.formimagenabmproducto {
   div.profile {
     display: flex;
     flex-direction: row;
-    padding: 0 30px;
-    width: 60%;
-  }
-
-  div.profileAvatar {
-    margin: 28px 10% 0 10%;
+    margin: auto;
+    max-width: 80%;
+    align-items: center;
+    justify-content: space-around;
   }
 
   div.processProfile {
     display: flex;
     flex-direction: column;
   }
+
 }
 
 @media (min-width: 1018px) {
@@ -1412,98 +1378,42 @@ form div.formimagenabmproducto {
   .centerHeader form.homesearch {
     width: 45%;
   }
+}
 
-  @media (min-width: 1300px) {
-    .mainIndex {
-      max-width: 1450px;
-      text-align: center;
-      margin: auto;
-    }
-
-    /* Darle ancho máximo
-  header {
+@media (min-width: 1300px) {
+  .mainIndex {
     max-width: 1450px;
-  }
-  body {
-    max-width: 1450px;
-  }
-  */
-
-    /*Carrito*/
-    div.detalleproducto {
-      padding: 0px 40px;
-    }
-
-    div.carritodecompras {
-      width: 100%;
-    }
-
-    div.carritodetalleproducto {
-      width: 61%;
-    }
-
-    div.totaldelcarrito {
-      width: 34%;
-    }
-
-    /*Header*/
-    .centerHeader input {
-      width: 550px;
-    }
-
-    .centerHeader .usuario {
-      margin-right: 30px;
-    }
-
-    .centerHeader a {
-      color: white;
-    }
-
-    /* SI EL USUARIO ENTRA EN SESSION EL USER IN SESSION APLICA ESTO
-  div#usuario {
-    display: none;
+    text-align: center;
+    margin: auto;
   }
 
-  div.UserinSessionheader {
-    display: none;
-    left: 47px;
-    transition: transform 0.3s;
-    position: relative;
-    width: 120px;
-    z-index: 10;
+  /*Carrito*/
+  div.detalleproducto {
+    padding: 0px 40px;
   }
 
-  .UserinSessionheader a span:last-child {
-    align-items: center;
-    bottom: 0;
-    border-radius: 20px;
-    color: transparent;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    left: 55px;
-    top: 0;
-    right: 0;
-    transition: width 0.3s, color 0.3s, border 0.3s;
-    width: 1px;
-    
+  div.carritodecompras {
+    width: 100%;
   }
-  .centerHeader div i.fa-cart-shopping {
-    border-radius: 20px;
-    font-size: 1.3rem;
-    padding: 7px;
-  }
-  */
-    /*
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
 
-    to {
-      transform: rotate(360deg);
-    }
+  div.carritodetalleproducto {
+    width: 61%;
   }
-  */
+
+  div.totaldelcarrito {
+    width: 34%;
+  }
+
+  /*Header*/
+  .centerHeader input {
+    width: 550px;
+  }
+
+  .centerHeader .usuario {
+    margin-right: 30px;
+  }
+
+  .centerHeader a {
+    color: white;
   }
 }
