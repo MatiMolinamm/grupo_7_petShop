@@ -128,7 +128,7 @@ const productsController = {
     }).then((productsPerros) => {
       res.render("products/perrosProducts", {
         productsPerros,
-        titulo_pagina: "Petit and Fun - Prodcutos",
+        titulo_pagina: "Petit and Fun - Productos",
       });
     });
   },
@@ -138,7 +138,7 @@ const productsController = {
     }).then((productsGatos) => {
       res.render("products/gatosProducts", {
         productsGatos,
-        titulo_pagina: "Petit and Fun - Prodcutos",
+        titulo_pagina: "Petit and Fun - Productos",
       });
     });
   },
@@ -148,7 +148,7 @@ const productsController = {
     }).then((productsPeces) => {
       res.render("products/pecesProducts", {
         productsPeces,
-        titulo_pagina: "Petit and Fun - Prodcutos",
+        titulo_pagina: "Petit and Fun - Productos",
       });
     });
   },
@@ -159,7 +159,7 @@ const productsController = {
     }).then((productsAves) => {
       res.render("products/avesProducts", {
         productsAves,
-        titulo_pagina: "Petit and Fun - Prodcutos",
+        titulo_pagina: "Petit and Fun - Productos",
       });
     });
   },
@@ -167,7 +167,7 @@ const productsController = {
     db.Product.findAll().then((products) => {
       res.render("products/listProducts", {
         products,
-        titulo_pagina: "Petit and Fun - Prodcutos",
+        titulo_pagina: "Petit and Fun - Productos",
       });
     });
   },
