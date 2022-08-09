@@ -31,11 +31,14 @@ window.addEventListener("load", function (e) {
       textDangerEmail.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else textDangerEmail.style.display = "none";
 
-    if (password.value === "") {
+    if (password.value === "" || password.value.length < 6) {
       errores.push("Debes completar el campo password");
       textDangerPassword.innerHTML =
-        "<p>" + "Debes completar el campo" + "</p>";
+        "<p>" +
+        "Debes completar el campo y contener mas de 6 caracteres" +
+        "</p>";
     } else textDangerPassword.style.display = "none";
+    console.log(password.value.length);
 
     if (errores.length > 0) {
       console.log(errores);

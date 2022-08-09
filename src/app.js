@@ -11,6 +11,8 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware"); //mi
 const routerMain = require("./routes/main");
 const routerProducts = require("./routes/products");
 const routerUsers = require("./routes/users");
+
+const routerApi = require("./routes/api/routerApi");
 const publicPath = path.resolve(__dirname, "../public");
 
 // Config
@@ -31,5 +33,8 @@ app.use(userLoggedMiddleware);
 app.use("/", routerMain);
 app.use("/users", routerUsers);
 app.use("/products", routerProducts);
+
+//Routes APIs
+app.use("/api", routerApi);
 
 app.listen(3000, () => console.log("servidor funcionando en puerto 3000"));

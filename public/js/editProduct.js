@@ -16,7 +16,7 @@ window.addEventListener("load", function (e) {
   let dangerOferta = document.querySelector("#dangerOferta");
   let description = document.querySelector("#description");
   console.log(description);
-  console.log(description.value);
+  console.log(description.length);
   let dangerDescription = document.querySelector("#dangerDescription");
   let peso = document.querySelector("#peso");
 
@@ -114,7 +114,7 @@ window.addEventListener("load", function (e) {
       dangerPeso.innerHTML =
         "<p>" + "Debes completar el campo packagin" + "</p>";
     } else dangerPeso.style.display = "none";
-    if (description.value == "") {
+    if (description.length == 0) {
       errores.push("descripcion");
       dangerDescription.innerHTML =
         "<p>" + "Debes completar el campo descripcion" + "</p>";
