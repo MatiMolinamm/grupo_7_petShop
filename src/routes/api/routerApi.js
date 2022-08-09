@@ -13,5 +13,6 @@ router.get("/users/:id", usersApiController.userId);
 //RUTAS API PRODUCTS
 
 router.get("/products", productsApiController.productsInDb);
+router.get("/products/:id", productsApiController.detail);
 
 module.exports = router;

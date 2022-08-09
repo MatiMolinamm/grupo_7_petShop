@@ -1,6 +1,5 @@
 const db = require("../../database/models");
 const path = require("path");
-const { url } = require("inspector");
 const publicPathAvatar = path.resolve(
   __dirname,
   "../../../public/img/usersAvatar"
