@@ -805,6 +805,7 @@ div.editiondetailbuttons button {
 
 div.carritodecompras {
   width: 100%;
+  padding: 30px;
   margin: 30px 10px;
   margin-bottom: 10vh;
 }
