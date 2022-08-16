@@ -1,206 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs')%>
+<%- include('../partials/head.ejs')%>
 
   <body>
     <%- include('../partials/header.ejs')%>
 
-    <main>
-      <h1 class="titulosforms">ABM Producto</h1>
-      <h2 class="forms">AGREGAR, MODIFICAR O ELIMINAR PRODUCTO</h2>
+      <main>
+        <!-- <h1 class="titulosforms">ABM Producto</h1> -->
+        <h2 class="forms">Agregar Producto</h2>
 
-      <form
-        class="form"
-        action="/products/abmproduct"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <div class="mainformabmproducto">
-          <div
-            class="formimagenabmproducto <%= locals.errors && errors.image ? 'is-invalid' : null %>"
-          >
-            <img src="/img/undef-file-image.png" />
+        <form class="form" action="/products/abmproduct" method="post" enctype="multipart/form-data">
+          <div class="formAltaProducto">
 
-            <input
-              id="image"
-              type="file"
-              accept=".jpg,.png,.svg"
-              name="image"
-              placeholder="Imagen del producto"
-              value="<%= locals.oldData ? oldData.image : null %>"
-            />
+            <div class="formAltaProductoImg <%= locals.errors && errors.image ? 'is-invalid' : null %>">
 
-            <div class="text-danger" id="dangerImage"></div>
+              <img src="/img/undef-file-image.png" />
 
-            <% if (locals.errors && errors.image) { %>
-            <div class="text-danger"><%= errors.image.msg %></div>
-            <% } %>
-          </div>
-
-          <div
-            class="detailformabmproducto <%= locals.errors && errors.name ? 'is-invalid' : null %>"
-          >
-            <div>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Título del producto"
-                value="<%= locals.oldData ? oldData.name : null %>"
+              <input 
+                id="image" 
+                type="file" 
+                accept=".jpg,.png,.svg" 
+                name="image" 
+                placeholder="Imagen del producto"
+                value="<%= locals.oldData ? oldData.image : null %>" 
               />
 
-              <div class="text-danger" id="dangerName"></div>
+              <div class="text-danger" id="dangerImage"></div>
 
-              <% if (locals.errors && errors.name) { %>
-              <div class="text-danger"><%= errors.name.msg %></div>
-              <% } %>
+              <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                  <%= errors.image.msg %>
+                </div>
+                <% } %>
+
             </div>
 
-            <div
-              class="detailformabmproducto <%= locals.errors && errors.description ? 'is-invalid' : null %>"
-            >
-              <textarea
-                name="description"
-                id="description"
-                placeholder="Describí tu producto"
-                value="<%= locals.oldData ? oldData.description : null %>"
-              >
-              </textarea>
+            <div class="formAltaProductoInputs">
 
-              <div class="text-danger" id="dangerDescription"></div>
+              <div class="formAltaProductoItem <%= locals.errors && errors.name ? 'is-invalid' : null %>">
 
-              <% if (locals.errors && errors.description) { %>
-              <div class="text-danger"><%= errors.description.msg %></div>
-              <% } %>
-            </div>
+                <input type="text" name="name" id="name" placeholder="Título del producto"
+                  value="<%= locals.oldData ? oldData.name : null %>" />
 
-            <div
-              class="detailformabmproducto <%= locals.errors && errors.price? 'is-invalid' : null %>"
-            >
-              <input
-                type="number"
-                id="price"
-                name="price"
-                placeholder="Precio"
-                value="<%= locals.oldData ? oldData.price : null %>"
-              />
+                <div class="text-danger" id="dangerName"></div>
 
-              <div class="text-danger" id="dangerPrice"></div>
-
-              <% if (locals.errors && errors.price) { %>
-              <div class="text-danger"><%= errors.price.msg %></div>
-              <% } %>
-            </div>
-
-            <div
-              class="inputselector <%= locals.errors && errors.packaging? 'is-invalid' : null %>"
-            >
-              <div>
-                <select name="packaging" id="peso">
-                  <option
-                    selected
-                    value="<%= locals.oldData ? oldData.packaging : null %>"
-                  >
-                    Seleccioná el tamaño del producto
-                  </option>
-                  <option type="number" value="3">3 kg</option>
-                  <option type="number" value="5">5 kg</option>
-                  <option type="number" value="8 ">8 kg</option>
-                </select>
+                <% if (locals.errors && errors.name) { %>
+                  <div class="text-danger">
+                    <%= errors.name.msg %>
+                  </div>
+                  <% } %>
               </div>
 
-              <div class="text-danger" id="dangerPeso"></div>
+              <div class="formAltaProductoItem <%= locals.errors && errors.description ? 'is-invalid' : null %>">
+                <textarea name="description" id="description" placeholder="Describí tu producto"
+                  value="<%= locals.oldData ? oldData.description : null %>">
+                </textarea>
 
-              <% if (locals.errors && errors.packaging) { %>
-              <div class="text-danger"><%= errors.packaging.msg %></div>
-              <% } %>
-            </div>
+                <div class="text-danger" id="dangerDescription"></div>
 
-            <div
-              class="detailformabmproducto <%= locals.errors && errors.stock? 'is-invalid' : null %>"
-            >
-              <input
-                type="number"
-                name="stock"
-                id="stock"
-                placeholder="Stock"
-                value="<%= locals.oldData ? oldData.stock : null %>"
-              />
+                <% if (locals.errors && errors.description) { %>
+                  <div class="text-danger">
+                    <%= errors.description.msg %>
+                  </div>
+                  <% } %>
+              </div>
 
-              <div class="text-danger" id="dangerStock"></div>
+              <div class="formAltaProductoItem <%= locals.errors && errors.price? 'is-invalid' : null %>">
+                <input type="number" id="price" name="price" placeholder="Precio"
+                  value="<%= locals.oldData ? oldData.price : null %>" />
 
-              <% if (locals.errors && errors.stock) { %>
-              <div class="text-danger"><%= errors.stock.msg %></div>
-              <% } %>
-            </div>
+                <div class="text-danger" id="dangerPrice"></div>
 
-            <div
-              class="inputselector <%= locals.errors && errors.class? 'is-invalid' : null %>"
-            >
-              <select name="class" id="categoria">
-                <option
-                  type="number"
-                  selected
-                  value="<%= locals.oldData ? oldData.class : null %>"
-                >
-                  Seleccioná una categoría
-                </option>
-                <option type="number" value="1">Perros</option>
-                <option type="number" value="2">Gatos</option>
-                <option type="number" value="3">Peces</option>
-                <option type="number" value="4">Aves</option>
-              </select>
-              <div class="text-danger" id="dangerCategoria"></div>
-              <% if (locals.errors && errors.class) { %>
-              <div class="text-danger"><%= errors.class.msg %></div>
-              <% } %>
-            </div>
+                <% if (locals.errors && errors.price) { %>
+                  <div class="text-danger">
+                    <%= errors.price.msg %>
+                  </div>
+                  <% } %>
+              </div>
 
-            <div
-              class="inputselector <%= locals.errors && errors.oferta? 'is-invalid' : null %>"
-            >
-              <select name="oferta" id="oferta">
-                <option
-                  selected
-                  value="<%= locals.oldData ? oldData.oferta : null %>"
-                >
-                  En Oferta
-                </option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-              </select>
-              <div class="text-danger" id="dangerOferta"></div>
-              <% if (locals.errors && errors.oferta) { %>
-              <div class="text-danger"><%= errors.oferta.msg %></div>
-              <% } %>
-            </div>
+              <div class="inputSelector <%= locals.errors && errors.packaging? 'is-invalid' : null %>">
+                <div>
+                  <select name="packaging" id="peso">
+                    <option selected value="<%= locals.oldData ? oldData.packaging : null %>">
+                      Seleccioná el tamaño del producto
+                    </option>
+                    <option type="number" value="3">3 kg</option>
+                    <option type="number" value="5">5 kg</option>
+                    <option type="number" value="8 ">8 kg</option>
+                  </select>
+                </div>
 
-            <div
-              class="detailformabmproducto <%= locals.errors && errors.amount? 'is-invalid' : null %>"
-            >
-              <input
-                type="number"
-                id="amount"
-                name="amount"
-                placeholder="Cantidad"
-                value="<%= locals.oldData ? oldData.amount : null %>"
-              />
-              <div class="text-danger" id="dangerAmount"></div>
-              <% if (locals.errors && errors.amount) { %>
-              <div class="text-danger"><%= errors.amount.msg %></div>
-              <% } %>
-            </div>
+                <div class="text-danger" id="dangerPeso"></div>
 
-            <div class="formbuttonsabmproducto">
-              <div class="buttonabmproducto">
+                <% if (locals.errors && errors.packaging) { %>
+                  <div class="text-danger">
+                    <%= errors.packaging.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="formAltaProductoItem <%= locals.errors && errors.stock? 'is-invalid' : null %>">
+                <input type="number" name="stock" id="stock" placeholder="Stock"
+                  value="<%= locals.oldData ? oldData.stock : null %>" />
+
+                <div class="text-danger" id="dangerStock"></div>
+
+                <% if (locals.errors && errors.stock) { %>
+                  <div class="text-danger">
+                    <%= errors.stock.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="inputSelector <%= locals.errors && errors.class? 'is-invalid' : null %>">
+                <select name="class" id="categoria">
+                  <option type="number" selected value="<%= locals.oldData ? oldData.class : null %>">
+                    Seleccioná una categoría
+                  </option>
+                  <option type="number" value="1">Perros</option>
+                  <option type="number" value="2">Gatos</option>
+                  <option type="number" value="3">Peces</option>
+                  <option type="number" value="4">Aves</option>
+                </select>
+                <div class="text-danger" id="dangerCategoria"></div>
+                <% if (locals.errors && errors.class) { %>
+                  <div class="text-danger">
+                    <%= errors.class.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="inputSelector <%= locals.errors && errors.oferta? 'is-invalid' : null %>">
+                <select name="oferta" id="oferta">
+                  <option selected value="<%= locals.oldData ? oldData.oferta : null %>">
+                    En Oferta
+                  </option>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+                <div class="text-danger" id="dangerOferta"></div>
+                <% if (locals.errors && errors.oferta) { %>
+                  <div class="text-danger">
+                    <%= errors.oferta.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="formAltaProductoItem <%= locals.errors && errors.amount? 'is-invalid' : null %>">
+                <input type="number" id="amount" name="amount" placeholder="Cantidad"
+                  value="<%= locals.oldData ? oldData.amount : null %>" />
+                <div class="text-danger" id="dangerAmount"></div>
+                <% if (locals.errors && errors.amount) { %>
+                  <div class="text-danger">
+                    <%= errors.amount.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="buttonProductForm">
                 <input type="submit" value="Agregar producto" />
               </div>
             </div>
+
           </div>
-        </div>
-      </form>
-    </main>
-    <script src="/js/altaProducto.js"></script>
-    <%- include('../partials/footer.ejs')%>
+
+        </form>
+
+      </main>
+      <script src="/js/altaProducto.js"></script>
+      <%- include('../partials/footer.ejs')%>
   </body>
+
 </html>

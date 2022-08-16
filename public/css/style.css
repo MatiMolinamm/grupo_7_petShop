@@ -890,68 +890,68 @@ td.imgcarritoproducto {
   display: flex;
 }
 
-/*!Mariano: alta, baja y modificacion producto*/
-form div.mainformabmproducto {
+/* Alta de producto */
+.formAltaProducto {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
   padding: 10px;
   width: 100%;
 }
 
-form div.formimagenabmproducto {
+.formAltaProductoInputs {
   display: flex;
-  flex-wrap: wrap;
-  width: 50%;
+  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-form div.formimagenabmproducto input {
-  margin: 0;
-  padding: 0;
+.formAltaProductoImg img {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px;
+  margin-bottom: 30px;
 }
 
-form div.formimagenabmproducto img {
-  max-width: 438px;
-  min-width: 200px;
+.formAltaProductoItem div {
+  margin: 10px;
+  padding: 10px;
   width: 100%;
 }
 
-form div.detailformabmproducto div {
-  margin: 10px 0;
-  width: 100%;
-}
-
-div.detailformabmproducto input,
-div.detailformabmproducto select,
-div.detailformabmproducto textarea {
+.inputSelectorOption,
+.formAltaProductoItem input,
+ select,
+ textarea,
+ option {
   background-color: #e8f0fe;
-  border: 0px solid;
+  color: gray;
+  border: none;
   border-radius: 15px;
-  margin: 8px 0px;
   min-width: 266px;
   max-width: 530px;
-  padding: 12px;
+  padding: 10px;
   width: 84vw;
 }
 
-form div input::placeholder,
-div textarea::placeholder {
-  color: #ffffff;
+.formAltaProductoItem input::placeholder,
+textarea::placeholder {
+  color: gray;
 }
 
-form div.formbuttonsabmproducto {
-  display: flex;
-  flex-wrap: wrap;
+.buttonProductForm input {
+  background-color: transparent;
+  width: 200px;
+  padding: 15px;
+  color: green;
+  border-radius: 5px;
+  border: 0.5px solid green;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-form div.formbuttonsabmproducto div {
-  width: 100%;
-}
-
-form div.buttonabmproducto input {
-  background-color: #4dbbd4;
-}
 
 
 div.buttonsFormProfileContainer {
@@ -1220,8 +1220,8 @@ div.buttonsFormProfileContainer {
     width: 10%;
   }
 
-  /* -- ABM PRODUCTO --*/
-  form div.mainformabmproducto {
+  .formAltaProducto {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
