@@ -64,6 +64,10 @@ main {
 
 /*------Clases del Header-----------*/
 
+.mainHeader {
+  width: 100%;
+}
+
 header {
   background-color: #4dbbd4;
   height: 130px;
@@ -904,6 +908,13 @@ td.imgcarritoproducto {
   flex-direction: column;
   padding: 50px;
   align-items: center;
+  justify-content: space-between;
+}
+
+.formAltaProductoImg {
+  display: flex;
+  align-items: center;
+  padding: 20px;
   justify-content: space-between;
 }
 
