@@ -1,5 +1,4 @@
 <header class="mainHeader">
-  
   <article class="topHeader">
     <div>
       <i class="fa-solid fa-phone"></i>
@@ -28,12 +27,7 @@
       </a>
     </div>
     <form class="homesearch" action="/search" method="get">
-      <input
-        id="homesearch"
-        type="search"
-        name="search"
-        placeholder="Buscar productos, marcas y más..."
-      />
+      <input id="homesearch" type="search" name="search" placeholder="Buscar productos, marcas y más..." />
       <button type="submit">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -41,41 +35,26 @@
     <div id="usuario">
       <div class="userState">
         <% if(locals.isLogged){ %>
-        <span>
-          <a href="/users/profile">
-            <div
-              class="userAvatar"
-              style="
+          <span>
+            <a href="/users/profile">
+              <div class="userAvatar" style="
                 background-image: url(../img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:null%>);
-              "
-            ></div>
-            <!-- SE REMPLAZÓ CON EL DIV DE ARRIBA PARA DARLE MEJOR FORMATO A LA IMAGEN<img
-                  id="avatar"
-                  src="/img/usersAvatar/<%=locals.isLogged? locals.userLogged.avatar:'default.png' %>  %> "
-                  alt="img user" />-->
-          </a>
-        </span>
-        <p id="userLoggedName">
-          <%= locals.isLogged? locals.userLogged.name:'' %>
-        </p>
-        <a href="/users/logout" id="logout">Logout</a>
-        <% } else { %>
-        <a href="/users/login">
-          <span><i class="fa-solid fa-user"></i></span>
-          <span>Ingreso</span>
-        </a>
-        <% } %>
+              "></div>
+            </a>
+          </span>
+          <p id="userLoggedName">
+            <%= locals.isLogged? locals.userLogged.name:'' %>
+          </p>
+          <a href="/users/logout" id="logout">Logout</a>
+          <% } else { %>
+            <a href="/users/login">
+              <span><i class="fa-solid fa-user"></i></span>
+              <span>Ingreso</span>
+            </a>
+            <% } %>
       </div>
       <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
-
-    <!-- SI EL USUARIO SE LOGUEA Y ESTA EN SESSION ENTONCES SE MUESTRA FIJO EL USER IN SESSION 
-    <div class="UserinSessionheader"
-      <a href="/profile">
-        <span><i class="fa-solid fa-user"></i></span>
-        <span>Ingreso</span>
-      </a>
-    </div>-->
   </article>
 
   <article class="bottomHeader">
@@ -86,11 +65,12 @@
       <li><a href="/products/3">Peces</a></li>
       <li><a href="#">Promociones</a></li>
       <li><a href="#">Sucursales</a></li>
-      <% if (locals.isLogged && locals.userLogged.category_id == 1 ){ %>
-      <li><a href="/products/abmproduct">Agregar Producto</a></li>
-      <li><a href="http://localhost:3001" target="_blank">Metricas</a></li>
+      <% if (locals.isLogged && locals.userLogged.category_id==1 ){ %>
+        <li><a href="/products/abmproduct">Agregar Producto</a></li>
+        <li><a href="http://localhost:3001" target="_blank">Metricas</a></li>
 
-      <% } %>
+        <% } %>
     </ul>
   </article>
+
 </header>

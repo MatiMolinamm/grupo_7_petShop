@@ -65,6 +65,8 @@ main {
 /*------Clases del Header-----------*/
 
 .mainHeader {
+  margin: auto;
+  max-width: 1450px;
   width: 100%;
 }
 
@@ -258,88 +260,65 @@ div a i.fa-user:hover {
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
-}
-
-.carrusel h2 {
-  color: black;
+  padding: 5px;
+  margin-top: 20px;
 }
 
 /* -- IMAGENES DE CATEGORIAS DE PRODUCTOS HOME --*/
-.productosList img {
-  max-width: 15%;
-}
+
 .categoryimages {
   display: flex;
   flex-direction: column;
   list-style: none;
   justify-content: space-around;
   padding: 10px;
+  margin-top: 20px;
   text-align: center;
 }
 
 .categoryimages img {
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 0 5px 5px 0 rgb(122, 122, 230);
   margin: 5px;
   width: 90%;
   height: auto;
 }
 
-div div.homeagregaralcarrito button.botonagregaralcarrito {
-  background-color: rgb(122, 122, 230);
+.productListTitle {
+  text-align: left;
+  margin-left: 10px;
+  padding: 20px;
+  color:rgba(84, 108, 247);
+}
+
+.productsCardCenter img {
+  max-width: 300px;
+}
+
+.productsCardButton {
+  background-color: rgba(0, 128, 0, 0.5);
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  text-decoration: none;
   color: white;
   font-size: 16px;
   height: 43px;
   margin: 10px 0;
-  width: 60%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.productsCard {
+  border-radius: 10px;
+  padding: 30px;
+  border: 0.2px solid rgba(0, 128, 0, 0.5);
 }
 
 .productosDestacados {
+  padding: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-h2.productosDestacados {
-  background-color: #fdcd10;
-  border-radius: 0px 10px 10px 0px;
-  color: black;
-  font-size: 16px;
-  justify-content: left;
-  margin-bottom: 20px;
-  padding: 7px;
-}
-
-.productos {
-  background-color: white;
-  border-radius: 5px;
-  border: solid 1px white;
-  box-shadow: 0px 0px 20px rgb(100, 100, 100);
-  margin: 10px;
-  padding: 15px;
-  text-align: center;
-  width: 80%;
-}
-
-.productos h3 {
-  color: black;
-}
-
-.productos img {
-  width: 100%;
-}
-
-.productos p {
-  color: black;
-}
-
-p.precioshome {
-  color: #666666;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px;
 }
 
 /* ------- footer -----------*/
@@ -804,6 +783,8 @@ div.editiondetailbuttons button {
 /*!Mariano: carrito de compras*/
 
 div.carritodecompras {
+  margin: auto;
+  max-width: 1450px;
   width: 100%;
   padding: 30px;
   margin-bottom: 10vh;
@@ -895,6 +876,12 @@ td.imgcarritoproducto {
 }
 
 /* Alta de producto */
+
+.mainAgregarProducto {
+  margin: auto;
+  max-width: 1450px;
+}
+
 .formAltaProducto {
   display: flex;
   flex-wrap: wrap;
