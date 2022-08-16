@@ -10,14 +10,14 @@ window.addEventListener("load", function (e) {
   console.log(textDangerPassword);
 
   email.addEventListener("mouseover", function (e) {
-    email.style.border = "solid green";
+    email.style.border = "0.2px solid green";
   });
   email.addEventListener("mouseout", function (e) {
     email.style.border = "";
   });
 
   password.addEventListener("mouseover", function (e) {
-    password.style.border = "solid green";
+    password.style.border = "0.2px solid green";
   });
   password.addEventListener("mouseout", function (e) {
     password.style.border = "";

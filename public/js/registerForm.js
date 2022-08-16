@@ -17,43 +17,43 @@ window.addEventListener("load", function (e) {
   );
 
   nombre.addEventListener("mouseover", function (e) {
-    nombre.style.border = "solid green";
+    nombre.style.border = "0.2px solid green";
   });
   nombre.addEventListener("mouseout", function (e) {
     nombre.style.border = "";
   });
   telefono.addEventListener("mouseover", function (e) {
-    telefono.style.border = "solid green";
+    telefono.style.border = "0.2px solid green";
   });
   telefono.addEventListener("mouseout", function (e) {
     telefono.style.border = "";
   });
   email.addEventListener("mouseover", function (e) {
-    email.style.border = "solid green";
+    email.style.border = "0.2px solid green";
   });
   email.addEventListener("mouseout", function (e) {
     email.style.border = "";
   });
   categoria.addEventListener("mouseover", function (e) {
-    categoria.style.border = "solid green";
+    categoria.style.border = "0.2px solid green";
   });
   categoria.addEventListener("mouseout", function (e) {
     categoria.style.border = "";
   });
   avatar.addEventListener("mouseover", function (e) {
-    avatar.style.border = "solid green";
+    avatar.style.border = "0.2px solid green";
   });
   avatar.addEventListener("mouseout", function (e) {
     avatar.style.border = "";
   });
   password.addEventListener("mouseover", function (e) {
-    password.style.border = "solid green";
+    password.style.border = "0.2px solid green";
   });
   password.addEventListener("mouseout", function (e) {
     password.style.border = "";
   });
   passwordConfirm.addEventListener("mouseover", function (e) {
-    passwordConfirm.style.border = "solid green";
+    passwordConfirm.style.border = "0.2px solid green";
   });
   passwordConfirm.addEventListener("mouseout", function (e) {
     passwordConfirm.style.border = "";

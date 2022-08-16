@@ -23,55 +23,55 @@ window.addEventListener("load", function (e) {
   let dangerPeso = document.querySelector("#dangerPeso");
 
   nombre.addEventListener("mouseover", function (e) {
-    nombre.style.border = "solid green";
+    nombre.style.border = "0.2px solid green";
   });
   nombre.addEventListener("mouseout", function (e) {
     nombre.style.border = "";
   });
   image.addEventListener("mouseover", function (e) {
-    image.style.border = "solid green";
+    image.style.border = "0.2px solid green";
   });
   image.addEventListener("mouseout", function (e) {
     image.style.border = "";
   });
   price.addEventListener("mouseover", function (e) {
-    price.style.border = "solid green";
+    price.style.border = "0.2px solid green";
   });
   price.addEventListener("mouseout", function (e) {
     price.style.border = "";
   });
   stock.addEventListener("mouseover", function (e) {
-    stock.style.border = "solid green";
+    stock.style.border = "0.2px solid green";
   });
   stock.addEventListener("mouseout", function (e) {
     stock.style.border = "";
   });
   categoria.addEventListener("mouseover", function (e) {
-    categoria.style.border = "solid green";
+    categoria.style.border = "0.2px solid green";
   });
   categoria.addEventListener("mouseout", function (e) {
     categoria.style.border = "";
   });
   peso.addEventListener("mouseover", function (e) {
-    peso.style.border = "solid green";
+    peso.style.border = "0.2px solid green";
   });
   peso.addEventListener("mouseout", function (e) {
     peso.style.border = "";
   });
   description.addEventListener("mouseover", function (e) {
-    description.style.border = "solid green";
+    description.style.border = "0.2px solid green";
   });
   description.addEventListener("mouseout", function (e) {
     description.style.border = "";
   });
   oferta.addEventListener("mouseover", function (e) {
-    oferta.style.border = "solid green";
+    oferta.style.border = "0.2px solid green";
   });
   oferta.addEventListener("mouseout", function (e) {
     oferta.style.border = "";
   });
   amount.addEventListener("mouseover", function (e) {
-    amount.style.border = "solid green";
+    amount.style.border = "0.2px solid green";
   });
   amount.addEventListener("mouseout", function (e) {
     amount.style.border = "";
