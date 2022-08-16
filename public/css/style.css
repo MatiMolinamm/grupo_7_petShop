@@ -666,7 +666,7 @@ div.cantidaddeproducto input::placeholder {
 }
 
 div form input.sumaryrestarproductoplus {
-  background-color: rgb(255 203 65);
+  background-color: rgba(0, 128, 0, 0.5);
   border-radius: 2px 14px 14px 1px;
   color: #ffffff;
   cursor: pointer;
@@ -677,7 +677,7 @@ div form input.sumaryrestarproductoplus {
 }
 
 div form input.sumaryrestarproductominus {
-  background-color: rgb(255 203 65);
+  background-color: rgba(0, 128, 0, 0.5);
   border-radius: 14px 2px 2px 14px;
   color: #ffffff;
   cursor: pointer;
@@ -825,7 +825,7 @@ div.proceder-checkout {
   border-radius: 5px;
   left: 10%;
   padding: 10px;
-
+  cursor: pointer;
   text-align: center;
 }
 
