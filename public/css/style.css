@@ -66,8 +66,8 @@ main {
 
 .mainHeader {
   margin: auto;
-  max-width: 1450px;
   width: 100%;
+  max-width: 1450px;
 }
 
 header {
@@ -77,6 +77,7 @@ header {
   position: sticky;
   top: 0;
   width: 100vw;
+  margin: auto;
 }
 
 header article {
@@ -199,16 +200,6 @@ div.userAvatar {
   top: 74%;
 }
 
-/* INHABILITADO EFECTO CARRITO 
-.centerHeader div i.fa-cart-shopping:hover,
-div a i.fa-user:hover {
-  color: white;
-  background-color: purple;
-  border: 1px solid #4dbbd4;
-  border-radius: 5px;
-  transition: all 1s;
-} */
-
 .centerHeader button {
   background-color: rgb(34 109 175);
   border: none;
@@ -298,16 +289,19 @@ div a i.fa-user:hover {
 }
 
 .productsCardButton {
-  background-color: rgba(0, 128, 0, 0.5);
-  border: none;
+  border: 0.5px solid rgba(0, 128, 0, 0.5);
   border-radius: 5px;
   text-decoration: none;
-  color: white;
+  background-color: transparent;
+  color: green;
   font-size: 16px;
   height: 43px;
   margin: 10px 0;
   width: 100%;
   cursor: pointer;
+  padding: 10px 25px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .productsCard {
@@ -699,6 +693,8 @@ div a.botonpesoproducto:hover {
 
 div button.botonagregaralcarrito {
   background-color: rgb(122, 122, 230);
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 5px;
   color: white;
@@ -706,7 +702,8 @@ div button.botonagregaralcarrito {
   margin: auto;
   min-width: 140x;
   max-width: 288px;
-  width: 100%;
+  padding: 10px 30px;
+  cursor: pointer;
 }
 
 div.ordencarrito {
@@ -794,12 +791,6 @@ div.carritodetalleproducto {
   width: 100%;
 }
 
-div form {
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
 div.proceder-checkout {
   background-color: #4dbbd4;
   border-radius: 5px;
@@ -875,6 +866,13 @@ td.imgcarritoproducto {
   justify-content: space-evenly;
 }
 
+/* Modificacion de producto */
+
+.inputSelector {
+  padding: 10px;
+  align-items: center;
+}
+
 /* Alta de producto */
 
 .mainAgregarProducto {
@@ -899,7 +897,7 @@ td.imgcarritoproducto {
 }
 
 .formAltaProductoImg {
-  display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 20px;
   justify-content: space-between;
@@ -919,17 +917,34 @@ td.imgcarritoproducto {
   flex-direction: column;
 }
 
-.imgContainer img,
-input {
+.imgContainer img {
   padding: 15px;
 }
 
 .formAltaProductoItem {
-  align-items: center;
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 15px;
 }
 
-.inputSelectorOption,
+.formModificacionProducto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputSelector input {
+  background-color: #e8f0fe;
+  color: gray;
+  border: none;
+  border-radius: 15px;
+  min-width: 266px;
+  max-width: 530px;
+  padding: 10px;
+  width: 84vw;
+}
+
 .formAltaProductoItem input,
 select,
 textarea,
@@ -975,7 +990,7 @@ textarea::placeholder {
 
 .productEditContainer {
   align-items: center;
-  margin-top: 30px;
+  flex-direction: column;
   display: flex;
   margin: auto;
   justify-content: space-around;
@@ -988,8 +1003,64 @@ div.buttonsFormProfileContainer {
   justify-content: center;
 }
 
+.buttonProductForm {
+  margin-top: 20px;
+}
+
 .formloginandregister button {
   cursor: pointer;
+}
+
+.mainLogin div {
+  padding: 5px;
+  margin: auto;
+}
+
+.mainLogin {
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.mainLoginDiv {
+  max-width: 450px;
+  flex-direction: column;
+  display: flex;
+}
+
+.mainLoginInputs {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.loginButtonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mainLoginItem {
+  flex-direction: row;
+}
+
+.mainLoginItemInput {
+  width: 400px;
+  padding: 15px;
+  border: 1px dashed #888;
+  outline: none;
+}
+
+
+.mainLoginContainer {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
 }
 
 @media (min-width: 481px) {
@@ -1086,14 +1157,10 @@ div.buttonsFormProfileContainer {
     width: 37%;
   }
 
-  .productos {
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(226, 226, 226));
-    width: 23%;
-  }
-
-  .productos:hover {
-    box-shadow: 0 0 15px purple;
-    transition: all 500ms;
+  .productsCardButton:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+    color: white;
+    transition: all 1s;
   }
 
   div div.homeagregaralcarrito button.botonagregaralcarrito:hover {
@@ -1179,8 +1246,7 @@ div.buttonsFormProfileContainer {
     position: absolute;
     padding: 6px 18px;
     height: 40px;
-    right: 27%;
-    top: 91px;
+    top: 71px;
   }
 
   .centerHeader button:hover {
@@ -1252,6 +1318,7 @@ div.buttonsFormProfileContainer {
   /* -- TOP HEADER --*/
 
   .topHeader {
+    max-width: 1450px;
     background-color: #226daf;
     display: flex;
     flex-wrap: wrap;
@@ -1262,6 +1329,7 @@ div.buttonsFormProfileContainer {
     margin-bottom: 20px;
     color: white;
     font-size: 14px;
+    margin: auto;
   }
 
   .topHeader p {
@@ -1358,6 +1426,10 @@ div.buttonsFormProfileContainer {
   div.processProfile {
     display: flex;
     flex-direction: column;
+  }
+
+  .productEditContainer {
+    flex-direction: row;
   }
 }
 

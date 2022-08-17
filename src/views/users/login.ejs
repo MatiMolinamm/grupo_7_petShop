@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs')%>
+<%- include('../partials/head.ejs')%>
+
   <body>
     <%- include('../partials/header.ejs')%>
-    <hr />
-    <main>
-      <h1 class="titulosforms">Acceso <span>>></span></h1>
-      <h2 class="forms">INGRESAR</h2>
-      <form action="/users/login" method="post" class="formloginandregister">
-        <div class="email">
-          <input
-          autofocus
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ingrese su email"
-            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.email : null %>"
-          ><div class="text-danger" id="dangerEmail"></div>
-          <% if (locals.errors && errors.email) { %>
-            <div class="text-danger">
-              <%= errors.email.msg %> 
-            </div>
-          <% } %>
-        <div class="password">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Contraseña"
-            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.password : null %>"
-          ><div class="text-danger" id="dangerPassword"></div>
-          <% if (locals.errors && errors.password) { %>
-            <div class="text-danger">
-              <%= errors.password.msg %> 
-            </div>
-          <% } %>
+
+      <main class="mainLogin">
+        <div class="mainLoginDiv">
+
+          <div class="mainLoginTitle"><h2>INGRESAR</h2></div>
+
+          <div class="mainLoginContainer">
+
+            <form action="/users/login" method="post">
+
+              <div class="mainLoginInputs">
+
+                <div class="mainLoginItem">
+                  <input autofocus type="email" name="email" id="email" placeholder="Ingrese su email"
+                    class="mainLoginItemInput <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>" />
+                  <div class="text-danger" id="dangerEmail"></div>
+                  <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                      <%= errors.email.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+
+                <div class="mainLoginItem">
+                  <input type="password" id="password" name="password" placeholder="Contraseña"
+                    class="mainLoginItemInput <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.password : null %>" />
+                  <div class="text-danger" id="dangerPassword"></div>
+                  <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                      <%= errors.password.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+              </div>
+
+              <div class="mainLoginItem">
+                <input type="checkbox" class="checkUser" name="remember_user" id="userremember">
+                <label for="userremember">Recordar mi usuario</label>
+              </div>
+
+              <div class="loginButtonsDiv">
+                <button class="productsCardButton" type="submit">Enviar</button>
+                <button class="productsCardButton" type="reset">Borrar</button>
+              </div>
+
+              <div class="mainLoginItem">
+                <a href="/users/register">¿Aún no está registrado?</a>
+                <a href="#">Olvide mi Contraseña</a>
+              </div>
+
+            </form>
+          </div>
         </div>
-        <div class="rememberUser"> <!-- class="form-group-form-check" comente por q no me mostraba el checkbox-->
-            <input type="checkbox" class="checkUser" name="remember_user" id="userremember">
-            <label for
-            ="userremember">Recordar mi usuario</label>
-        </div>
-        <div class="boton">
-          <button type="submit">Enviar</button>
-          <button type="reset">Borrar</button>
-        </div>
-        <div class="linkto">
-          <a href="/users/register">¿Aún no está registrado?</a>
-          <a href="#">Olvide mi Contraseña</a>
-        </div>
-      </form>
+      </main>
       <script src="/js/loginForm.js"></script>
-    </main>
-    <%- include('../partials/footer.ejs')%>
+      <%- include('../partials/footer.ejs')%>
   </body>
+
 </html>

@@ -53,9 +53,12 @@
               </div>
 
               <div class="formAltaProductoItem <%= locals.errors && errors.description ? 'is-invalid' : null %>">
-                <textarea name="description" id="description" placeholder="Describí tu producto"
-                  value="<%= locals.oldData ? oldData.description : null %>">
-                </textarea>
+                <textarea 
+                  name="description" 
+                  id="description" 
+                  placeholder="Describí tu producto"
+                  value="<%= locals.oldData ? oldData.description : null %>"
+                ></textarea>
 
                 <div class="text-danger" id="dangerDescription"></div>
 
