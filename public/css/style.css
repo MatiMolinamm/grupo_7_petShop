@@ -284,11 +284,13 @@ div a i.fa-user:hover {
   height: auto;
 }
 
-.productListTitle {
+.productListTitle,
+.productEditTitle {
+  font-size: 30px;
   text-align: left;
   margin-left: 10px;
   padding: 20px;
-  color:rgba(84, 108, 247);
+  color: rgba(84, 108, 247);
 }
 
 .productsCardCenter img {
@@ -309,6 +311,8 @@ div a i.fa-user:hover {
 }
 
 .productsCard {
+  width: 300px;
+  margin-top: 15px;
   border-radius: 10px;
   padding: 30px;
   border: 0.2px solid rgba(0, 128, 0, 0.5);
@@ -760,7 +764,7 @@ main div.descripcionproducto {
 }
 
 .detalleproducto {
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   padding: 100px;
   max-width: 1450px;
@@ -909,17 +913,27 @@ td.imgcarritoproducto {
   margin-bottom: 30px;
 }
 
-.formAltaProductoItem div {
-  margin: 10px;
-  padding: 10px;
-  width: 100%;
+.imgContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgContainer img,
+input {
+  padding: 15px;
+}
+
+.formAltaProductoItem {
+  align-items: center;
+  justify-content: space-around;
 }
 
 .inputSelectorOption,
 .formAltaProductoItem input,
- select,
- textarea,
- option {
+select,
+textarea,
+option {
   background-color: #e8f0fe;
   color: gray;
   border: none;
@@ -946,7 +960,26 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+.productEditTitle {
+  font-size: 20px;
+  color: #226daf;
+}
 
+.productEditForm {
+  max-width: 1450px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.productEditContainer {
+  align-items: center;
+  margin-top: 30px;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+}
 
 div.buttonsFormProfileContainer {
   display: flex;
@@ -958,7 +991,6 @@ div.buttonsFormProfileContainer {
 .formloginandregister button {
   cursor: pointer;
 }
-
 
 @media (min-width: 481px) {
   .centerHeader {
@@ -1031,11 +1063,9 @@ div.buttonsFormProfileContainer {
     padding-top: 10px;
     margin-top: 10px;
   }
-
 }
 
 @media (min-width: 769px) {
-
   div.buttonsFormProfileContainer {
     display: flex;
     align-items: center;
@@ -1045,7 +1075,7 @@ div.buttonsFormProfileContainer {
   }
 
   /*Mariano carrito*/
-  
+
   div.carritodetalleproducto {
     border-right: 1px solid rgb(228, 228, 228);
     width: 60%;
@@ -1329,7 +1359,6 @@ div.buttonsFormProfileContainer {
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media (min-width: 1018px) {
@@ -1374,7 +1403,7 @@ div.buttonsFormProfileContainer {
   }
 
   /*Carrito*/
-  
+
   div.carritodecompras {
     width: 100%;
   }

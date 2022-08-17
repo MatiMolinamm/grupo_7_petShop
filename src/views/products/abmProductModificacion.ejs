@@ -4,19 +4,21 @@
 
   <body>
     <%- include('../partials/header.ejs')%>
+
       <main>
-        <h1 class="titulosforms">Editar producto</h1>
 
-        <form 
-          class="form"
+        <form class="productEditForm"
           action="/products/abmproductEdit/<%=productRenderizar.id %>/?class=<%=productRenderizar.section_id%>&_method=PUT"
-          method="post" 
-          enctype="multipart/form-data"
-        >
-          <div class="formAltaProducto">
+          method="post" enctype="multipart/form-data">
 
-            <div class="formAltaProductoImg">
-              <img src="/img/products/<%= productRenderizar.image %>" />
+          <h2 class="productEditTitle">EDITAR PRODUCTO</h2>
+
+          <div class="productEditContainer">
+
+            <div class="imgContainer">
+              <img src="/img/undef-file-image.png" />
+              <!-- <img src="/img/products/<%= productRenderizar.image %>" /> -->
+
               <input id="image" type="file" accept=".jpg,.png,.svg" name="image" placeholder="imagen del producto"
                 value="<%= locals.oldData ? oldData.image : productRenderizar.image%>" />
               <div class="text-danger" id="dangerImage"></div>
@@ -25,6 +27,7 @@
                   <%= errors.image.msg %>
                 </div>
                 <% } %>
+
             </div>
 
             <div class="formAltaProductoItem">
@@ -134,7 +137,7 @@
               </div>
 
               <div class="buttonProductForm">
-                  <input type="submit" value="Modificar producto" />                
+                <input type="submit" value="Modificar producto" />
               </div>
             </div>
           </div>
