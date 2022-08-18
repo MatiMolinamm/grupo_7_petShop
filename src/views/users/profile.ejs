@@ -4,9 +4,8 @@
 
   <body>
     <%- include('../partials/header.ejs')%>
-      <hr />
+
       <main>
-        <h1 class="titulosforms">Perfil</h1>
 
         <div class="profile">
 
@@ -16,12 +15,8 @@
           </div>
 
           <div class="formContainer">
-            <form 
-              action="/users/profile/?_method=put" 
-              method="post" 
-              class="formloginandregister" 
-              enctype="multipart/form-data" 
-            > 
+            <form action="/users/profile/?_method=put" method="post" class="formloginandregister"
+              enctype="multipart/form-data">
 
               <div class="nombre">
                 <input autofocus id="nombre" type="text" name="name" placeholder="Nombre y Apellido"
@@ -34,6 +29,7 @@
                   </div>
                   <% } %>
               </div>
+
               <div class="telefono">
                 <input type="number" name="telefono" id="telefono" placeholder="Numero telefónico"
                   class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
@@ -45,6 +41,7 @@
                   </div>
                   <% } %>
               </div>
+
               <div class="email">
                 <input id="email" type="email" name="email" placeholder="email@address.com"
                   class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
@@ -56,9 +53,9 @@
                   </div>
                   <% } %>
               </div>
-              <div class="inputselector">
-                <label for="categoria">Selecciona la categoria</label>
-                <select name="category_id" id="categoria">
+
+              <div>
+                <select  class="inputCategoria" name="category_id" id="categoria">
                   <% if(user.category_id==1) {%>
                     <option value="1" selected>Administrador</option>
                     <option value="2">Cliente</option>
@@ -69,6 +66,7 @@
                         <% } %>
                 </select>
               </div>
+
               <div class="avatar">
                 <input id="avatar" type="file" name="avatar" value="<%=user.avatar %> "
                   class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>" />
@@ -79,6 +77,7 @@
                   </div>
                   <% } %>
               </div>
+
               <div class="pasword">
                 <input id="password" type="password" name="password" placeholder="Ingresar password"
                   class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
@@ -90,24 +89,29 @@
                   </div>
                   <% } %>
               </div>
+
               <div class="pasword">
                 <input id="passwordConfirm" type="password" name="passwordConfirm" placeholder="Confirmar password" />
                 <div class="text-danger" id="dangerPasswordConfirm"></div>
               </div>
-              <div class="formloginandregister">
-                <button type="submit">Guardar</button>
+
+              <div class="buttonsFormProfileContainer">
+
+                <div>
+                  <button class="productsCardButton" type="submit">Guardar</button>
+                </div>
+
+                <form action="/users/profile/?_method=delete" method="post">
+                  <button class="productsCardButton" type="submit">Eliminar cuenta</button>
+                </form>
+
               </div>
 
+
             </form>
           </div>
 
-          <div class="buttonsFormProfileContainer">
 
-            <form action="/users/profile/?_method=delete" method="post" class="formloginandregister">
-              <button type="submit">Eliminar cuenta</button>
-            </form>
-
-          </div>
 
         </div>
 

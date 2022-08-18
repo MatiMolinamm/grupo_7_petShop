@@ -407,47 +407,21 @@ div img#profileAvatar {
   flex-direction: column;
 }
 
-.formloginandregister input {
+.formloginandregister input, .inputCategoria {
   background-color: #e8f0fe;
-  border: 0px solid;
+  border: 1px dashed rgba(0, 128, 0, 0.5);
   border-radius: 15px;
   margin: 8px 0px;
   min-width: 266px;
   max-width: 530px;
-  padding: 12px;
+  padding: 15px;
   width: 84vw;
+  outline: none;
 }
 
 .formloginandregister input::placeholder {
-  color: #000000;
+  color: #888;
   padding: 5px;
-}
-
-.formloginandregister button {
-  background-color: #4dbbd4;
-  border: none;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  font-weight: 900;
-  padding: 11px 5px;
-  margin: 15px 10px 20px 10px;
-  width: 80px;
-}
-
-.formloginandregister button:hover {
-  background-color: rgb(111, 11, 204);
-  border: none;
-  color: white;
-  font-weight: 900;
-}
-
-div.form-group-form-check {
-  font-size: 13px;
-}
-
-div.form-group-form-check input {
-  margin: 10px -114px 41px -95%;
-  width: 5px;
 }
 
 div.rememberUser {
@@ -1001,6 +975,8 @@ div.buttonsFormProfileContainer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 400px;
+  pading: 5px;
 }
 
 .buttonProductForm {
@@ -1421,6 +1397,8 @@ div.buttonsFormProfileContainer {
     max-width: 80%;
     align-items: center;
     justify-content: space-around;
+    margin-top: 60px;
+    margin-bottom: 40px;
   }
 
   div.processProfile {
