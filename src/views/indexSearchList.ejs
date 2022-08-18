@@ -15,37 +15,54 @@
           <li><a href="/products/4"><img src="/img/products/aves.png"></a></li>
         </ul>
         <form action="" method="get">
-          <h1>RESULTADO DE LA BUSQUEDA:<div class="resultadoCero" autofocus></div>
-          </h1>
+          <h2 class="productListTitle">BUSQUEDA</h2><div class="resultadoCero" autofocus></div>
+          </h2>
 
           <h2 class="productosDestacados"></h2>
-          <article class="productosDestacados">
+          <div class="productosDestacados">
 
             <% productsSearch.forEach( ( producto )=> { %>
-              <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
-                class="idproducto">
-                <div class="productsCard">
-                  <h3>
+
+              <div class="productsCard">
+
+                <div class="productsCardCenter">
+
+                  <div class="cardTitle">
                     <%= producto.name %>
-                  </h3>
-                  <img src="/img/products/<%= producto.image%>" alt="alimento" />
+                  </div>
+
+                  <div class="divImg">
+                    <img src="/img/products/<%= producto.image %>" alt="img" />
+                  </div>
+
                   <p>
-                    <%= producto.description %>
+                    $ <%= producto.price %>
                   </p>
-                  <p>Presentacion: <%= producto.packaging %>
+                  <p>
+                    Presentación: <%= producto.packaging %> kg
                   </p>
-                  <p class="precioshome">
-                    <%= producto.price %>
+                  <p>
+                    Descripción: <%= producto.description %>
                   </p>
-              </a>
-              <div class="homeagregaralcarrito">
-                <button class="botonagregaralcarrito">AGREGAR</button>
+
+                </div>
+
+                <div class="productsCardBottom">
+
+                  <button class="productsCardButton">
+                    <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
+                    class="idproducto">VER</a>
+                  </button>
+                
+                  <button class="productsCardButton">AGREGAR</button>
+
+                </div>
+
               </div>
-              </div>
+
               <% }); %>
 
-
-          </article>
+          </div>
         </form>
       </main>
       <%- include('./partials/footer.ejs')%>
