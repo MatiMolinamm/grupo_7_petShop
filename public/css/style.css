@@ -285,11 +285,23 @@ div.userAvatar {
   color: rgba(84, 108, 247);
 }
 
-.productsCardCenter img {
+.productsCardCenter {
   max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  object-fit: cover;
 }
 
-.productsCardButton, .boton {
+.divImg img {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.productsCardButton,
+.boton {
   border: 0.5px solid rgba(0, 128, 0, 0.5);
   border-radius: 5px;
   text-decoration: none;
@@ -306,17 +318,30 @@ div.userAvatar {
 }
 
 .productsCard {
-  width: 300px;
-  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 350px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-radius: 10px;
   padding: 30px;
   border: 0.2px solid rgba(0, 128, 0, 0.5);
+}
+
+.cardTitle {
+  padding-bottom: 30px;
+}
+
+.productsCardBottom {
+  margin: auto;
 }
 
 .productosDestacados {
   padding: 40px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -324,10 +349,13 @@ div.userAvatar {
 
 .footer {
   width: 100%;
+  margin: auto;
+  max-width: 1450px;
   background-color: #8c52ff;
 }
 
 .footer .grupo-1 {
+  max-width: 1450px;
   width: 80%;
   margin: auto;
   display: grid;
@@ -413,7 +441,9 @@ div img#profileAvatar {
   flex-direction: column;
 }
 
-.formloginandregister input, .inputCategoria, #categoria {
+.formloginandregister input,
+.inputCategoria,
+#categoria {
   background-color: #e8f0fe;
   border: 1px dashed rgba(0, 128, 0, 0.5);
   border-radius: 15px;
@@ -716,10 +746,9 @@ h2.titulodescripcionproducto {
   padding: 0;
 }
 
-main article.imagenproducto img {
+.imagenproducto img {
   display: block;
-  height: auto;
-  max-width: 100%;
+  max-width: 300px;
   padding: 25px;
 }
 
@@ -1047,7 +1076,6 @@ div.buttonsFormProfileContainer {
   outline: none;
 }
 
-
 .mainLoginContainer {
   display: flex;
   margin: auto;
@@ -1154,7 +1182,8 @@ div.buttonsFormProfileContainer {
     width: 37%;
   }
 
-  .productsCardButton:hover, .boton:hover {
+  .productsCardButton:hover,
+  .boton:hover {
     background-color: rgba(0, 128, 0, 0.5);
     color: white;
     transition: all 1s;

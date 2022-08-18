@@ -31,11 +31,10 @@
                   <div class="cardTitle">
                     <%= producto.name %>
                   </div>
-
-                  <!-- MATI: esta linea comentada acá abajo es como estaba el código pero no me muestra la imagen, entonces puse una estática para poder hacer el estilo del css -->
-                  <!-- <img src="/img/products/<%= producto.img %>" alt="img" /> -->
                   
-                  <img src="/img/undef-file-image.png" alt="img" />
+                  <div class="divImg">
+                    <img src="/img/products/<%= producto.image%>" alt="img" />
+                  </div>
 
                   <p>
                     $ <%= producto.price %>
