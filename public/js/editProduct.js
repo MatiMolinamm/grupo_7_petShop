@@ -1,5 +1,5 @@
 window.addEventListener("load", function (e) {
-  let form = document.querySelector(".form");
+  let form = document.querySelector(".productEditForm");
   let image = document.querySelector("#image");
   let dangerImage = document.querySelector("#dangerImage");
   let nombre = document.querySelector("#name");
@@ -79,7 +79,8 @@ window.addEventListener("load", function (e) {
 
   form.addEventListener("submit", function (e) {
     let errores = [];
-    if (nombre.value === "") {
+
+    if (!nombre.value) {
       errores.push("Debes completar el campo nombre");
       dangerNombre.innerHTML =
         "<p>" + "Debes completar el campo nombre" + "</p>";
@@ -89,39 +90,48 @@ window.addEventListener("load", function (e) {
       errores.push("Debes completar el campo imagen");
       dangerImage.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerImage.style.display = "none";
+
     if (price.value === "") {
-      errores.push("Debes completar precio");
+      errores.push("Debes completar el campo precio");
       dangerPrice.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerPrice.style.display = "none";
+
     if (stock.value === "") {
       errores.push("Debes completar el campo email");
       dangerStock.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerStock.style.display = "none";
+
     if (categoria.value === "") {
-      errores.push("Debes completar el campo categoria");
+      errores.push("Debes completar el campo categoría");
       dangerCategoria.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerCategoria.style.display = "none";
+
     if (amount.value === "") {
       errores.push("Debes completar el campo password");
       dangerAmount.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerAmount.style.display = "none";
+
     if (oferta.value === "") {
-      errores.push("oferta");
+      errores.push("Debes completar el campo oferta");
       dangerOferta.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerOferta.style.display = "none";
+
     if (!peso.value) {
-      errores.push("oferta");
+      errores.push("Debes completar el campo peso");
       dangerPeso.innerHTML =
-        "<p>" + "Debes completar el campo packagin" + "</p>";
+        "<p>" + "Debes completar el campo" + "</p>";
     } else dangerPeso.style.display = "none";
+
     if (description.length == 0) {
       errores.push("descripcion");
       dangerDescription.innerHTML =
         "<p>" + "Debes completar el campo descripcion" + "</p>";
     } else dangerDescription.style.display = "none";
+
     if (errores.length > 0) {
       console.log(errores);
       e.preventDefault();
     }
+    
   });
 });

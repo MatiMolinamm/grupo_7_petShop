@@ -3,10 +3,10 @@
   <%- include('../partials/head.ejs')%>
   <body>
     <%- include('../partials/header.ejs')%>
-    <hr />
-    <main>
-      <h1 class="titulosforms">Registro</h1>
+
+    <main class="mainRegister">
       <h2 class="forms">REGISTRARSE</h2>
+      <br/><br/>
       <form
         action="/users/register"
         method="post"
@@ -56,7 +56,6 @@
           <% } %>
         </div>
         <div class="inputSelector">
-          <label for="categoria">Selecciona la categoria</label>
           <select name="categoria" id="categoria">
             <option value="1">Administrador</option>
             <option value="2">Cliente</option>
@@ -103,9 +102,9 @@
           />
           <div class="text-danger" id="dangerPasswordConfirm"></div>
         </div>
-        <div class="boton">
-          <button type="submit">Enviar</button>
-          <button type="reset">Borrar</button>
+        <div class="loginButtonsDiv">
+          <button class="boton" type="submit">Enviar</button>
+          <button class="boton" type="reset">Borrar</button>
         </div>
       </form>
     </main>

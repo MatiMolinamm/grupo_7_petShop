@@ -198,6 +198,7 @@ div.userAvatar {
   left: 87%;
   position: absolute;
   top: 74%;
+  font-size: 15px;
 }
 
 .centerHeader button {
@@ -288,7 +289,7 @@ div.userAvatar {
   max-width: 300px;
 }
 
-.productsCardButton {
+.productsCardButton, .boton {
   border: 0.5px solid rgba(0, 128, 0, 0.5);
   border-radius: 5px;
   text-decoration: none;
@@ -400,6 +401,11 @@ div img#profileAvatar {
   justify-content: center;
 }
 
+.mainRegister {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .formloginandregister {
   align-items: center;
   background-color: #ffffff;
@@ -407,7 +413,7 @@ div img#profileAvatar {
   flex-direction: column;
 }
 
-.formloginandregister input, .inputCategoria {
+.formloginandregister input, .inputCategoria, #categoria {
   background-color: #e8f0fe;
   border: 1px dashed rgba(0, 128, 0, 0.5);
   border-radius: 15px;
@@ -761,7 +767,6 @@ div.carritodecompras {
 }
 
 div.carritodetalleproducto {
-  border-right: 1px solid rgb(228, 228, 228);
   width: 100%;
 }
 
@@ -836,6 +841,7 @@ table.tablacarritodetalleproducto {
 }
 
 td.imgcarritoproducto {
+  padding-top: 20px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -900,6 +906,7 @@ td.imgcarritoproducto {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 15px;
+  outline: none;
 }
 
 .formModificacionProducto {
@@ -931,11 +938,16 @@ option {
   max-width: 530px;
   padding: 10px;
   width: 84vw;
+  outline: none;
 }
 
 .formAltaProductoItem input::placeholder,
 textarea::placeholder {
   color: gray;
+}
+
+.buttonProductForm {
+  margin-top: 30px;
 }
 
 .buttonProductForm input {
@@ -944,9 +956,16 @@ textarea::placeholder {
   padding: 15px;
   color: green;
   border-radius: 5px;
-  border: 0.5px solid green;
+  border: 0.5px dashed green;
   font-size: 15px;
   cursor: pointer;
+}
+
+.buttonProductForm input:hover {
+  background-color: rgba(0, 128, 0, 0.5);
+  color: white;
+  transition: all 1s ease;
+  border: 1px solid green;
 }
 
 .productEditTitle {
@@ -976,11 +995,7 @@ div.buttonsFormProfileContainer {
   align-items: center;
   justify-content: center;
   width: 400px;
-  pading: 5px;
-}
-
-.buttonProductForm {
-  margin-top: 20px;
+  padding: 5px;
 }
 
 .formloginandregister button {
@@ -1058,7 +1073,7 @@ div.buttonsFormProfileContainer {
   }
 
   .centerHeader div i.fa-cart-shopping {
-    font-size: 21px;
+    font-size: 15px;
     left: 89%;
     top: 72%;
     max-width: 30px;
@@ -1123,6 +1138,12 @@ div.buttonsFormProfileContainer {
 
   /*Mariano carrito*/
 
+  .formCarrito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
   div.carritodetalleproducto {
     border-right: 1px solid rgb(228, 228, 228);
     width: 60%;
@@ -1133,16 +1154,10 @@ div.buttonsFormProfileContainer {
     width: 37%;
   }
 
-  .productsCardButton:hover {
+  .productsCardButton:hover, .boton:hover {
     background-color: rgba(0, 128, 0, 0.5);
     color: white;
     transition: all 1s;
-  }
-
-  div div.homeagregaralcarrito button.botonagregaralcarrito:hover {
-    border-radius: 5px;
-    border: 1px solid white;
-    transition: all 800ms;
   }
 
   main article.resumenproducto {
@@ -1192,6 +1207,7 @@ div.buttonsFormProfileContainer {
 
   .centerHeader div i.fa-cart-shopping {
     position: initial;
+    font-size: 15px;
   }
 
   .centerHeader .logo {
@@ -1231,7 +1247,7 @@ div.buttonsFormProfileContainer {
   }
 
   .centerHeader div i.fa-cart-shopping {
-    font-size: 3vw;
+    font-size: 15px;
   }
 
   div.userState {
@@ -1456,6 +1472,8 @@ div.buttonsFormProfileContainer {
 
   div.carritodecompras {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   div.carritodetalleproducto {

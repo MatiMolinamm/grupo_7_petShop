@@ -15,8 +15,8 @@ window.addEventListener("load", function (e) {
   let oferta = document.querySelector("#oferta");
   let dangerOferta = document.querySelector("#dangerOferta");
   let description = document.querySelector("#description");
-  console.log(description);
-  console.log(description.value);
+  // console.log(description);
+  // console.log(description.value);
   let dangerDescription = document.querySelector("#dangerDescription");
   let peso = document.querySelector("#peso");
 
@@ -82,7 +82,7 @@ window.addEventListener("load", function (e) {
     if (nombre.value === "") {
       errores.push("Debes completar el campo nombre");
       dangerNombre.innerHTML =
-        "<p>" + "Debes completar el campo nombre" + "</p>";
+        "<p>" + "Debes completar el campo" + "</p>";
     } else dangerNombre.style.display = "none";
 
     if (image.value === "") {
@@ -98,7 +98,7 @@ window.addEventListener("load", function (e) {
       dangerStock.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerStock.style.display = "none";
     if (categoria.value === "") {
-      errores.push("Debes completar el campo categoria");
+      errores.push("Debes completar el campo categoría");
       dangerCategoria.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerCategoria.style.display = "none";
     if (amount.value === "") {
@@ -106,18 +106,18 @@ window.addEventListener("load", function (e) {
       dangerAmount.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerAmount.style.display = "none";
     if (oferta.value === "") {
-      errores.push("oferta");
+      errores.push("Debes completar el campo oferta");
       dangerOferta.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerOferta.style.display = "none";
     if (!peso.value) {
-      errores.push("oferta");
+      errores.push("Debes completar el campo errores");
       dangerPeso.innerHTML =
-        "<p>" + "Debes completar el campo packagin" + "</p>";
+        "<p>" + "Debes completar el campo" + "</p>";
     } else dangerPeso.style.display = "none";
     if (description.value == "") {
-      errores.push("descripcion");
+      errores.push("Debes completar el campo descripción");
       dangerDescription.innerHTML =
-        "<p>" + "Debes completar el campo descripcion" + "</p>";
+        "<p>" + "Debes completar el campo" + "</p>";
     } else dangerDescription.style.display = "none";
     if (errores.length > 0) {
       console.log(errores);

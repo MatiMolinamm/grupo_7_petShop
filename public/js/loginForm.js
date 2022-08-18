@@ -1,11 +1,13 @@
 window.addEventListener("load", function (e) {
-  let form = document.querySelector(".formloginandregister");
+  let form = document.querySelector(".loginForm");
 
   let email = document.querySelector("#email");
+  
   let password = document.querySelector("#password");
 
   let textDangerEmail = document.querySelector("#dangerEmail");
   console.log(textDangerEmail);
+
   let textDangerPassword = document.querySelector("#dangerPassword");
   console.log(textDangerPassword);
 
