@@ -37,6 +37,8 @@ header {
   flex-direction: row;
   justify-content: space-around;
   padding: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #userState {
@@ -106,6 +108,7 @@ header {
   background-color: transparent;
   border: 0.3px solid #fff;
   border-radius: 5px;
+  margin-left: 2px;
 }
 
 #menu,
@@ -130,18 +133,40 @@ header {
   font-weight: 300;
 }
 
-/* seccion principal */
+/* SLIDER */
 
-.carrusel {
-  background-image: url(../img/banner-promo4.png);
-  display: flex;
-  height: 200px;
-  justify-content: center;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+.slider {
   width: 100%;
-  border-radius: 10px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider ul {
+  display: flex;
+  padding: 0px;
+  width: 200%;
+
+  animation: cambio 5s infinite alternate;
+  animation-timing-function: ease-in;
+}
+
+.slider li {
+  width: 100%;
+  list-style: none;
+}
+
+.slider img {
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@keyframes cambio {
+  0% {margin-left: 0;}
+  45% {margin-left: 0;}
+  
+  60% {margin-left: -100%;}
+  100% {margin-left: -100%;}
 }
 
 /*  productCards  */
@@ -163,7 +188,7 @@ header {
 
 .productsCardButton,
 .boton {
-  border: 0.5px solid rgba(0, 128, 0, 0.5);
+  border: 0.5px dashed rgba(0, 128, 0, 0.5);
   border-radius: 5px;
   text-decoration: none;
   background-color: transparent;
@@ -995,20 +1020,6 @@ div.buttonsFormProfileContainer {
 
   /*<-- login -->*/
 
-  h1.titulosforms {
-    background-color: #cbcbcb;
-    border-radius: 0 20px 20px 0px;
-    box-shadow: 1px 3px 8px grey;
-    color: #828282;
-    font-family: "Source Sans Pro", HelveticaNeue-Light, "Helvetica Neue Light",
-      "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 17px;
-    font-style: italic;
-    margin-top: 40px;
-    padding: 5px 0 5px 20px;
-    width: 160px;
-  }
-
   .linkto {
     color: #000000;
     display: flex;
@@ -1096,8 +1107,6 @@ div.buttonsFormProfileContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 5px;
-    position: relative;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
