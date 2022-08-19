@@ -254,6 +254,7 @@ div.userAvatar {
   width: 100%;
   padding: 5px;
   margin-top: 20px;
+  border-radius: 10px;
 }
 
 /* -- IMAGENES DE CATEGORIAS DE PRODUCTOS HOME --*/
@@ -352,6 +353,8 @@ div.userAvatar {
   margin: auto;
   max-width: 1450px;
   background-color: #8c52ff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .footer .grupo-1 {
@@ -1082,6 +1085,37 @@ div.buttonsFormProfileContainer {
   flex-direction: column;
 }
 
+/*  itemBar  */
+
+.itemBarContainer ul {
+  margin: auto;
+  padding: 20px;
+  font-size: 60px;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  display: flex;
+}
+.itemBarContainer ul li {
+  display: inline-block;
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+.itemBarContainer ul li a {
+  border: 0.1 solid black;
+  border-radius: 50%;
+  display: block;
+  padding: 0 10px;
+  background-color: rgba(0, 128, 128, 0.7);
+  color: #fff;
+  line-height: 50px;
+  font-size: 18px;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
 @media (min-width: 481px) {
   .centerHeader {
     display: flex;
@@ -1152,6 +1186,16 @@ div.buttonsFormProfileContainer {
     justify-content: space-between;
     padding-top: 10px;
     margin-top: 10px;
+  }
+
+  .itemBarContainer ul {
+    flex-direction: row;
+    margin: auto;
+    padding: 20px;
+    font-size: 60px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
   }
 }
 
@@ -1291,6 +1335,8 @@ div.buttonsFormProfileContainer {
     justify-content: center;
     margin-top: 5px;
     position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   /* -- BOTTOM HEADER --*/
@@ -1487,6 +1533,29 @@ div.buttonsFormProfileContainer {
 
   .centerHeader form.homesearch {
     width: 45%;
+  }
+
+  /*  itemBar  */
+  .itemBarContainer ul {
+    width: 1000px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .itemBarContainer ul:hover a {
+    transform: scale(1.05);  
+    filter: none;
+  }
+  .itemBarContainer ul li .dog:hover {
+    background-color: #bd081c;
+  }
+  .itemBarContainer ul li .cat:hover {
+    background-color: #e4405f;
+  }
+  .itemBarContainer ul li .fish:hover {
+    background-color: #55acee;
+  }
+  .itemBarContainer ul li .kiwiBird:hover {
+    background-color: #3b5999;
   }
 }
 
