@@ -5,7 +5,7 @@
 }
 
 /*Mariano*! padding para todos los h*/
-h1 {
+/* h1 {
   font-size: 1.5rem;
 }
 
@@ -51,6 +51,10 @@ h5 {
   margin: 5px;
   padding: 8px;
   width: 210px;
+} */
+
+main {
+  background-color: #ffffff;
 }
 
 .mainIndex {
@@ -58,9 +62,6 @@ h5 {
   background-repeat: repeat;
 }
 
-main {
-  background-color: #ffffff;
-}
 
 /*------Clases del Header-----------*/
 
@@ -1555,6 +1556,12 @@ div.buttonsFormProfileContainer {
     background-color: #55acee;
   }
   .itemBarContainer ul li .kiwiBird:hover {
+    background-color: #3b5999;
+  }
+  .itemBarContainer ul li .location:hover {
+    background-color: #bd081c;
+  }
+  .itemBarContainer ul li .dropdown:hover {
     background-color: #3b5999;
   }
 }
