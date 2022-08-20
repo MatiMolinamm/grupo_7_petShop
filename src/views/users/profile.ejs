@@ -5,6 +5,7 @@
   <body>
     <%- include('../partials/header.ejs')%>
 
+<<<<<<< HEAD
     <main>
       <div class="profile">
         <div class="imageContainer">
@@ -12,6 +13,118 @@
             class="profileAvatar"
             style="background-image: url(../img/usersAvatar/<%=user.avatar%>)"
           ></div>
+=======
+      <main>
+        
+        <h2 class="pageTitle">Perfil</h2>
+
+        <div class="profile">
+
+          <div class="imageContainer">
+            <div class="profileAvatar" style="background-image: url(../img/usersAvatar/<%= user.avatar %>)">
+            </div>
+          </div>
+
+          <div class="formContainer">
+            <form action="/users/profile/?_method=put" method="post" class="formloginandregister"
+              enctype="multipart/form-data">
+
+              <div class="nombre">
+                <input autofocus id="nombre" type="text" name="name" placeholder="Nombre y Apellido"
+                  class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                  value="<%= locals.oldData ? oldData.name : user.name %>" />
+                <div class="text-danger" id="dangerName"></div>
+                <% if (locals.errors && errors.name) { %>
+                  <div class="text-danger">
+                    <%= errors.name.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="telefono">
+                <input type="number" name="telefono" id="telefono" placeholder="Numero telefónico"
+                  class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
+                  value="<%= locals.oldData ? oldData.telefono : user.phone %>" />
+                <div class="text-danger" id="dangerTelefono"></div>
+                <% if (locals.errors && errors.telefono) { %>
+                  <div class="text-danger">
+                    <%= errors.telefono.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="email">
+                <input id="email" type="email" name="email" placeholder="email@address.com"
+                  class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                  value="<%= locals.oldData ? oldData.email : user.email %>" />
+                <div class="text-danger" id="dangerEmail"></div>
+                <% if (locals.errors && errors.email) { %>
+                  <div class="text-danger">
+                    <%= errors.email.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div>
+                <select  class="inputCategoria" name="category_id" id="categoria">
+                  <% if(user.category_id==1) {%>
+                    <option value="1" selected>Administrador</option>
+                    <option value="2">Cliente</option>
+                    <% } %>
+                      <% if(user.category_id==2) {%>
+                        <option value="1">Administrador</option>
+                        <option value="2" selected>Cliente</option>
+                        <% } %>
+                </select>
+              </div>
+
+              <div class="avatar">
+                <input id="avatar" type="file" name="avatar" value="<%=user.avatar %> "
+                  class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>" />
+                <div class="text-danger" id="dangerAvatar"></div>
+                <% if (locals.errors && errors.avatar) { %>
+                  <div class="text-danger">
+                    <%= errors.avatar.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="pasword">
+                <input id="password" type="password" name="password" placeholder="Ingresar password"
+                  class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                  value="<%= locals.oldData ? oldData.password : null %>" />
+                <div class="text-danger" id="dangerPassword"></div>
+                <% if (locals.errors && errors.password) { %>
+                  <div class="text-danger">
+                    <%= errors.password.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <div class="pasword">
+                <input id="passwordConfirm" type="password" name="passwordConfirm" placeholder="Confirmar password" />
+                <div class="text-danger" id="dangerPasswordConfirm"></div>
+              </div>
+
+              <div class="buttonsFormProfileContainer">
+
+                <div>
+                  <button class="productsCardButton" type="submit">Guardar</button>
+                </div>
+
+                <form action="/users/profile/?_method=delete" method="post">
+                  <button class="productsCardButton" type="submit">Eliminar cuenta</button>
+                </form>
+
+              </div>
+
+
+            </form>
+          </div>
+
+
+
+>>>>>>> f2b849875e8364e31e298588f9f0c59db2c5aa91
         </div>
 
         <div class="formContainer">

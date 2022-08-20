@@ -7,15 +7,15 @@
     <%- include('./partials/header.ejs')%>
 
       <main class="mainIndex">
-        <article class="carrusel"></article>
-        <ul class="categoryimages">
-          <li><a href="/products/1"><img src="/img/products/perros.png"></a></li>
-          <li><a href="/products/2"><img src="/img/products/gatos.png"></a></li>
-          <li><a href="/products/3"><img src="/img/products/peces.png"></a></li>
-          <li><a href="/products/4"><img src="/img/products/aves.png"></a></li>
-        </ul>
+
+        <%- include('./partials/slider.ejs')%>
+
+        <%- include('./partials/itemBar.ejs')%>
+        
         <form action="" method="get">
-          <h2 class="productListTitle">BUSQUEDA</h2><div class="resultadoCero" autofocus></div>
+          
+          <h2 class="productListTitle">BUSQUEDA
+            <div class="resultadoCero" autofocus></div>
           </h2>
 
           <h2 class="productosDestacados"></h2>
