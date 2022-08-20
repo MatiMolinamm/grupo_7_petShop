@@ -89,6 +89,11 @@ header {
   color: #fff;
 }
 
+.logo {
+  display: block;
+  width: 120px;
+}
+
 .inputSearchBar::placeholder {
   color: #fff;
 }
@@ -131,6 +136,7 @@ header {
   margin-top: 40px;
   color: gray;
   font-weight: 300;
+  margin-bottom: 20px;
 }
 
 .slider {
@@ -149,9 +155,16 @@ header {
   object-fit: cover;
 }
 
+.productsCardCenter p {
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+}
+
 .divImg img {
   max-width: 200px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .productsCardButton,
@@ -184,11 +197,15 @@ header {
 }
 
 .cardTitle {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .productsCardBottom {
   margin: auto;
+  margin-top: 20px;
 }
 
 .productosDestacados {
