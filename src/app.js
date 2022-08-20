@@ -48,4 +48,10 @@ app.use("/products", routerProducts);
 //Routes APIs
 app.use("/api", routerApi);
 
+app.use((req, res, next) => {
+  res
+    .status(404)
+    .render("notFound", { titulo_pagina: "Petit and Fun - Productos" });
+});
+
 app.listen(3000, () => console.log("servidor funcionando en puerto 3000"));

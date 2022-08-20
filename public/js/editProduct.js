@@ -1,5 +1,6 @@
 window.addEventListener("load", function (e) {
   let form = document.querySelector(".productEditForm");
+
   let image = document.querySelector("#image");
   let dangerImage = document.querySelector("#dangerImage");
   let nombre = document.querySelector("#name");
@@ -15,12 +16,10 @@ window.addEventListener("load", function (e) {
   let oferta = document.querySelector("#oferta");
   let dangerOferta = document.querySelector("#dangerOferta");
   let description = document.querySelector("#description");
-  console.log(description);
-  console.log(description.length);
   let dangerDescription = document.querySelector("#dangerDescription");
   let peso = document.querySelector("#peso");
-
   let dangerPeso = document.querySelector("#dangerPeso");
+  console.log(oferta.value);
 
   nombre.addEventListener("mouseover", function (e) {
     nombre.style.border = "0.2px solid green";
@@ -46,12 +45,7 @@ window.addEventListener("load", function (e) {
   stock.addEventListener("mouseout", function (e) {
     stock.style.border = "";
   });
-  categoria.addEventListener("mouseover", function (e) {
-    categoria.style.border = "0.2px solid green";
-  });
-  categoria.addEventListener("mouseout", function (e) {
-    categoria.style.border = "";
-  });
+
   peso.addEventListener("mouseover", function (e) {
     peso.style.border = "0.2px solid green";
   });
@@ -84,32 +78,32 @@ window.addEventListener("load", function (e) {
       errores.push("Debes completar el campo nombre");
       dangerNombre.innerHTML =
         "<p>" + "Debes completar el campo nombre" + "</p>";
-    } else dangerNombre.style.display = "none";
+    } else dangerNombre.style.display = "";
 
     if (image.value === "") {
       errores.push("Debes completar el campo imagen");
       dangerImage.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
-    } else dangerImage.style.display = "none";
+    } else dangerImage.style.display = "";
 
     if (price.value === "") {
       errores.push("Debes completar el campo precio");
       dangerPrice.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
-    } else dangerPrice.style.display = "none";
+    } else dangerPrice.style.display = "";
 
     if (stock.value === "") {
       errores.push("Debes completar el campo email");
       dangerStock.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerStock.style.display = "none";
 
-    if (categoria.value === "") {
-      errores.push("Debes completar el campo categoría");
-      dangerCategoria.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
-    } else dangerCategoria.style.display = "none";
+    // if (categoria.value === "") {
+    //   errores.push("Debes completar el campo categoría");
+    //   dangerCategoria.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
+    // } else dangerCategoria.style.display = "none";
 
     if (amount.value === "") {
-      errores.push("Debes completar el campo password");
+      errores.push("Debes completar el campo ");
       dangerAmount.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
-    } else dangerAmount.style.display = "none";
+    } else dangerAmount.style.display = "";
 
     if (oferta.value === "") {
       errores.push("Debes completar el campo oferta");
@@ -118,20 +112,18 @@ window.addEventListener("load", function (e) {
 
     if (!peso.value) {
       errores.push("Debes completar el campo peso");
-      dangerPeso.innerHTML =
-        "<p>" + "Debes completar el campo" + "</p>";
-    } else dangerPeso.style.display = "none";
+      dangerPeso.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
+    } else dangerPeso.style.display = "";
 
-    if (description.length == 0) {
+    if (description.value == 0) {
       errores.push("descripcion");
       dangerDescription.innerHTML =
         "<p>" + "Debes completar el campo descripcion" + "</p>";
-    } else dangerDescription.style.display = "none";
+    } else dangerDescription.style.display = "";
 
     if (errores.length > 0) {
       console.log(errores);
       e.preventDefault();
     }
-    
   });
 });

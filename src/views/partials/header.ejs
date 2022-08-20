@@ -1,21 +1,19 @@
 <header class="mainHeader">
-
   <article class="topHeader">
-      <div>
-        <i class="fa-solid fa-phone"></i>
-        <p>+54 9 11 7564-9278</p>
-      </div>
+    <div>
+      <i class="fa-solid fa-phone"></i>
+      <p>+54 9 11 7564-9278</p>
+    </div>
 
-      <div class="envios">
-        <i class="fa-solid fa-truck-fast"></i>
-        <p><a>Envíos en el día en CABA y GBA</a></p>
-      </div>
+    <div class="envios">
+      <i class="fa-solid fa-truck-fast"></i>
+      <p><a>Envíos en el día en CABA y GBA</a></p>
+    </div>
 
-      <div>
-        <i class="fas fa-envelope"></i>
-        <p>Contactanos</p>
-      </div>
-    
+    <div>
+      <i class="fas fa-envelope"></i>
+      <p>Contactanos</p>
+    </div>
   </article>
 
   <article class="centerHeader">
@@ -29,7 +27,12 @@
       </a>
     </div>
     <form class="homesearch" action="/search" method="get">
-      <input id="homesearch" type="search" name="search" placeholder="Buscar productos, marcas y más..." />
+      <input
+        id="homesearch"
+        type="search"
+        name="search"
+        placeholder="Buscar productos, marcas y más..."
+      />
       <button type="submit">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -37,23 +40,26 @@
     <div id="usuario">
       <div class="userState">
         <% if(locals.isLogged){ %>
-          <span>
-            <a href="/users/profile">
-              <div class="userAvatar" style="
+        <span>
+          <a href="/users/profile">
+            <div
+              class="userAvatar"
+              style="
                 background-image: url(../img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:null%>);
-              "></div>
-            </a>
-          </span>
-          <p id="userLoggedName">
-            <%= locals.isLogged? locals.userLogged.name:'' %>
-          </p>
-          <a href="/users/logout" id="logout">Logout</a>
-          <% } else { %>
-            <a href="/users/login">
-              <span><i class="fa-solid fa-user"></i></span>
-              <span>Ingreso</span>
-            </a>
-            <% } %>
+              "
+            ></div>
+          </a>
+        </span>
+        <p id="userLoggedName">
+          <%= locals.isLogged? locals.userLogged.name:'' %>
+        </p>
+        <a href="/users/logout" id="logout">Logout</a>
+        <% } else { %>
+        <a href="/users/login">
+          <span><i class="fa-solid fa-user"></i></span>
+          <span>Ingreso</span>
+        </a>
+        <% } %>
       </div>
       <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
@@ -65,14 +71,13 @@
       <li><a href="/products/2">Gatos</a></li>
       <li><a href="/products/4">Aves</a></li>
       <li><a href="/products/3">Peces</a></li>
-      <li><a href="#">Promociones</a></li>
+      <li><a href="/">Promociones</a></li>
       <li><a href="#">Sucursales</a></li>
       <% if (locals.isLogged && locals.userLogged.category_id==1 ){ %>
-        <li><a href="/products/abmproduct">Agregar Producto</a></li>
-        <li><a href="http://localhost:3001" target="_blank">Metricas</a></li>
+      <li><a href="/products/abmproduct">Agregar Producto</a></li>
+      <li><a href="http://localhost:3001" target="_blank">Metricas</a></li>
 
-        <% } %>
+      <% } %>
     </ul>
   </article>
-
 </header>

@@ -13,6 +13,14 @@ router.get("/users/:id", usersApiController.userId);
 //RUTAS API PRODUCTS
 
 router.get("/products", productsApiController.productsInDb);
+
+router.get("/products/perros", productsApiController.perros);
+router.get("/products/gatos", productsApiController.gatos);
+router.get("/products/peces", productsApiController.peces);
+router.get("/products/aves", productsApiController.aves);
 router.get("/products/:id", productsApiController.detail);
+
+//ERROR
+router.get("*", productsApiController.error);
 
 module.exports = router;

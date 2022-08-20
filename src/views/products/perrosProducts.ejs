@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs')%>
+  <%- include('../partials/head.ejs')%>
 
   <body>
-
     <%- include('../partials/header.ejs')%>
 
-      <main class="mainIndex">
+    <main class="mainIndex">
+      <article class="carrusel"></article>
 
-        <article class="carrusel"></article>
+      <ul class="categoryimages">
+        <li>
+          <a href="/products/1"><img src="/img/products/perros.png" /></a>
+        </li>
+        <li>
+          <a href="/products/2"><img src="/img/products/gatos.png" /></a>
+        </li>
+        <li>
+          <a href="/products/3"><img src="/img/products/peces.png" /></a>
+        </li>
+        <li>
+          <a href="/products/4"><img src="/img/products/aves.png" /></a>
+        </li>
+      </ul>
 
-        <ul class="categoryimages">
-          <li><a href="/products/1"><img src="/img/products/perros.png"></a></li>
-          <li><a href="/products/2"><img src="/img/products/gatos.png"></a></li>
-          <li><a href="/products/3"><img src="/img/products/peces.png"></a></li>
-          <li><a href="/products/4"><img src="/img/products/aves.png"></a></li>
-        </ul>
+      <form action="" method="get">
+        <h2 class="productListTitle">PRODUCTOS PARA PERROS</h2>
 
-        <form action="" method="get">
+        <div class="productosDestacados">
+          <% productsPerros.forEach( ( producto )=> { %>
 
-          <h2 class="productListTitle">PRODUCTOS PARA PERROS</h2>
+          <div class="productsCard">
+            <div class="productsCardCenter">
+              <div class="cardTitle"><%= producto.name %></div>
 
-          <div class="productosDestacados">
-
-            <% productsPerros.forEach( ( producto )=> { %>
-
-              <div class="productsCard">
-                <div class="productsCardCenter">
-
-                  <div class="cardTitle">
-                    <%= producto.name %>
-                  </div>
-
-                  <div class="divImg">
-                    <img src="/img/products/<%= producto.image%>" alt="img" />
-                  </div>
-
-                  <p>
-                    $ <%= producto.price %>
-                  </p>
-                  <p>
-                    Presentación: <%= producto.packaging %> kg
-                  </p>
-                  <p>
-                    Descripción: <%= producto.description %>
-                  </p>
-
-                </div>
-                <div class="productsCardBottom">
-
-                  <button class="productsCardButton">
-                    <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
-                    class="idproducto">VER</a>
-                  </button>
-                
-                  <button class="productsCardButton">AGREGAR</button>
-
-                </div>
-                             
-
+              <div class="divImg">
+                <img src="/img/products/<%= producto.image%>" alt="img" />
               </div>
-              <% }); %>
+
+              <p>$ <%= producto.price %></p>
+              <p>Presentación: <%= producto.packaging %> kg</p>
+              <p>Descripción: <%= producto.description %></p>
             </div>
-        </form>
+            <div class="productsCardBottom">
+              <button class="productsCardButton">
+                <a
+                  href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
+                  class="idproducto"
+                  >VER</a
+                >
+              </button>
 
-      </main>
-      <%- include('../partials/footer.ejs')%>
+              <button class="productsCardButton">AGREGAR</button>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs')%>
   </body>
-
 </html>

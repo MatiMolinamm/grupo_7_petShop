@@ -1,6 +1,7 @@
 const bcryptjs = require("bcryptjs");
 const validation = require("../middlewares/validationMiddleware");
 const db = require("../database/models");
+const { promiseImpl } = require("ejs");
 
 const usersController = {
   login: (req, res) =>
@@ -60,10 +61,9 @@ const usersController = {
       user: req.session.userLogged,
     });
   },
-  editUser: (req, res) => {
+  editUser: async (req, res) => {
     let toUpdate = req.session.userLogged;
     let notError = validation.editUserValidation(req, res);
-
     if (notError && req.body.password !== req.body.passwordConfirm) {
       return res.render("users/profile", {
         errors: {
@@ -75,46 +75,34 @@ const usersController = {
         oldData: req.body,
         user: req.session.userLogged,
       });
-    } else {
-      db.User.update(
-        {
-          name: req.body.name ? req.body.name : toUpdate.name,
-          phone: req.body.telefono ? req.body.telefono : toUpdate.phone,
-          //email: req.body.email ? req.body.email : toUpdate.email,
-          avatar: req.file ? req.file.filename : toUpdate.avatar,
-          password: req.body.password
-            ? bcryptjs.hashSync(req.body.password, 10)
-            : toUpdate.password,
-          category_id: req.body.categoria
-            ? req.body.categoria
-            : toUpdate.category_id,
-        },
-        { where: { id: toUpdate.id } }
-      ).then((r) => {
-        req.session.destroy();
-        return res.redirect("/");
-      });
     }
-    //  VALIDACION DE EMAIL EN EDITAR USUARIO.
-    // if (notError) {
-    // db.User.findAll({ where: { email: req.body.email } }).then(
-    //   (resultado) => {
-    //     if (
-    //       resultado.length > 0
-    //         ? resultado[0].dataValues.email
-    //         : null == req.body.email
-    //     ) {
-    //       return res.render("users/profile", {
-    //         errors: {
-    //           email: {
-    //             msg: "Este email ya está registrado",
-    //           },
-    //         },
-    //         titulo_pagina: "Petit and Fun - Registro",
-    //         oldData: req.body,
-    //         user: req.session.userLogged,
-    //       });
-    //     } else
+
+    let update = await db.User.update(
+      {
+        name: req.body.name ? req.body.name : toUpdate.name,
+        phone: req.body.telefono ? req.body.telefono : toUpdate.phone,
+        //email: req.body.email ? req.body.email : toUpdate.email,
+        avatar: req.file ? req.file.filename : toUpdate.avatar,
+        password: req.body.password
+          ? bcryptjs.hashSync(req.body.password, 10)
+          : toUpdate.password,
+        category_id: req.body.categoria
+          ? req.body.categoria
+          : toUpdate.category_id,
+      },
+      { where: { id: toUpdate.id } }
+    );
+    let userRender = db.User.findAll({
+      where: { id: req.session.userLogged.id },
+    });
+    promiseImpl.all([update, userRender]).then((data) => {
+      console.log(data[1][0].dataValues.id);
+      req.session.userLogged = data[1][0].dataValues;
+      res.render("users/profile", {
+        titulo_pagina: "Petit and Fun - Profile",
+        user: req.session.userLogged,
+      });
+    });
   },
 
   register: (req, res) =>
