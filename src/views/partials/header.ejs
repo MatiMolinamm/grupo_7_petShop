@@ -30,7 +30,7 @@
       <a href="/products/3">Peces</a>
       <a href="/products/4">Aves</a>
       <a href="/products/list">Todos</a>
-      <% if(locals.isLogged){ %>
+      <% if( locals.isLogged && locals.userLogged.category_id==1 ){ %>
         <a href="/products/abmproduct">Nuevo Producto</a>
         <a href="http://localhost:3001" target="_blank">Admin Panel</a>
       <% } %>
@@ -90,7 +90,7 @@
       <li><a href="/products/3">Peces</a></li>
       <li><a href="/products/4">Aves</a></li>
       <li><a href="/products/list">Todos los productos</a></li>
-      <% if (locals.isLogged && locals.userLogged.category_id==1 ){ %>
+      <% if ( locals.isLogged && locals.userLogged.category_id==1 ){ %>
         <li><a href="/products/abmproduct">Agregar Producto</a></li>
         <li><a href="http://localhost:3001" target="_blank">Admin panel</a></li>
         <% } %>
