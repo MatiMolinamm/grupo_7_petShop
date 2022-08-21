@@ -54,9 +54,7 @@
         <% if(locals.isLogged){ %>
           <span>
             <a href="/users/profile">
-              <div class="userAvatar" style="
-                background-image: url(../img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:null%>);
-              "></div>
+              <div class="userAvatar" style="background-image: url(/img/usersAvatar/<%=locals.isLogged?locals.userLogged.avatar:null%>)"></div>
             </a>
           </span>
           <p id="userName">
