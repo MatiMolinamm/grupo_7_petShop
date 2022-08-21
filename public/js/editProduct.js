@@ -1,4 +1,5 @@
 window.addEventListener("load", function (e) {
+  
   let form = document.querySelector(".productEditForm");
   let image = document.querySelector("#image");
   let dangerImage = document.querySelector("#dangerImage");

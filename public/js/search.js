@@ -1,6 +1,6 @@
 window.addEventListener("load", function (e) {
 
-  let divResultado = document.querySelectorAll(".productos");
+  let divResultado = document.querySelectorAll(".productsCard");
 
   let resultadoCero = document.querySelector(".resultadoCero");
   
