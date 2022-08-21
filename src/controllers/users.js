@@ -4,7 +4,7 @@ const db = require("../database/models");
 
 const usersController = {
   login: (req, res) =>
-    res.render("users/login", { titulo_pagina: "Petit and Fun -Login" }),
+    res.render("users/login", { titulo_pagina: "Petit and Fun - Login" }),
   processLogin: (req, res) => {
     let notError = validation.loginValidation(req, res);
     db.User.findAll({ where: { email: req.body.email } }).then((resultado) => {
@@ -15,7 +15,7 @@ const usersController = {
               msg: "El email no se encuentra en la base de datos",
             },
           },
-          titulo_pagina: "Petit and Fun -Login",
+          titulo_pagina: "Petit and Fun - Login",
         });
       }
     });
@@ -49,7 +49,7 @@ const usersController = {
               msg: "Contraseña incorrecta, ingrese nuevamente su usuario y contraseña",
             },
           },
-          titulo_pagina: "Petit and Fun -Login",
+          titulo_pagina: "Petit and Fun - Login",
         });
       }
     });

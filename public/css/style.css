@@ -116,13 +116,13 @@ header {
   margin-left: 2px;
 }
 
-#menu,
 #logout,
 #cart,
 .fa-user {
   color: #fff;
   font-size: 25px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .bottomHeader {
@@ -1027,6 +1027,13 @@ div.buttonsFormProfileContainer {
 }
 
 @media (min-width: 769px) {
+  button.hamburger {
+    display: none;
+  }
+  .mobile-nav {
+    display: none;
+  }
+
   div.buttonsFormProfileContainer {
     display: flex;
     align-items: center;
@@ -1198,11 +1205,10 @@ div.buttonsFormProfileContainer {
     height: 40px;
     padding: 10px;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     margin: auto;
     align-items: center;
   }
-
   .topHeader .telefono,
   .topHeader .envios,
   .topHeader .contactanos {
@@ -1288,10 +1294,6 @@ div.buttonsFormProfileContainer {
 }
 
 @media (min-width: 1018px) {
-  #menu {
-    display: none;
-  }
-
   /*  itemBar  */
   .itemBarContainer ul {
     width: 1000px;
@@ -1344,4 +1346,75 @@ div.buttonsFormProfileContainer {
   div.totaldelcarrito {
     width: 34%;
   }
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 30px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+.hamburger.is-active:before {
+  -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburger.is-active:after {
+  -webkit-transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+.mobile-nav {
+  position: fixed;
+  margin-top: 100px;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: -98;
+  background-color: #4dbbd4f5;
+  padding-top: 120px;
+  -webkit-transition: 1s ease-in;
+  transition: 1s ease-in;
+}
+.mobile-nav.is-active {
+  left: 0;
+}
+.mobile-nav a {
+  font-weight: 200;
+  border-radius: 10px;
+  border: solid .2px #fff;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+}
+.mobile-nav a:hover {
+  background-color: teal;
+  transition: 1s ease;
 }
