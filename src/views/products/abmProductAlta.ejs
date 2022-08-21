@@ -10,6 +10,7 @@
         <h2 class="pageTitle">Cargar un producto</h2>
 
         <form class="form" action="/products/abmproduct" method="post" enctype="multipart/form-data">
+
           <div class="formAltaProducto">
 
             <div class="formAltaProductoImg <%= locals.errors && errors.image ? 'is-invalid' : null %>">
@@ -39,8 +40,13 @@
 
               <div class="formAltaProductoItem <%= locals.errors && errors.name ? 'is-invalid' : null %>">
 
-                <input type="text" name="name" id="name" placeholder="Título del producto"
-                  value="<%= locals.oldData ? oldData.name : null %>" />
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  placeholder="Título del producto" 
+                  value="<%= locals.oldData ? oldData.name : null %>" 
+                />
 
                 <div class="text-danger" id="dangerName"></div>
 
@@ -49,9 +55,11 @@
                     <%= errors.name.msg %>
                   </div>
                   <% } %>
+
               </div>
 
-              <div class="formAltaProductoItem <%= locals.errors && errors.description ? 'is-invalid' : null %>">
+              <div 
+                class="formAltaProductoItem <%= locals.errors && errors.description ? 'is-invalid' : null %>">
                 <textarea 
                   name="description" 
                   id="description" 
@@ -66,6 +74,7 @@
                     <%= errors.description.msg %>
                   </div>
                   <% } %>
+
               </div>
 
               <div class="formAltaProductoItem <%= locals.errors && errors.price? 'is-invalid' : null %>">
@@ -170,8 +179,8 @@
         </form>
 
       </main>
-      <script src="/js/altaProducto.js"></script>
       <%- include('../partials/footer.ejs')%>
-  </body>
-
+    </body>
+    
+  <script src="/js/altaProducto.js"></script>
 </html>

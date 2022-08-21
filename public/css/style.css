@@ -90,8 +90,7 @@ header {
 }
 
 .logo {
-  display: block;
-  width: 120px;
+  display: none;
 }
 
 .inputSearchBar::placeholder {
@@ -988,6 +987,12 @@ div.buttonsFormProfileContainer {
 }
 
 @media (min-width: 481px) {
+
+  .logo {
+    display: block;
+    width: 120px;
+  }
+
   .productos {
     width: 45%;
   }
