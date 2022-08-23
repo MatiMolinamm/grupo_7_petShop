@@ -15,26 +15,18 @@
         <h2 class="productEditTitle">EDITAR PRODUCTO</h2>
 
         <div class="productEditContainer">
-          <div class="imgContainer">
+          <div class="imgContainer" >
             <img src="/img/products/<%= productRenderizar.image %>" />
 
-<<<<<<< HEAD
-            <input
-              id="image"
-              type="file"
-              accept=".jpg,.png,.svg"
-              name="image"
-              placeholder="imagen del producto"
-              value="<%= locals.oldData ? oldData.image : productRenderizar.image%>"
-            />
-            <div class="text-danger" id="dangerImage"></div>
-            <% if (locals.errors && errors.image) { %>
-            <div class="text-danger"><%= errors.image.msg %></div>
-            <% } %>
-          </div>
-=======
           <h2 class="pageTitle">Modificar producto</h2>
->>>>>>> f2b849875e8364e31e298588f9f0c59db2c5aa91
+          <input 
+                id="image" 
+                type="file" 
+                accept=".jpg,.png,.svg" 
+                name="image" 
+                placeholder="Imagen del producto"
+                value="<%= locals.oldData ? oldData.image : productRenderizar.image %>" 
+              />
 
           <div class="formModificacionProducto">
             <div class="inputSelector">
@@ -94,9 +86,9 @@
               >
                 <!-- <option value="<%= productRenderizar.packaging %>"> -->
                 <option value="">Seleccioná el tamaño del producto</option>
-                <option value="3 kg">3 kg</option>
-                <option value="5 kg">5 kg</option>
-                <option value="8 kg">8 kg</option>
+                <option value="3">3 kg</option>
+                <option value="5">5 kg</option>
+                <option value="8">8 kg</option>
               </select>
 
               <div class="text-danger" id="dangerPeso"></div>

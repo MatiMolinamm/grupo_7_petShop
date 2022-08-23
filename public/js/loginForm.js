@@ -2,7 +2,7 @@ window.addEventListener("load", function (e) {
   let form = document.querySelector(".loginForm");
 
   let email = document.querySelector("#email");
-  
+
   let password = document.querySelector("#password");
 
   let textDangerEmail = document.querySelector("#dangerEmail");
@@ -33,7 +33,7 @@ window.addEventListener("load", function (e) {
       textDangerEmail.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else textDangerEmail.style.display = "none";
 
-    if (password.value === "" || password.value.length < 6) {
+    if (!password.value) {
       errores.push("Debes completar el campo password");
       textDangerPassword.innerHTML =
         "<p>" +

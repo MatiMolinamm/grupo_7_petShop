@@ -7,7 +7,7 @@ const publicPathAvatar = path.resolve(
 
 const usersApiController = {
   usersInDb: (req, res) => {
-    db.User.findAll().then((users) => {
+    db.User.findAll({ include: ["category"] }).then((users) => {
       console.log(users[0].dataValues);
       var usersToApi;
       if (users) {
@@ -16,6 +16,7 @@ const usersApiController = {
             id: user.dataValues.id,
             name: user.dataValues.name,
             email: user.dataValues.email,
+            category: user.dataValues.category,
             detail: "http://localhost:3000/api/users/" + user.dataValues.id,
           };
           return usersToApi;
@@ -35,20 +36,26 @@ const usersApiController = {
   },
   userId: (req, res) => {
     let id = req.params.id;
-    db.User.findOne({ where: { id: id } }).then((data) => {
-      if (data) {
-        const avatarPath = path.join(publicPathAvatar, data.dataValues.avatar);
-        let userApi = {
-          id: data.dataValues.id,
-          name: data.dataValues.name,
-          phone: data.dataValues.phone,
-          email: data.dataValues.email,
-          avatar: avatarPath,
-        };
+    db.User.findOne({ where: { id: id }, include: ["category"] }).then(
+      (data) => {
+        if (data) {
+          const avatarPath = path.join(
+            publicPathAvatar,
+            data.dataValues.avatar
+          );
+          let userApi = {
+            id: data.dataValues.id,
+            name: data.dataValues.name,
+            phone: data.dataValues.phone,
+            email: data.dataValues.email,
+            avatar: avatarPath,
+            category: data.dataValues.category,
+          };
 
-        res.json(userApi);
+          res.json(userApi);
+        }
       }
-    });
+    );
   },
 };
 

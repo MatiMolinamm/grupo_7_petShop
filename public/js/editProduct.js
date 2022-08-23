@@ -9,8 +9,7 @@ window.addEventListener("load", function (e) {
   let dangerPrice = document.querySelector("#dangerPrice");
   let stock = document.querySelector("#stock");
   let dangerStock = document.querySelector("#dangerStock");
-  let categoria = document.querySelector("#categoria");
-  let dangerCategoria = document.querySelector("#dangerCategoria");
+
   let amount = document.querySelector("#amount");
   let dangerAmount = document.querySelector("#dangerAmount");
   let oferta = document.querySelector("#oferta");
@@ -80,17 +79,17 @@ window.addEventListener("load", function (e) {
         "<p>" + "Debes completar el campo nombre" + "</p>";
     } else dangerNombre.style.display = "";
 
-    if (image.value === "") {
-      errores.push("Debes completar el campo imagen");
-      dangerImage.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
-    } else dangerImage.style.display = "";
+    // if (image.value === "") {
+    //   errores.push("Debes completar el campo imagen");
+    //   dangerImage.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
+    // } else dangerImage.style.display = "";
 
     if (price.value === "") {
       errores.push("Debes completar el campo precio");
       dangerPrice.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerPrice.style.display = "";
 
-    if (stock.value === "") {
+    if (!stock.value) {
       errores.push("Debes completar el campo email");
       dangerStock.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerStock.style.display = "none";
@@ -100,7 +99,7 @@ window.addEventListener("load", function (e) {
     //   dangerCategoria.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     // } else dangerCategoria.style.display = "none";
 
-    if (amount.value === "") {
+    if (!amount.value) {
       errores.push("Debes completar el campo ");
       dangerAmount.innerHTML = "<p>" + "Debes completar el campo" + "</p>";
     } else dangerAmount.style.display = "";

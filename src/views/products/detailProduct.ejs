@@ -1,96 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs')%>
+  <%- include('../partials/head.ejs')%>
 
   <body>
     <%- include('../partials/header.ejs')%>
 
-      <main>
-        <h2 class="pageTitle">Detalle</h2>
-        <div class="detalleproducto">
+    <main>
+      <h2 class="pageTitle">Detalle</h2>
+      <div class="detalleproducto">
+        <article class="imagenproducto">
+          <img src="/img/products/<%= productRenderizar.image%>" />
+        </article>
 
-          <article class="imagenproducto">
-            <img src="/img/products/<%= productRenderizar.image%>">
-          </article>
+        <article class="resumenproducto">
+          <h1 class="tituloresumenproducto"><%= productRenderizar.name %></h1>
 
-          <article class="resumenproducto">
+          <div class="precioystock">
+            <span class="precio"> $ <%= productRenderizar.price %> </span>
+            <span class="stock">Stock: 20u.</span>
+          </div>
 
-            <h1 class="tituloresumenproducto">
-              <%= productRenderizar.name %>
-            </h1>
+          <div class="pesoproducto">
+            <p>Medida del paquete</p>
+            <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto"
+              >3 Kg.</a
+            >
+            <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto"
+              >15 Kg.</a
+            >
+            <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto"
+              >18 Kg.</a
+            >
+          </div>
 
-            <div class="precioystock">
-              <span class="precio">
-                $ <%= productRenderizar.price %>
-              </span>
-              <span class="stock">Stock: 20u.</span>
-            </div>
+          <div class="ordencarrito">
+            <form
+              class="cart"
+              action="/carrito"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <!--enctype es para enviar datos codificados -->
 
-            <div class="pesoproducto">
-              <p>Medida del paquete</p>
-              <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">3 Kg.</a>
-              <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">15 Kg.</a>
-              <a href="/paginaconproductodeXkilos.html" class="botonpesoproducto">18 Kg.</a>
-            </div>
-
-            <div class="ordencarrito">
-
-              <form class="cart" action="/carrito" method="post" enctype="multipart/form-data">
-                <!--enctype es para enviar datos codificados -->
-
-                <div class="cantidaddeproducto">
-                  <input type="button" class="sumaryrestarproductominus" value="-">
-                  <input type="text" placeholder="3"
-                    class="inputcantidaddeproducto">
-                  <input type="button" class="sumaryrestarproductoplus" value="+">
-                </div>
-
-              </form>
-
-              <div class="agregaralcarrito">
-                <button class="botonagregaralcarrito">AGREGAR AL CARRITO</button>
+              <div class="cantidaddeproducto">
+                <input
+                  type="button"
+                  class="sumaryrestarproductominus"
+                  value="-"
+                />
+                <input
+                  type="text"
+                  placeholder="3"
+                  class="inputcantidaddeproducto"
+                />
+                <input
+                  type="button"
+                  class="sumaryrestarproductoplus"
+                  value="+"
+                />
               </div>
+            </form>
 
+            <div class="agregaralcarrito">
+              <button class="botonagregaralcarrito">AGREGAR AL CARRITO</button>
             </div>
+          </div>
 
-            <div class="descripcionproducto">
-              <h2 class="titulodescripcionproducto">Descripción: </h2>
-              <p>
-                <%= productRenderizar.description %>
-              </p>
-              <p>
-                Presentación: <%= productRenderizar.packaging %> kg
-              </p>
-            </div>
+          <div class="descripcionproducto">
+            <h2 class="titulodescripcionproducto">Descripción:</h2>
+            <p><%= productRenderizar.description %></p>
+            <p>Presentación: <%= productRenderizar.packaging %> kg</p>
+          </div>
 
-            <div class="editiondetailbuttons">
+          <div class="editiondetailbuttons">
+            <a
+              href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.section_id%>"
+            >
+              <% if (locals.isLogged && locals.userLogged.category_id==1 ){ %>
+              <button type="submit" class="productsCardButton">EDITAR</button>
+            </a>
 
-              <a href="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.section_id%>">
-                <% if (locals.isLogged && locals.userLogged.category_id==1 ){ %>
-                  <button type="submit" class="productsCardButton">
-                    EDITAR
-                  </button>
-              </a>
+            <form
+              action="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.section_id%>&_method=delete"
+              method="POST"
+            >
+              <button type="submit" class="productsCardButton">ELIMINAR</button>
+            </form>
 
-              <form
-                action="/products/abmproductEdit/<%= productRenderizar.id %>/?class=<%=productRenderizar.section_id%>&_method=delete"
-                method="POST">
-                <button type="submit" class="productsCardButton">
-                  ELIMINAR
-                </button>
+            <% } %>
+          </div>
+        </article>
+      </div>
+    </main>
 
-              </form>
-
-              <% } %>
-
-            </div>
-
-          </article>
-
-        </div>
-      </main>
-
-      <%- include('../partials/footer.ejs')%>
+    <%- include('../partials/footer.ejs')%>
   </body>
-
 </html>

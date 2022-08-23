@@ -1,66 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs')%>
+  <%- include('../partials/head.ejs')%>
 
   <body>
-
     <%- include('../partials/header.ejs')%>
 
-      <main class="mainIndex">
+    <main class="mainIndex">
+      <%- include('../partials/slider.ejs')%> <%-
+      include('../partials/itemBar.ejs')%>
 
-        <%- include('../partials/slider.ejs')%>
+      <form action="" method="get">
+        <h2 class="pageTitle">Peces</h2>
 
-        <%- include('../partials/itemBar.ejs')%>
+        <div class="productosDestacados">
+          <% productsPeces.forEach( ( producto )=> { %>
 
-        <form action="" method="get">
+          <div class="productsCard">
+            <div class="productsCardCenter">
+              <div class="cardTitle"><%= producto.name %></div>
 
-          <h2 class="pageTitle">Peces</h2>
-
-          <div class="productosDestacados">
-
-            <% productsPeces.forEach( ( producto )=> { %>
-
-              <div class="productsCard">
-                <div class="productsCardCenter">
-
-                  <div class="cardTitle">
-                    <%= producto.name %>
-                  </div>
-
-                  <div class="divImg">
-                    <img src="/img/products/<%= producto.image%>" alt="img" />
-                  </div>
-
-                  <p>
-                    $ <%= producto.price %>
-                  </p>
-                  <p>
-                    Presentación: <%= producto.packaging %> kg
-                  </p>
-                  <p>
-                    Descripción: <%= producto.description %>
-                  </p>
-
-                </div>
-                <div class="productsCardBottom">
-
-                  <button class="productsCardButton">
-                    <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
-                    class="idproducto">VER</a>
-                  </button>
-                
-                  <button class="productsCardButton">AGREGAR</button>
-
-                </div>
-                             
-
+              <div class="divImg">
+                <img src="/img/products/<%= producto.image%>" alt="img" />
               </div>
-              <% }); %>
+
+              <p>$ <%= producto.price %></p>
+              <p>Presentación: <%= producto.packaging %> kg</p>
+              <p>Descripción: <%= producto.description %></p>
             </div>
-        </form>
+            <div class="productsCardBottom">
+              <button class="productsCardButton">
+                <a
+                  href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
+                  class="idproducto"
+                  >VER</a
+                >
+              </button>
 
-      </main>
-      <%- include('../partials/footer.ejs')%>
+              <button class="productsCardButton">AGREGAR</button>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs')%>
   </body>
-
 </html>

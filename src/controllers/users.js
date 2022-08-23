@@ -8,8 +8,9 @@ const usersController = {
     res.render("users/login", { titulo_pagina: "Petit and Fun -Login" }),
   processLogin: (req, res) => {
     let notError = validation.loginValidation(req, res);
+
     db.User.findAll({ where: { email: req.body.email } }).then((resultado) => {
-      if (resultado.length == 0) {
+      if (resultado.length === 0) {
         res.render("users/login", {
           errors: {
             email: {
@@ -110,7 +111,6 @@ const usersController = {
 
   storeUsers: (req, res) => {
     let error = validation.registerValidation(req, res);
-    console.log(req.body);
 
     if (error) {
       db.User.findAll({ where: { email: req.body.email } }).then(
