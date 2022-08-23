@@ -5,7 +5,7 @@ const { promiseImpl } = require("ejs");
 
 const usersController = {
   login: (req, res) =>
-    res.render("users/login", { titulo_pagina: "Petit and Fun -Login" }),
+    res.render("users/login", { titulo_pagina: "Petit and Fun - Login" }),
   processLogin: (req, res) => {
     let notError = validation.loginValidation(req, res);
 
@@ -17,7 +17,7 @@ const usersController = {
               msg: "El email no se encuentra en la base de datos",
             },
           },
-          titulo_pagina: "Petit and Fun -Login",
+          titulo_pagina: "Petit and Fun - Login",
         });
       }
     });
@@ -51,7 +51,7 @@ const usersController = {
               msg: "Contraseña incorrecta, ingrese nuevamente su usuario y contraseña",
             },
           },
-          titulo_pagina: "Petit and Fun -Login",
+          titulo_pagina: "Petit and Fun - Login",
         });
       }
     });

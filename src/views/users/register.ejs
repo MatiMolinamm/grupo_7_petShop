@@ -57,6 +57,9 @@
         </div>
         <div class="inputSelector">
           <select name="categoria" id="categoria">
+            <option type="number" selected value="<%= locals.oldData ? oldData.categoria : null %>">
+              Seleccioná un perfil
+            </option>
             <option value="1">Administrador</option>
             <option value="2">Cliente</option>
             <div class="text-danger" id="dangerCategoria"></div>

@@ -15,101 +15,101 @@
         <h2 class="productEditTitle">EDITAR PRODUCTO</h2>
 
         <div class="productEditContainer">
-          <div class="imgContainer" >
+          <div class="imgContainer">
             <img src="/img/products/<%= productRenderizar.image %>" />
 
-          <h2 class="pageTitle">Modificar producto</h2>
-          <input 
-                id="image" 
-                type="file" 
-                accept=".jpg,.png,.svg" 
-                name="image" 
-                placeholder="Imagen del producto"
-                value="<%= locals.oldData ? oldData.image : productRenderizar.image %>" 
-              />
+            <h2 class="pageTitle">Modificar producto</h2>
+            <input
+              id="image"
+              type="file"
+              accept=".jpg,.png,.svg"
+              name="image"
+              placeholder="Imagen del producto"
+              value="<%= locals.oldData ? oldData.image : productRenderizar.image %>"
+            />
 
-          <div class="formModificacionProducto">
-            <div class="inputSelector">
-              <!-- <label for="name">Nombre del producto: </label> -->
-              <input
-                id="name"
-                type="text"
-                placeholder="Nombre del producto"
-                name="name"
-                value="<%= locals.oldData ? oldData.name : productRenderizar.name %>"
-              />
-              <div class="text-danger" id="dangerName"></div>
+            <div class="formModificacionProducto">
+              <div class="inputSelector">
+                <!-- <label for="name">Nombre del producto: </label> -->
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Nombre del producto"
+                  name="name"
+                  value="<%= locals.oldData ? oldData.name : productRenderizar.name %>"
+                />
+                <div class="text-danger" id="dangerName"></div>
 
-              <% if (locals.errors && errors.name) { %>
-              <div class="text-danger"><%= errors.name.msg %></div>
-              <% } %>
-            </div>
+                <% if (locals.errors && errors.name) { %>
+                <div class="text-danger"><%= errors.name.msg %></div>
+                <% } %>
+              </div>
 
-            <div class="inputSelector">
-              <!-- <label for="description">Descripción: </label> -->
-              <textarea
-                id="description"
-                name="description"
-                value="<%= locals.oldData ? oldData.description :productRenderizar.description %>"
-                placeholder="Describí tu producto"
-              >
+              <div class="inputSelector">
+                <!-- <label for="description">Descripción: </label> -->
+                <textarea
+                  id="description"
+                  name="description"
+                  value="<%= locals.oldData ? oldData.description :productRenderizar.description %>"
+                  placeholder="Describí tu producto"
+                >
 <%= locals.oldData ? oldData.description : productRenderizar.description %></textarea
-              >
-              <div class="text-danger" id="dangerDescription"></div>
-              <% if (locals.errors && errors.description) { %>
-              <div class="text-danger"><%= errors.description.msg %></div>
-              <% } %>
-            </div>
+                >
+                <div class="text-danger" id="dangerDescription"></div>
+                <% if (locals.errors && errors.description) { %>
+                <div class="text-danger"><%= errors.description.msg %></div>
+                <% } %>
+              </div>
 
-            <div class="inputSelector">
-              <!-- <label for="price">Precio: $ </label> -->
-              <input
-                id="price"
-                type="number"
-                name="price"
-                value="<%= locals.oldData ? oldData.price : productRenderizar.price %>"
-                placeholder="Precio"
-              />
-              <div class="text-danger" id="dangerPrice"></div>
-              <% if (locals.errors && errors.price) { %>
-              <div class="text-danger"><%= errors.price.msg %></div>
-              <% } %>
-            </div>
+              <div class="inputSelector">
+                <!-- <label for="price">Precio: $ </label> -->
+                <input
+                  id="price"
+                  type="number"
+                  name="price"
+                  value="<%= locals.oldData ? oldData.price : productRenderizar.price %>"
+                  placeholder="Precio"
+                />
+                <div class="text-danger" id="dangerPrice"></div>
+                <% if (locals.errors && errors.price) { %>
+                <div class="text-danger"><%= errors.price.msg %></div>
+                <% } %>
+              </div>
 
-            <div class="inputSelector">
-              <!-- <label for="packaging">Packaging: </label> -->
-              <select
-                name="packaging"
-                id="peso"
-                selected
-                value="<%= locals.oldData ? oldData.packaging : productRenderizar.packaging%>"
-              >
-                <!-- <option value="<%= productRenderizar.packaging %>"> -->
-                <option value="">Seleccioná el tamaño del producto</option>
-                <option value="3">3 kg</option>
-                <option value="5">5 kg</option>
-                <option value="8">8 kg</option>
-              </select>
+              <div class="inputSelector">
+                <!-- <label for="packaging">Packaging: </label> -->
+                <select
+                  name="packaging"
+                  id="peso"
+                  selected
+                  value="<%= locals.oldData ? oldData.packaging : productRenderizar.packaging%>"
+                >
+                  <!-- <option value="<%= productRenderizar.packaging %>"> -->
+                  <option value="">Seleccioná el tamaño del producto</option>
+                  <option value="3">3 kg</option>
+                  <option value="5">5 kg</option>
+                  <option value="8">8 kg</option>
+                </select>
 
-              <div class="text-danger" id="dangerPeso"></div>
-              <% if (locals.errors && errors.packaging) { %>
-              <div class="text-danger"><%= errors.packaging.msg %></div>
-              <% } %>
-            </div>
+                <div class="text-danger" id="dangerPeso"></div>
+                <% if (locals.errors && errors.packaging) { %>
+                <div class="text-danger"><%= errors.packaging.msg %></div>
+                <% } %>
+              </div>
 
-            <div class="inputSelector">
-              <!-- <label for="stock">Stock: </label> -->
-              <input
-                id="stock"
-                type="number"
-                name="stock"
-                placeholder="Stock"
-                value="<%= locals.oldData ? oldData.stock : productRenderizar.stock %>"
-              />
-              <div class="text-danger" id="dangerStock"></div>
-            </div>
+              <div class="inputSelector">
+                <!-- <label for="stock">Stock: </label> -->
+                <input
+                  id="stock"
+                  type="number"
+                  name="stock"
+                  placeholder="Stock"
+                  value="<%= locals.oldData ? oldData.stock : productRenderizar.stock %>"
+                />
+                <div class="text-danger" id="dangerStock"></div>
+              </div>
 
-            <!-- <div class="inputSelector">
+              <!-- <div class="inputSelector">
                 <select 
                   name="class" 
                   selected value="<%= locals.oldData ? oldData.class :productRenderizar.class %>"
@@ -123,7 +123,13 @@
 
                 </select>
 
-              </div> -->
+                <div class="text-danger" id="dangerCategoria"></div>
+                <% if (locals.errors && errors.category) { %>
+                  <div class="text-danger">
+                    <%= errors.category.msg %>
+                  </div>
+                  <% } %>
+              </div>
 
             <div class="inputSelector">
               <!-- <label for="amount">Cantidad: </label> -->

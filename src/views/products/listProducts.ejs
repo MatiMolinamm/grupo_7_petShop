@@ -3,68 +3,67 @@
 <%- include('../partials/head.ejs')%>
 
   <body>
+
     <%- include('../partials/header.ejs')%>
-      <main>
+    
+      <main class="mainIndex">
 
-        <h2 class="pageTitle">Listado</h2>
+        <%- include('../partials/slider.ejs')%>
 
-        <article class="productosDestacados">
+        <%- include('../partials/itemBar.ejs')%>
 
-          <% products.forEach( ( producto )=> { %>
-            <div class="productsCard">
-              <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>">
+        <form action="" method="get">
 
-                <h3>
-                  <%= producto.name %>
-                </h3>
+          <h2 class="pageTitle">Todos los productos</h2>
 
-                <img src="/img/products/<%= producto.image%>" alt="image" />
+          <div class="productosDestacados">
 
-                <p>
-                  <%= producto.description %>
-                </p>
+            <% products.forEach( ( producto )=> { %>
 
-                <p>
-                  Presentacion: <%= producto.packaging %> kg
-                </p>
+              <div class="productsCard">
 
-                <p class="precioshome">
-                  <%= producto.price %>
-                </p>
+                <div class="productsCardCenter">
 
-                <div class="homeagregaralcarrito">
+                  <div class="cardTitle">
+                    <%= producto.name %>
+                  </div>
 
-                  <button class="botonagregaralcarrito">
-                    <div class="editiondetailbuttons">
+                  <div class="divImg">
+                    <img src="/img/products/<%= producto.image %>" alt="img" />
+                  </div>
 
-                      <a href="/products/abmproductEdit/<%= producto.id %>/?class=<%=producto.section_id%>">
-                        <% if (locals.isLogged && locals.userLogged.category_id==1 ){ %>
-                          <button type="submit">
-                            EDITAR
-                          </button>
-                      </a>
+                  <p>
+                    $ <%= producto.price %>
+                  </p>
+                  <p>
+                    Presentación: <%= producto.packaging %> kg
+                  </p>
+                  <p>
+                    Descripción: <%= producto.description %>
+                  </p>
 
-                      <form
-                        action="/products/abmproductEdit/<%= producto.id %>/?class=<%=producto.section_id%>&_method=delete"
-                        method="POST">
-                        <button type="submit">
-                          ELIMINAR
-                        </button>
-                      </form>
-
-                      <% } %>
-                    </div>
-                  </button>
                 </div>
-              </a>
 
-            </div>
+                <div class="productsCardBottom">
 
-            <% }); %>
+                  <button class="productsCardButton">
+                    <a href="/products/<%=producto.section_id%>/<%= producto.id%>/?class=<%=producto.section_id%>"
+                    class="idproducto">VER</a>
+                  </button>
+                
+                  <button class="productsCardButton">AGREGAR</button>
 
-        </article>
+                </div>
+
+              </div>
+
+              <% }); %>
+
+          </div>
+        </form>
       </main>
       <%- include('../partials/footer.ejs')%>
+
   </body>
 
 </html>
